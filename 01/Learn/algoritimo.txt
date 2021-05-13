@@ -1,0 +1,19 @@
+//Conceito//
+1 - suporta conceito de repetição
+
+2 - até X vezes OU até determinada condição ocorrer
+
+3 - Possibilidade de tomar decisão: Se acontecer isso... A, Se aqui... B...
+A ou B sempre vai para C... Mas A e B nunca ao mesmo tempo 
+
+4 - Ordem das passsos também é importante
+
+5 - Nem sempre tem saida
+
+6 - Nem sempre tem entrada
+
+7 - Nem sempre tem entrada e saida
+
+8 - Algumas linguagens podem devolver varias saidas
+
+9 - Quanto mais alto nivel da linguaguem -> mais prox do ser humano

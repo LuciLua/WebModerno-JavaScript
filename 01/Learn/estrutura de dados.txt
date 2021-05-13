@@ -1,0 +1,48 @@
+//Estrutura de dados//
+
+Organizar e administrar os dados
+ex: lista
+
+Tipos de estruturas
+
+FIFO > primeiro a entrar é o primeiro a sair
+first in first out
+
+LIFO > o ultimo a entrar é o primeiro a sair
+left in first out
+Ex: pilha
+
+ARVORE
+
+TABELA > em linahs e colunas
+
+PILHA
+
+LISTA
+
+---
+
+estruturas de dados basicas
+int, real, letra, bool
+
+estruturas personalizadas
+
+---
+
+variaveis e constantes
+armazenar dados em variaveis e constantes
+
+rotular determinado valor
+melhor trabalhar com esses rotulos
+
+operações
+relacionais, logicas, aritmeticas, atrib... etc
+
+somar, dividir, multiplicar....
+---
+
+precisa ter condições... para tal coisa acontecer
+satisfazer condições para satisfazer tal coisa >>> logica
+
+
+
