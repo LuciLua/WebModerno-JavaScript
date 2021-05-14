@@ -50,7 +50,6 @@ const printResult = function(nota){
     }
     console.log('!!! Successful Operation !!!')
 }
-
 printResult(4)
 printResult(10)
 printResult(99)
