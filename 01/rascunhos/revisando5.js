@@ -23,8 +23,6 @@ sec([100, 80])
 
 
 
-const pessoa = [n1, n2,,n4] = [23, 90,10,900]
+const pessoa2 = [n1, n2,, n4] = [23, 90, 10, 900]
 
-console.log(pessoa[0])
-
-console.log(n2,n4)
+console.log('n1 = ' + n1 + '\npessoa2[2] = '+ pessoa2[2])
