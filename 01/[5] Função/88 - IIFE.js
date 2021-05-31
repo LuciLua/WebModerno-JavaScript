@@ -9,9 +9,8 @@
 // IIFE -> expressão de função / Function expression
 // Immediately Invoked Function Expression
 
-(function(){
+(function(valor){
     console.log
     ('Será executado na hora!')
-    console.log('Fugindo do escopo mais abrangente!')
-})()
-
+    console.log('Fugindo do escopo mais abrangente!', valor)
+})('!!!parametro!!!')
