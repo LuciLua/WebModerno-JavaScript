@@ -9,12 +9,9 @@ function DiaUtilFeriado(dia){
     }
     
     switch(dia){
-        case 1: case 8: case 15: case 22: case 29:
+        case 1: case 7: case 8: case 14: case 15: case 21: case 22: case 28 :case 29:  
             feriado.push('é feriado')
-            break
-        case 7: case 14: case 21: case 28:
-            feriado.push('é feriado')
-            break    
+            break 
         default:
             util.push('é dia útil')
     }
