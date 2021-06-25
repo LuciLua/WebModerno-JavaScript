@@ -1,4 +1,4 @@
-function diaUtilFeriado(dia){
+function DiaUtilFeriado(dia){
     const calender = []
 
     const util = []
@@ -19,24 +19,32 @@ function diaUtilFeriado(dia){
             util.push('é dia útil')
     }
 
-    if (feriado != false){
-        console.log(dia, feriado.join(' '))
+    if (calender.indexOf(dia) != -1){
+        if (feriado != false){
+            console.log(dia, feriado.join(' '))
+        } else {
+            console.log(dia, util.join(' '))
+        }
     } else {
-        console.log(dia, util.join(' '))
+        console.log('Dia inválido')
     }
 }
 
 // feriados
 
-diaUtilFeriado(8)
-diaUtilFeriado(7)
+DiaUtilFeriado(8)
+DiaUtilFeriado(7)
 
 // util
 
-diaUtilFeriado(2)
-diaUtilFeriado(9)
-diaUtilFeriado(10)
-diaUtilFeriado(13)
-diaUtilFeriado(16)
-diaUtilFeriado(23)
+DiaUtilFeriado(2)
+DiaUtilFeriado(9)
+DiaUtilFeriado(10)
+DiaUtilFeriado(13)
+DiaUtilFeriado(16)
+DiaUtilFeriado(23)
 
+// Dias inválidos
+
+DiaUtilFeriado(32)
+DiaUtilFeriado(43)
