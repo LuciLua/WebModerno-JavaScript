@@ -1,31 +1,39 @@
 function enquanto(valor){
     
-    let vitorias = 0
-    let derrotas = 0
+    let quantidade = 0 
 
-    let jogoEnquanto = jogo(valor)
+    let valorJogo = jogo(valor)
 
     function jogo(valor){
-        if (valor >= 60){
-            vitorias++
+
+        if (valor >= 100){
+            return 100
+        } else if (valor >= 50){
+            return 50
+        } else if (valor >= 0){
+            return 0
         }
-        else if (valor >= 40){
-            vitorias += 0.5
-        }
-        else if (valor >= 0){
-            derrotas++
-            // vitorias--
-        }
-        
-        return (vitorias)
-    }
-    
-    while (jogoEnquanto < 1){
-        console.log(jogoEnquanto)
-        jogoEnquanto += 0.5
     }
 
-    return (jogo(valor) + ' pontos antes \n' + jogoEnquanto + 'Pontos agora')
-}
+    while (valor >= valorJogo){
+        switch (valorJogo){
+            case 100:
+                valor -= 50
+                quantidade += 2
+                break
+            case 50:
+                valor -= 5
+                quantidade++
+                break
+            case 0:
+                valor -= 0
+                break
+        }
+    }
 
-console.log(enquanto(10))
+    return ('quantidade é '+ quantidade + ' e o valor que sobra é: ' + valor)
+    // 300 sendo diminuido ate que seja menor que 100
+
+    }
+
+console.log(enquanto(300))
