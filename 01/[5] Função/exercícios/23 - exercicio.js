@@ -43,8 +43,11 @@ function notasAluno(cod, notaA, notaB, notaC){
             if (notas[i] > maiorNota){
                 maiorNota = notas[i]
             }
-            dividendo = (maiorNota*pesoMaiorNota) + (notas[1]*pesoOutrasNotas) +  (notas[2]*pesoOutrasNotas) // Como capturar valores apenas que nao sao os maiores? Dessa forma o maior sempre teria que ficar na posição [0] e o restante nas proximas
         }
+
+        notas.sort()
+        dividendo = (maiorNota*pesoMaiorNota) + (notas[0]*pesoOutrasNotas) +  (notas[1]*pesoOutrasNotas) // Como capturar valores apenas que nao sao os maiores? Dessa forma o maior sempre teria que ficar na posição [0] e o restante nas proximas
+
         mP = dividendo/divisor 
 
         // aprovado ou não
@@ -65,4 +68,4 @@ function notasAluno(cod, notaA, notaB, notaC){
     }
 }
 
-notasAluno(3, 7, 4, 5)
+notasAluno(3, 4, 5, 7)
