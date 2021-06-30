@@ -1,44 +1,71 @@
 function notasAluno(cod, notaA, notaB, notaC){
 
     const alunos = ['Luci','Pedro','Tais','Silvia']
-    var codigos = [a1,a2,a3,a4] = [1, 2, 3, 4]
+    var codigos = [1, 2, 3, 4]
+
+    switch(cod){ // define um nome de aluno para cada codigo
+        case 1:
+            alunos[0]
+            break
+        case 2:
+            alunos[1]
+            break
+        case 3:
+            alunos[2]
+            break
+        case 4:
+            alunos[3]
+            break        
+    }
+
+    var situacao = ''
+    var mostrarNotas = ''
 
     var pesoMaiorNota = 4
     var pesoOutrasNotas = 3
     
-    
-    let divisor = pesoMaiorNota + (2*pesoOutrasNotas)
-    let dividendo = 0
-    
     var maiorNota = 0
-   
+    
+    let dividendo = 0
+    let divisor = pesoMaiorNota + (2*pesoOutrasNotas)
+    
     let mP = 0
 
     const notas = [notaA, notaB, notaC]
     
     // se aluno estiver matriculado
     if (codigos.indexOf(cod) != -1){
-        console.log('[',cod,'] Aluno matriculado')
+        console.log('[',cod,'] - ', alunos[cod], '- Aluno matriculado')
 
         // gera nota das provas em um indice
         for (let i = 0; i < notas.length; i++){
             
-            console.log(`Prova ${i+1}: ${notas[i]}`)
+            mostrarNotas += (`Prova ${i+1}: ${notas[i]}\n`)
 
             //verifica qual é a maior nota
             if (notas[i] > maiorNota){
                 maiorNota = notas[i]
             } 
 
-            dividendo = (maiorNota*pesoMaiorNota) + (notas[0]*pesoOutrasNotas) +  (notas[2]*pesoOutrasNotas) // Como capturar valores apenas que nao sao os maiores?
+            dividendo = (maiorNota*pesoMaiorNota) + (notas[1]*pesoOutrasNotas) +  (notas[2]*pesoOutrasNotas) // Como capturar valores apenas que nao sao os maiores? Dessa forma o maior sempre teria que ficar na posição [0] e o restante nas proximas
         }
         
-    
         mP = dividendo/divisor            
-            
-        console.log('dividendo: ',dividendo)
-        console.log('A média ponderada é: ',mP)
+        
+        // aprovado ou não
+        if (mP >= 5){
+            situacao = 'Aprovado'
+        } else {
+            situacao = 'Reprovado'
+        }
 
+        console.log('Situação:', situacao)
+        console.log(`Notas:\n${mostrarNotas}`)
+
+
+        // console.log('dividendo: ',dividendo)
+        console.log('A média ponderada é: ',mP)
+        
     } else{
         console.log('[',cod,'] Aluno não existe')
     }
@@ -46,4 +73,4 @@ function notasAluno(cod, notaA, notaB, notaC){
 }
 
 
-notasAluno(1, 4, 7, 5)
+notasAluno(3, 7, 4, 5)
