@@ -1,5 +1,5 @@
 function notasAluno(cod, notaA, notaB, notaC){
-
+    
     const alunos = ['Luci','Pedro','Tais','Silvia']
     var codigos = [1, 2, 3, 4]
 
@@ -17,8 +17,8 @@ function notasAluno(cod, notaA, notaB, notaC){
             alunos[3]
             break        
     }
-
-    var situacao = ''
+    
+    const notas = [notaA, notaB, notaC]
     var mostrarNotas = ''
 
     var pesoMaiorNota = 4
@@ -31,46 +31,38 @@ function notasAluno(cod, notaA, notaB, notaC){
     
     let mP = 0
 
-    const notas = [notaA, notaB, notaC]
-    
     // se aluno estiver matriculado
     if (codigos.indexOf(cod) != -1){
-        console.log('[',cod,'] - ', alunos[cod], '- Aluno matriculado')
+        console.log(`[ ${cod} ] - ${alunos[cod]} - Aluno matriculado`)
 
         // gera nota das provas em um indice
         for (let i = 0; i < notas.length; i++){
-            
             mostrarNotas += (`Prova ${i+1}: ${notas[i]}\n`)
 
             //verifica qual é a maior nota
             if (notas[i] > maiorNota){
                 maiorNota = notas[i]
-            } 
-
+            }
             dividendo = (maiorNota*pesoMaiorNota) + (notas[1]*pesoOutrasNotas) +  (notas[2]*pesoOutrasNotas) // Como capturar valores apenas que nao sao os maiores? Dessa forma o maior sempre teria que ficar na posição [0] e o restante nas proximas
         }
-        
-        mP = dividendo/divisor            
-        
+        mP = dividendo/divisor 
+
         // aprovado ou não
         if (mP >= 5){
-            situacao = 'Aprovado'
+           var situacao = 'Aprovado'
         } else {
-            situacao = 'Reprovado'
+           var situacao = 'Reprovado'
         }
 
-        console.log('Situação:', situacao)
+        console.log(`Situação: ${situacao}`)
         console.log(`Notas:\n${mostrarNotas}`)
 
-
         // console.log('dividendo: ',dividendo)
-        console.log('A média ponderada é: ',mP)
-        
+        console.log(`A média ponderada é: ${mP}`)
+
     } else{
-        console.log('[',cod,'] Aluno não existe')
+        console.log(`[ ${cod} ] - Aluno não existe`)
     }
-
 }
-
 
 notasAluno(3, 7, 4, 5)
