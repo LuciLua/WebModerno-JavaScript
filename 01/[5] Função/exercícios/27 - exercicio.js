@@ -4,7 +4,7 @@ function criancas(altA, taxA, altB, taxB){
         this.nome = nome
         this.altura = altura
         this.taxa = taxa
-        this.info = function(){ console.log('Criança',this.nome,'\nAltura: ',this.altura, '\nTaxa:', this.taxa, '\n')}
+        this.info = function(){ console.log(`Criança ${this.nome} \nAltura: ${this.altura}cm \nTaxa: ${this.taxa}cm por ano\n`)}
     }
 
     const criancaAObj = new Crianca('Felipe', altA, taxA)
@@ -15,28 +15,52 @@ function criancas(altA, taxA, altB, taxB){
 
     const criancasAll = [criancaAObj, criancaBObj]
 
-    // const criancaMaior = [0, 'Nome']
-    const criancaMaior = []
+    const criancaMenor = []
     
     for (let i = 0; i < criancasAll.length; i++){
 
         if (criancasAll[i].altura !== criancasAll[0].altura || criancasAll[i].altura !== criancasAll[1].altura){
-            criancaMaior.push((criancasAll[i].altura), criancasAll[i].nome)
-    
-            while (criancaMaior[0] > criancasAll[i].altura){
-                criancaMaior[0] = criancasAll[i].altura
-                criancaMaior[1] = (criancasAll[i].nome)
-            }        
+            
+            while (criancaMenor[0] > criancasAll[i].altura){
+                criancaMenor[0] = criancasAll[i].altura
+                criancaMenor[1] = (criancasAll[i].nome)
+                criancaMenor[2] = (criancasAll[i].taxa)
+            }  
+            
+            criancaMenor.push((criancasAll[i].altura), criancasAll[i].nome)
+
+            function calcFaltaQuanto(){
+                function calcFaltaQuantoTaxa(){
+                    var faltaTaxa = 0
+                    if (criancaMenor[2] == criancaMenor[2]){
+                        faltaTaxa = (falta - criancaMenor[2]) 
+                    }
+                    return faltaTaxa
+                }   
+
+                var falta = criancasAll[i].altura - criancaMenor[0]
+                return console.log('faltam: ',falta,'cm para que o menor alcance o maior num periodo de:', calcFaltaQuantoTaxa(),'anos')
+            }  
 
         } 
         
         else {
-            criancaMaior[0] = 'Alturas iguais'
-            criancaMaior[1] = 'Alturas iguais'
+            criancaMenor[0] = 'Alturas iguais'
+            criancaMenor[1] = 'Alturas iguais'
+            function calcFaltaQuanto(){
+                return '0'
+            }
         }
         
     }
-    console.log('Altura da menor criança: ',criancaMaior[0], '\nNome:', criancaMaior[1])
+
+    console.log('Altura da menor criança: ',criancaMenor[0], '\nNome:', criancaMenor[1])
+    calcFaltaQuanto()
 }
 
-criancas(7,4,9,7) // crianca A: alt=23 tax=4 | crianca B: alt=56 tax=7
+criancas(130,10,160,30) // crianca A: alt=23 tax=4 | crianca B: alt=56 tax=7
+
+// se uma criançaA cresce 25 cm por ano
+// se uma criançaB cresce 30 cm por ano
+
+// 4 anos necessario para a 1 chegar na 2
