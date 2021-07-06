@@ -30,29 +30,3 @@ function funcB(paramA, paramB){
 }
 
 funcB(paramA, paramB)
-
-
-// ---
-
-
-// let vetor = [1, 2, 3, 4, 5]
-
-// function multiplicaVetor(vetor, multiplicador){
-//     let vetorResultado = []
-//     vetor.forEach(elemento => { vetorResultado.push(elemento * multiplicador) });
-
-//     return vetorResultado
-// }
-
-// console.log(multiplicaVetor(vetor, 3))
-
-console.log('-------')
-
-function foreachTest(vetorTeste){
-    let testResultado = []
-    vetorTeste.forEach(function (qualquerCoisa) {  testResultado.push(qualquerCoisa + ' edited') }); // função anonima ou pode ser tambem ....
-   // vetorTeste.forEach(qualquerCoisa => {  testResultado.push(qualquerCoisa + ' edited') }); // uma array function
-    return testResultado
-}
-
-console.log(foreachTest([1,2,34,56,87]))
