@@ -26,3 +26,11 @@ function removerVogais2(frase){
 
 removerVogais2("Cod3r") // retornará "Cd3r"
 removerVogais2("Fundamentos") // retornará "Fndmnts"
+
+
+//resolucao 3
+
+const removerVogais3 = frase => console.log(frase.replace(/[aeiou]/ig, '')) // ???
+
+removerVogais3("Cod3r") // retornará "Cd3r"
+removerVogais3("Fundamentos") // retornará "Fndmnts"
