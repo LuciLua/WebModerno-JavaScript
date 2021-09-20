@@ -1,0 +1,14 @@
+{
+    "name": "primeiromodulo",
+    "version": "1.0.0",
+    "description": "Este é o meu primeiro modulo sendo exportado para outro arquivo JS, o arquivo package.json parece ser necessario para isso funcionar",
+    "main": "",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Luci4Dev",
+    "license": "ISC",
+    "type": "module",
+    "email": "luci.lua81@gmail.com",
+    "url": "luci-lua.tk"
+  }
