@@ -74,4 +74,20 @@ console.log(`Preço total: R$${(getPreco(produtoA)+getPreco(produtoB)+getPreco(p
 
 console.log('-----------------')
 
+const [pedro, julia] = persons; // destructuring
+console.log(pedro)
+console.log(julia)
+
+const pessoaDestructuring = {
+    name: 'Isadora',
+    age: 19,
+    from: 'Norway',
+    cars: [
+        'Fiat',
+        'Chevolet'
+    ]
+}
+
+const { name, age, from, ...cars } = pessoaDestructuring;
+console.log(`${name} tem ${age} anos e nasceu em ${from}. Ela tem ${cars.cars.length} carros: ${cars.cars.join(' e ')}.`)
 
