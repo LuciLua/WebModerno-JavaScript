@@ -19,7 +19,7 @@ console.log(saudacao.ola)
 // control alt m
 // para finalizar
 
-const c = require('./151 - Pasta_A/Pasta_B/Pasta C')
+const c = require('./Pasta_A/Pasta_B/Pasta C')
 console.log(c.ola2)
 
 // index pode ser o 'lobby' para acessar outros arquivos
