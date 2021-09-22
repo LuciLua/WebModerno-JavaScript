@@ -2,8 +2,10 @@
   "name": "funcionarios",
   "version": "1.0.0",
   "description": "meu projeto funcionarios",
-  "main": "index.js",
+  "main": "funcionarios.js",
   "scripts": {
+    "start": "nodemon",
+    "dev": "echo \"--------------------HELLO, WORLD!--------------------\" && echo \"I'm happy for you\" && nodemon",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
