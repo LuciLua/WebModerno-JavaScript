@@ -1,0 +1,193 @@
+1950 - computador eletronico
+1960 - ARPANET - Departamento de Defesa Americano
+1970 - TCP/IP - Robert E Kahn e Vint Cerf
+1980 - WWW - Tim Berners-Lee
+1990 - Internet no Brasil
+2000 - Ig, Redes Sociais, Internet em casa
+
+internet: grande rede de computadores
+
+topologia centralizada 
+topologia distribuida => assumida pela internet
+
+web: grande teia de comunicação entre varios niveis diferentes
+
+
+=-----------------=
+
+base da internet:
+
+protocolo  TCP/ IP
+
+TCP: Transmision Control protocol => Orientado a conexão e confiável
+    HandShake : conversa preliminar entre os pontos para que o dado seja transferido
+
+UDP : User Datagram Protocol => Não Orientado a conexão e baseado no melhor esforço, não tem confiabilidade
+possui melhor controle no nível da aplicação sobre quais dados são enviados e quando.
+
+
+IP : Internet protocol => Roteamento entre redes
+    (enderço IP) => ipv4
+
+=-----------------=
+
+TCP/IP
+
+Protocolo baseado num padrão de projeto chamado 'lawyers'
+protocolo é separado em camadas, cada camada tem sua própria responsabilidade
+
+Objetivo: Dividir um software maior em camadas, cada uma com suas proprias responsbilidades 
+
+lawyers/camadas:
+
+comunica |  [ Aplicação ]  /\  devolve dados
+         \/ [ Transporte ]  |
+         |  [ Internet ]    /\
+         \/ [ Rede/Física ] |
+
+Apl. depende da camada de transport..transp. depende da cam de inter... etc
+camada de cima usa serviçõs da camadas de baixo pra fazer a comunicação
+
+
+dentro do pacote TCP/IP
+tem cabeçalhos, rodapés na mensagem... para envelopar dados entre uma camada e outra
+
+
+=-----------------=
+
+
+[ Rede/Física ] => 
+    {
+        - Ethernet, Wi-fi...
+        - Mac address
+        - Física (Hardware) e Enlace (Software)
+    }
+
+[ Internet ] => 
+    {
+        - Endereço IP - Internet Protocol => identifica sua máquina dentro de uma rede
+        (tem endereço 'público' para qualquer pessoa do mundo chegar na minha máquina,
+        e tem endereço local, com roteamento) => comunicacao entre redes
+        - Conexão entre redes
+        - Transferencia de Pacotes
+    }
+
+[ Transporte ] => 
+    {
+        - TCP (confiável), UDP (melhor esforço)
+        - Comunicação Host-a-Host (maquina para máquina: comunicação entre elas)
+        - Confiabilidade, Integridade... 
+    }
+
+[ Aplicação ] => 
+    {
+        - HTTP, FTP, SMTP...
+        - Comunicação Processo-A-Processo
+        - Npumero da Porta
+    }
+
+não basta comunicar com p computador do google
+precisa comunicar o 'browser' do seu pc com o servidor web que provê o serviço, exemplo gmail
+
+Precisa comunicar processo a processo
+
+=-----------------=
+
+ipv4
+
+ip de classe A
+ip de classe B
+ip de classe C
+
+
+Ip dividido em partes:
+
+de 0 até 255
+
+
+ex.: 192.168.100.230
+
+parte desse IP: identifica rede que o pc está
+parte desse IP: identifica computador dentro de uma rede
+
+------------------------------------------------------------
+
+IP de classe A:
+
+pouquissimas redes de classe A que existem no mundo
+
+_____255______ . _0_ . _0_ . _0_
+1ª parte: rede | 2ª, 3ª, 4ª parte : Host
+
+para definir o que é rede e o que é host: MÁSCARA DE SUBREDE
+
+maáscara de subrede: um número associado a um IP 
+tem o mesmo tamanho de uma IP
+
+semmpre que na máscara de subrede de um determinado bit está marcado com 1:
+significa que aquela parte do IP aponta para uma rede
+
+sempre que na máscara de subrede de um determinado bit está marcado com 0:
+significa que o bit correspondente no IP aponta para uma máquina
+
+
+Pro lado esquerdo da máscara: sempre terá bits '1'
+Pro lado direito da máscara: sempe terá bits '0'
+
+<<< tudo que for 1 pra ca, endereço da rede 
+>>> tudo que for 0 pra ca, endereço do host
+
+ou seja: os primeiros números é rede, os outros 3 é host (mas nem sempre é assim)
+
+------------------------------------------------------------
+
+IP de classe B:
+
+o que define a classe dele é a máscara de subrede
+
+_255_ . _255_ . _0_ . _0_
+1ª, 2ª parte: rede | 3ª, 4ª parte : Host
+
+1ª e 2ª parte: todos os bits são marcados com '1'
+3ª e 4ª parte: todos os bits são marcados com '0', parte final mapeando os hosts
+
+------------------------------------------------------------
+
+IP de classe C: (mais usados)
+
+
+_255_ . _255_ . _255_ . _0_
+
+1ª ,2ª ,3ª parte: rede | 4ª parte: host 
+
+
+(limite 255 máquinas dentro de uma rede de classe C)
+
+1 bit = 255 decimal = 11111111 (8 x 1 em binario)
+
+------------------------------------------------------------
+
+conceito de Porta
+
+porta é um processo
+
+comp1: 10.85.0.4 =>
+{ rodando: Skype, Chrome, Apache, Dropbox }
+[ http://10.85.0.5:8080 ]
+    |  |
+    |  |
+    |  |
+comp2: 10.85.0.5 =>
+{ rodando:  GitHub Desk, Chrome, Node, MySQL}
+[ chrome rodando na porta 8080 ]
+
+
+para comunicar: precisa saber o IP e o processo
+processo é mapeado pela porta
+
+comunicação processo a processo
+
+
+
+
+
