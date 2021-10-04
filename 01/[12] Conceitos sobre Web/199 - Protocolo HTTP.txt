@@ -1,0 +1,119 @@
+HTTP =>  Hyper Text Transfer Protocol
+Protocolo de transferencia de hipertexto
+
+hipertexto: que tem links associados
+
+depois foi evoluindo.. pra trasnferencia de imagens, jogos...
+
+----------------------------------------
+
+Características:
+
+
+- faz parte da camada de [ aplicação ] (do TCP/IP, última camada, mais alto nível)
+
+
+- HTTP é um protocolo Stateless
+
+Stateless: servidor <-------> máquina
+é como se estivessem fazeendo a comunicação pela 1ª vez, dentro do protocolo não existe o estado da requisição
+
+- Cliente-servidor : (requisição)-> baseada na url, com um conunto de parametros
+(resposta)-> pode ser arquivo texto, html, video...
+
+
+cliente manda requisição a partir de uma url
+requisição atendida pelo servidor, que manda a resposta baseado na requisição que foi feita
+
+
+protocolo que retorna conteúdos para formar uma página web
+
+----------------------------------------
+
+
+FLUXO
+
+(1) - Usuário informa url
+    url: www.google.com.br
+
+(2) - Browser gera a Requisição
+    GET / HTTP / 1.1
+    host: www.google.com.br
+
+(3) - Servidor Web gera a reposta
+    HTTP/1.1 200 OK
+    content-Type: text/html; charset=UTF-8
+    date: Mon, 30 Abril 2028 17:00:02 GMT
+    connection: close
+    content-Length: 438
+
+    <html> ...
+
+(4) - Browser renderiza a página
+    [...]
+
+----------------------------------------
+
+METODOS DO HTTP
+
+GET => HTTP
+POST => HTTP
+PUT => HTTP
+DELETE => HTTP
+TRACE => HTTP
+OPTIONS => HTTP
+CONNECT => HTTP
+HEAD => HTTP
+
+Requisição e Resposta 
+
+Cliente -----url + params ------> Servidor
+Cliente <---- HTML, CSS, JS, Img, Vid... -- Servidor
+
+
+uma das técnicas pro site carregar mais rápido: diminuir as requisições necessarias para carregar os arquivos
+
+----------------------------------------
+
+Requisição Via GET
+
+url + parametros da requisição 
+
+
+Cabeçalho .... passsa parametros na requisição
+Corpo .... corpo fica vazio, aprametros na url
+
+google.com.br/search?q=web+moderno
+
+? => divisor de parametros
+
+q => query
+
+& => acrescenta mais parametros
+
+hl => host language
+
+----------------------------------------
+
+requisição segura: HTTPS => comunicação maquina client-server: criptografada
+
+----------------------------------------
+
+Requisição tipo POST: parametros vao no corpo da requisição
+ex.: para senhas
+
+Requisição no host
+parametros no corpo da requisição
+
+HTTPS evita o ataque "homem no meio" => man-in-the-middle
+
+----------------------------------------
+
+
+Grupos de Status HTTP
+
+-> 1xx - Informação  (grupo 100)
+-> 2xx - Sucesso (grupo 200)
+-> 3xx - Redirecionamento (grupo 300)
+-> 4xx - Erro no Client (grupo 400)
+-> 5xx - Erro no serv (grupo 500)
