@@ -1,0 +1,67 @@
+Aplicação Client Side vs Aplicação Server Side
+
+
+antes:
+tudo era centralizado no mainframe
+
+2ª era:
+client-server
+
+cliente com regras no proprio client
+cliente acessava diretamente banco de dados(e camadas)
+e tinha de 3 camadas: cliente rico desktop + middware + acesso banco de dados
+
+A aplicação desktop uma aplicação rica: varias coisas sendo processadas do lado do cliente
+Servidor servia apenas para ter os daods centralizados...
+
+Nesse modelo: dificuldade de atualizar aplicação
+
+Era da web:
+
+passou a ter aplicação server side
+
+server side: toda renderização das páginas são processadas do lado do servidor
+browser do usuario: como um terminal google
+
+--------------
+
+aplicações client side 
+
+front end + services 
+
+aplicação , cliente rico 
+
+acesso ao servidor para obter dados
+codigos implementado do lado do servidor para gerar web services, regras de negocios, camadas de segurança...
+
+gerado do lado do cliente usando javascript
+
+--------
+
+resumindo>
+
+aplicação server-side
+
+conteúdo HTML é gerado a partir do servidor, não apenas dados sao enviados do servidor para o Browser
+
+aplicação client-side / front end
+
+conceito de SPA => single page application
+
+aplicação com única página, todo conteúdo visual é gerado dinamicamente com o javascript
+e não mais gerado pelo servidor
+
+servidor passa a ter serviços  wen, tendo web services do lado do servidor que geram 
+dados em json. 
+ => Web services rest gerando dados em json
+
+ou seja: html, css, js vindo do client e dados em formato json (por exemplo) do servidor
+
+
+--------
+
+
+react => framework client-side
+
+ele só chama os serviços web para enviar ou pegar dados
+o resto é realizado do lado do client
