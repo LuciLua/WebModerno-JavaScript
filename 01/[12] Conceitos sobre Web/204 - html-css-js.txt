@@ -1,0 +1,23 @@
+TRIPÉ DE UMA APLICAÇÃO WEB:
+
+html => parte estrutural
+css => parte de estilo
+js => comportamento 
+
+
+-----------
+
+
+h1 => cabeçalho mais importante
+h2, h3 .... h6
+Hierarquia de importancia, não só tamanho
+
+-----------
+
+react: mistura javascript com html
+react: separar funcionalidades em componentes
+react: .jsx
+
+
+
+
