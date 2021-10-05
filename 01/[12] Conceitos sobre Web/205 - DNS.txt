@@ -1,0 +1,64 @@
+servidor DNS: traduz os nomes de domínio em endereços IP
+
+
+www.site.com.br => 54.69.61.89
+
+www => subdominio
+
+site.com.br => dominio
+
+CNAME => apelido, pode colocar o endereço do site, e por baixo acessa o subdominio
+
+
+DNS funciona sobre o protocolo UDP na porta 53
+
+---------------
+
+funcionamento basico de DNS
+
+(_1_) -  Usuário informa o endereço no browser
+(_2_) - Computador envia uma consulta DNS para o servidor local
+(_3_) - O servidor responde com o endereço IP
+(_4_) - Computador acessa o servidor a partir do IP obtido
+
+
+se o endereço DNS for inválido: nao consigo navegar pois ele preciso resolver os nomes
+
+----------------
+
+-Busca recursiva- : um DNS chama outro ate encontrar o endereço 
+
+[ DNS Client ] ------www.site.com.br----> [ DNS Server 1 : 11.11.12.1 ] (se não achar:)
+
+
+[ DNS Server 1 : 11.11.12.1 ] ___.
+              \/                 |<_____>DNS Server 2: 11.11.12.2
+       'voce conhece  o          |<_____>DNS Server 3: 11.11.12.3
+   endereço www.site.com.br?'    |<_____>DNS Server 4: 11.11.12.4 ... 'sim!'  
+                                            \/
+                                      o endreço é: 23.35.67.98
+
+----------------
+
+-Busca Interativa- 
+
+[ DNS Client ] -----www.site.com.br-------> [ DNS Server 1: 11.11.12.1  (referência)]
+[   |  /\    ]  <-----11.11.12.2------------[                          ]
+    |  |
+   \/  |
+   DNS Server 2 : 11.11.12.2
+
+
+----------------
+
+DNS Records
+
+- A -Ipv4
+
+- AAAA - Ipv6
+
+- MX - Servidor de Email
+
+- NS - Servidor de DNS
+
+- CNAME - Canonical Name (apelido)
