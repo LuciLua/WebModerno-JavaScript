@@ -61,4 +61,4 @@ DNS Records
 
 - NS - Servidor de DNS
 
-- CNAME - Canonical Name (apelido)
+- CNAME - Canonical Name (apelido): ex: vendasonline.com.br => chico.vendasonline.com.br (só para mim)
