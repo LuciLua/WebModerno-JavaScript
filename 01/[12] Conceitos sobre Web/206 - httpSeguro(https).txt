@@ -1,0 +1,40 @@
+HTTP seguro: HTTPS - criptografado
+
+criptografa os dados a partir de um certificado
+
+http + tls (ssl nvl 4) => transport layer security proctocol
+
+http + ssl (secure sockets Layer Protocol)
+
+tls = ssl (msm protocolo, versoes diferentes)
+
+
+Certificado é diferente de protocolo
+
+
+=> ssl/tls => certificado usado com os protocolos SSL / TLS
+
+
+------------
+
+
+HTTPSecurity:
+
+Objetivo: garantir que a informação que sai da máquina do cliente e vai para o servidor
+seja segura no sentido que ninguém consiga descriptografar e ler o que esta no meio
+
+- dados criptografados usando os protocolos TLS ou SSL
+- protege contra interceptação (MITM => men-in-the-middle)
+- Criptografa todas as informações: URL, cookies e headers (mas o IP é visivel)
+- Usa certificados digitais
+
+CA (certification Autority => autoridade certificadora)
+=> organizações que emitem e validam as certificados
+
+
+gerar certificado gratuito: https://letsencrypt.org/
+
+automatiza processo de instalação do certificado: https://certbot.eff.org/
+
+Browser também tem que ter o certificado instalado
+
