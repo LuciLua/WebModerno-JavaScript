@@ -1,0 +1,22 @@
+estatico ou dinamico, vao focar no server-side
+
+estatico: quando o servidor lê arquivos estaticos e serve a página para ser renderizada com leitura de arquivos fisicos no servidor web
+OU SEJA: apenas lidos os arquivos e devolvido
+
+
+dinamico: conteúdo gerado a partir de um código (ex: pode imprimir a hora certa na pagina,
+incluir info que foi omitida no banco de dados para gerar um arquivo personalizado...)
+OU SEJA: gerado a partir de um código
+
+
+normalmente gerado a partir de uma consulta de dados no banco de dados
+
+
+----------
+
+
+react: arquivos vieram estaticamente do servidor. do ponto de vista do cliente: esta gerando conteudo dinamico a partir do javascript
+
+
+conteúdo estatico: recursos consumidos pelo servidor são muito menores 
+
