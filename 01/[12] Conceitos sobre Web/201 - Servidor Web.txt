@@ -1,0 +1,65 @@
+ex.:
+apache, node.js, nginx...
+
+Cliente => Antes de chegar no servidor, é feita uma consulta DNS
+ex.: 8.8.8.8 (do google)
+
+tabela: semore que o usuario acessar www -> aponte para o ip ......
+apontou para esse IP: o cliente tem que chegar no DNS
+para de fato resolver quem é www.site.com.br
+
+
+cliente --- consulta dns -----> Web server =>> devolve resposta para cliente
+
+precisa estar dentro de algum servidor DNS
+
+tempo de replicação de informação para todos os DNS do mundo pode demorar
+
+--------------
+
+uma mesmo servidor: varios sites sendo atendidos:
+
+Virtual Hosting
+
+Web server _____.
+23.67.100.3     |___>www.site-1.com
+                |___>www.site-2.com
+                |___>www.site-3.com
+
+
+geralmente para grande aplicação: varios servidores
+
+balanceado, por carga ou cluster
+
+cluster: conjunto de computadores que se conhecem entre si para atender um site de porte maior
+
+---------------
+
+Estrutura de pastas de arquivos estáticos
+
+Web server _____.
+23.67.100.3     |___> imagens
+                |___> css
+                |___> js
+                |___> index.html
+                |___> about.html
+
+
+enviar arquivos estáticos para cdns (content delivery network) : pode ser uma boa
+para replicar os dados
+
+---------------
+
+Web Stack
+                        Stack mais famosa: LAMP
+                    
+Sistema operacional =>  Linux
+Web server          =>  Apache
+Banco de Dados      =>  MySQL
+Linguagem           =>  PHP
+
+
+
+
+
+
