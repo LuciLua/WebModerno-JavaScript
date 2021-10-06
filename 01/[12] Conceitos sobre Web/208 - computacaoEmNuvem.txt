@@ -22,3 +22,8 @@ ex.: google cloud plataform
 SAAS => Software as a service
 ex.: salesforce
 
+Pra que serve computacao em nuvem:
+
+Com computação em nuvem, você utiliza armazenamento e processamento em computadores e servidores hospedado. A vantagem é acesso rápido, flexibilidade e segurança. Uma outra vantagem é que o investimento inicial é relativamente baixo, e armazenamento e processamento podem ser escalonáveis, ou seja,se adaptam à necessidade. Há infraestruturas, softwares, plataformas, funções e outras coisas como serviço.
+
+Fazendo um paralelo com energia elétrica, seria complicado cada pessoa ter uma estação elétrica própria e cuidar da sua própria distribuição e manutenção. Em vez disso, nós contratamos uma empresa que cuida da parte de infraestrutura e pagamos de acordo com o uso, ou seja, não temos a própria infraestrutura, delegamos ela.
