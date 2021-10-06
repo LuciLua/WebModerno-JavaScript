@@ -1,0 +1,64 @@
+web services são um padrão de mercado
+provê facilidade para ter interoperalidade entre linguagens
+
+serviço de negocio: ex: obter lista de clientes devedores
+serviço disponibilidado em base tecnologias da web
+
+web services geralmente trabalha com formato textual (XML, JSON...)
+
+alternativas para trabalhar com web services:
+
+- Simple Object Acess Protocol (SOAP)
+mais burocratico
+    WSDL => web service Description Language - descreve quais sao os metodos que um serviço utiliza,
+    como são os dados que esse serviço utiliza...
+    baseado em XML => qual a funcao que vc quwer chamar, quais sao os parametros q vc quer passar 
+    RPC => Remote procedural call (invocação de funcões remotas)
+
+
+- Representation State Transfer (REST)
+mais simples, mais leve
+    JSON
+    HTTP
+    - RESTFUL: serviço que segue as convenções do REST
+
+    CRUD => Create, Read, Update, Delete
+
+    .________________________________________________.
+    |______URL_____|___Método___|_____Descrição______|
+    |              |            |                    |
+    | /clientes    |    POST    |  Novo Cliente      |
+    | /clientes    |    GET     |  Obtém todos       |
+    | /clientes/36 |    GET     |  Obtém cliente 36  |
+    | /clientes/12 |    PUT     |  Att. cliente 12   |
+    | /clientes/41 |   DELETE   |  Exclui cliente 41 |
+    |______________|____________|____________________|
+
+
+Escolhas Arqueturais
+
+SOA vs Micro Service
+
+
+SOA  (Service Oriented Architecture): mais antiga
+    baseada em serviços que sao instalados dentro de um ESB (enterprise servise bus)
+    barramento de serviços
+
+Micro Serviços: mais moderno
+    pegar aplicação maior e quebrar ela em pequenos modulos autocontidos
+    deixa de ter uma grande aplicação monolítica para ter serviços especializados
+
+
+--------------
+
+Web Service:
+ 
+ Serviços que são disponibilizados pela minha aplicação e rodam em cima de 
+ tecnologias web normalmente rodam em cima do protocolo HTTP.
+
+ principais tecnologias de mercado:
+
+ - tecnologias baseadas em XML (Soup)
+ - tecnologia usando webservice REST (geralmente trabalha com jSON)
+
+ 
