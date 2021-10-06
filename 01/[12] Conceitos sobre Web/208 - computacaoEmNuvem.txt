@@ -1,0 +1,24 @@
+nuvens em sua maioria são suportadas por servidores linux
+
+- Nuvens de infraestrutura
+    IAAS =>  infraestrutura as a service
+    ex.: amazon webservice (maior provedor de nuvem do mundo)
+
+
+- Nuvens de Plataforma
+
+- Nuvem de Software
+
+
+Pagar pelo uso
+
+autoscale => aumenta ou diminui infraestrutura de acordo com a demanda do sistema
+
+
+
+PAAS => plataform as a service
+ex.: google cloud plataform
+
+SAAS => Software as a service
+ex.: salesforce
+
