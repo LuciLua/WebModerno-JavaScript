@@ -1,0 +1,79 @@
+<table>
+    <caption>Produtos</caption> <!--Opcional-->
+
+    <thead> <!--Cabeçalho da tabela> Opcional (bom colocar)-->
+        <tr> <!--linha da tabela: Table rool-->
+            <th>Produto</th> <!--Table head-->
+            <th>Preço</th>
+            <th>Quantidade</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+
+    <tbody> <!--Corpo da tabela> Opcional (bom colocar)-->
+        <tr>  <!--Primeira linha-->
+            <td>iPad</td> <!--Table data-->
+            <td>R$3289,99</td>
+            <td>2</td>
+            <td>R$6.579,98</td>
+        </tr>
+
+        <tr> <!--Segunda linha-->
+            <td>Fones</td> <!--Table data-->
+            <td>R$10,00</td>
+            <td>5</td>
+            <td>R$50,00</td>
+        </tr>
+    </tbody>
+
+    <tfoot> <!--Rodapé da tabela> Opcional (bom colocar)-->
+        <tr>
+            <td colspan="3">Total</td> <!--colspan: ocupar x colunas nessa celula-->
+            <td>R$6.629,98</td>
+        </tr>
+        <!--rowspan: ocupar x celulas nessa coluna -->
+</table>
+
+
+<style>
+    table{
+        border-collapse: collapse;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    table caption{
+        font-weight: bold;
+        border: #444 1px solid;
+        border-radius: 30px;
+
+        padding: 7px;
+
+        margin-bottom: 40px;
+    }
+
+    th, td{
+        padding: 10px;
+    }
+
+    thead tr{
+        border-bottom: solid 1px #444;
+    }
+
+    tbody tr:hover{
+        background-color: rgb(201, 201, 201);
+        cursor: pointer;
+    }
+
+    tfoot tr{
+        border-top: solid #444 1px;
+        background-color: #444;
+        color: #fff;
+        font-weight: bold;
+    }
+
+</style>
