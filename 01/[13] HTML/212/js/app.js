@@ -1,8 +1,4 @@
-console.log('ola')
-
 document.querySelectorAll('[wm-nav]').forEach(link => {
-    console.log(link)
-
     const conteudo = document.getElementById('conteudo')
     
     link.onclick = function(e){
@@ -23,3 +19,16 @@ document.querySelectorAll('[wm-nav]').forEach(link => {
 // link.href ou getAttributte
 
 // fetch => requisição ajax em cima do atributo href
+
+document.getElementById('navOpenClose').onclick = e => {
+    const navOpenClose = document.querySelector('.headNav')
+
+    const seta = document.querySelector('.navOpenClose')
+
+    seta.classList.toggle('active')
+
+    const d = navOpenClose.nextElementSibling.style.display
+
+    navOpenClose.nextElementSibling.style.display = d === 'none' ? 'flex' : 'none'
+
+}

@@ -8,15 +8,23 @@
     scroll-behavior: smooth;
 }
 
+html {
+    height: 100%;
+    min-height: 100%;
+}
+
 body{
     width: 100%;
     height: 100%;
-    min-height: 100vh;
+    min-height: 100%;
 
-    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+
+    background-color: #fff;
     position: relative;
-
 }
+
 
 header{
     position: relative;
@@ -35,7 +43,62 @@ header h1{
     margin-bottom: 5px;
 }
 
+.headNav{
+    display: flex;
+}
+
+.headNav h1{
+    margin-right: 20px;
+}
+
+
 nav{
+    margin: 20px;
+}
+
+nav span:first-of-type{
+    background-color: #1a1a1c1b;
+}
+
+nav span:first-of-type:hover{
+    background-color: #1a1a1c1b;
+    color: #1a1a1c;
+}
+
+
+nav .navOpenClose{
+    width: 30px;
+    height: 30px;
+
+    border: 1px solid rgb(58, 58, 58);
+    border-radius: 5px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+
+    position: relative;
+
+    user-select: none;
+
+    transform: rotateZ(0deg);
+}
+
+.navOpenClose.active{
+    transform: rotateZ(90deg);
+    background-color: #1a1a1c2a;
+}
+
+
+
+nav .navOpenClose:hover{
+    background-color: #3b3b3d;
+    color: #fff;
+}
+
+.exercicios{
     position: relative;
 
     display: flex;
@@ -107,6 +170,11 @@ footer{
     display: flex;
     align-items: center;
     justify-content: center;
+
+    position: relative;
+    bottom: 0;
+
+    margin-top: auto;
 }
 
 footer p{
