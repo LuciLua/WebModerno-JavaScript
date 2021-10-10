@@ -1,7 +1,218 @@
+<link rel="stylesheet" href="./style.css">
+
 <h1>Formulário</h1>
 
 <form action="http://localhost:3003/usuarios" method="POST">
-    <input type="text" name="nome">
-    <input type="number" name="idade">
+    <input class="textBox" type="text" name="nome" placeholder="Nome">
+    <input class="textBox" type="password" name="senha" placeholder="Senha">
+    <div class="tipos">
+        <div class="tipo">
+            <h4>Acesso</h4>
+        </div>
+        <div class="tipo">
+            <label for="admin">Admin</label>
+            <input type="radio" id="admin" value="admin" name="tipo">
+        </div>
+        <div class="tipo">
+            <label for="user">User</label>
+            <input type="radio" id="user" value="user" name="tipo"> 
+            <!-- valor enviado para o backend: o q tiver em value -->
+        </div>
+    </div>
+    <div class="situacao">
+        <div class="status">
+            <label class="ativo active-inative" for="ativo">Ativo</label>
+            <input type="checkbox" name="status" id="ativo" value="ativo">
+        </div>
+        <div class="status">
+            <label class="inativo active-inative" for="inativo">Ocupado</label>
+            <input type="checkbox" name="status" id="inativo" value="ocupado">
+        </div>
+    </div>
+    <div class="estados">
+        <h4>Estado</h4>
+        <select name="estado" id="">
+            <option value="">Selecione</option>
+            <option value="AC">Acre</option>
+            <option value="BA">Bahia</option>
+            <option value="MG">Minas Gerais</option>
+        </select>
+        <select name="interesses" multiple size="5" id="">
+            <option value="violao">Violão</option>
+            <option value="teclado">Teclado</option>
+            <option value="viola">Viola</option>
+            <option value="tambor">Tambor</option>
+            <option value="clarinete">Clarinete</option>
+        </select>
+    </div>
+
+
+
+    <textarea name="bio" cols="30" rows="10"></textarea>
     <button>Incluir</button>
 </form>
+
+<script>
+    document.querySelectorAll('.active-inative').forEach(ai => {
+        ai.onclick = function(){
+            var b = ai.style.background
+            ai.style.background = b == 'rgb(31, 31, 31)' ? 'rgb(107, 107, 107)' : 'rgb(31, 31, 31)'
+        }
+    })
+</script>
+
+<style>
+
+    form{
+        display: flex;
+        flex-direction: column;
+
+        background-color: rgb(255, 255, 255);
+        margin-top: 20px;
+
+        position: relative;
+
+        width: 100%;
+        padding: 10px;
+        height: fit-content;
+
+        flex-wrap: wrap;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    form .situacao{
+        width: 100%;
+        max-width: 500px;
+
+        height: 50px;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    form .situacao .status{
+        margin: 5px;
+    }
+    
+    form .situacao .status label{
+        width: 100%;
+        padding: 3px 9px;
+        height: 100%;
+    }
+    
+    form .situacao .status .active-inative{
+        border-radius: 3px;
+        font-size: 14px;
+
+        color: #fff;
+        font-family: Arial, Helvetica, sans-serif;        
+        background-color: rgb(107, 107, 107);
+
+        user-select: none;
+        cursor: pointer;
+    }
+
+    form .situacao .status input{
+        display: none;
+    }
+
+    form .estados{
+        width: 100%;
+        max-width: 500px;
+        display: flex;
+        align-items: center;
+    }
+
+    form .estados h4{
+        margin-right: 10px;
+    }
+
+    form .estados select{
+        width: 100%;
+    }
+
+    form .textBox,
+    form textarea{
+        width: 100%;
+        max-width: 500px;
+
+        position: relative;
+
+        border: none;
+        margin: 5px;
+
+        outline: none;
+
+        background-color: rgb(235, 235, 235);
+
+        padding: 20px;
+    }
+
+    form textarea{
+        resize: none;
+        height: 180px;
+    }
+    form .textBox{
+        height: 35px;
+    }
+
+    form button{
+        border: none;
+        width: 100%;
+        height: 35px;
+        max-width: 500px;
+
+        background-color: rgb(71, 105, 150);
+        color: #fff;
+
+        margin-top: 20px;
+        cursor: pointer;
+    }
+
+    form button:hover{
+        background-color: rgb(53, 81, 118);
+    }
+
+    form .tipos{
+        width: 100%;
+        max-width: 500px;
+
+        display: flex;
+        flex-direction: row;
+
+        border: 1px solid rgb(225, 225, 225);
+    }
+
+    form .tipos .tipo{
+        margin: 2px;
+
+        display: flex;
+        flex-direction: row-reverse;
+        width: 100px;
+
+        padding: 10px;
+    }
+
+    form .tipos .tipo label{
+        text-align: start;
+        width: 100%;
+
+        display: flex;
+        align-items: center;
+
+        margin-right: auto;
+        margin-left: 8px;
+
+    }
+
+    form .tipos .tipo input{
+        margin-right: auto;
+    }
+
+
+</style>
