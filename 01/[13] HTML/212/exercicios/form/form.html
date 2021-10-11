@@ -2,7 +2,9 @@
 
 <h1>Formulário</h1>
 
-<form action="http://localhost:3003/usuarios" method="POST">
+<form method="POST">
+    <input type="hidden" name="id" value="1">
+    <!-- input escondido para tambem pegar id do ususario -->
     <input class="textBox" type="text" name="nome" placeholder="Nome">
     <input class="textBox" type="password" name="senha" placeholder="Senha">
     <div class="tipos">
@@ -31,13 +33,13 @@
     </div>
     <div class="estados">
         <h4>Estado</h4>
-        <select name="estado" id="">
+        <select name="estado">
             <option value="">Selecione</option>
             <option value="AC">Acre</option>
             <option value="BA">Bahia</option>
             <option value="MG">Minas Gerais</option>
         </select>
-        <select name="interesses" multiple size="5" id="">
+        <select name="interesses" multiple size="5">
             <option value="violao">Violão</option>
             <option value="teclado">Teclado</option>
             <option value="viola">Viola</option>
@@ -49,7 +51,8 @@
 
 
     <textarea name="bio" cols="30" rows="10"></textarea>
-    <button>Incluir</button>
+    <button formaction="http://localhost:3003/usuarios" formmethod="POST">Incluir</button>
+    <button formaction="http://localhost:3003/usuarios/3">Alterar</button>
 </form>
 
 <script>
