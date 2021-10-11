@@ -1,0 +1,71 @@
+<p>
+    <img src="http://files.cod3r.com.br/curso-web/imagem1.jpg" alt="Muro da cidade" title="Muro da cidade por Tarso Bessa"/>
+    <!-- alt de alternativa, interpretada pelos leitores de def visual, e é mostrada quando img n e carregada -->
+</p>
+
+<p>
+    <img src="http://files.cod3r.com.br/curso-web/imagem2.gif" alt="">
+</p>
+
+<p class="circular">
+    <img src="http://files.cod3r.com.br/curso-web/imagem3.png" alt="Rio de Janeiro">
+</p>
+
+<p class="texto">
+    <img src="http://files.cod3r.com.br/curso-web/avatar.jpg" id="avatar" alt="Avatar">
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi doloremque unde aliquam ad provident vero adipisci nisi, explicabo, nostrum velit iste et sapiente Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, ab voluptates doloribus quas magnam illum voluptatum fugiat odit ad dolorem sit aliquam esse! Fugiat recusandae omnis corrupti impedit provident laudantium.
+</p>
+
+<p class="cidade"></p>
+
+<p>
+    <!-- para colocar varias fontes de  imagens -->
+    <picture>
+        <!--  se nenhuma dessas imagens q estao sendo referencias por <source> forem satisfeitas -->
+        <!--  ela vai descendo, ate exibir a img logo estreita -->
+        <!-- requisito tamanho do browser  -->
+        <source srcset="http://files.cod3r.com.br/curso-web/logo-larga.png"
+        media="(min-width: 600px)">
+        <img src="http://files.cod3r.com.br/curso-web/logo-estreita.png" alt="Logo">
+    </picture>
+</p>
+
+<style>
+    p{
+        margin-bottom: 15px;
+    }
+
+    img, .circular{
+        max-width: 513px;
+
+        width: 90%;
+    }
+
+    .circular{
+        background-color: #444;
+    }
+
+    .texto{
+        max-width: 513px;
+        width: 90%;
+
+        text-align: justify;
+    }
+
+    .texto img{
+        width: 50px;
+        margin-right: 10px;
+    }
+
+    .cidade{
+        max-width: 513px;
+        width: 90%;
+        height: 342px;
+
+        background-image: url('http://files.cod3r.com.br/curso-web/imagem4.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 200%;
+    }
+
+</style>
