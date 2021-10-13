@@ -22,11 +22,22 @@ main{
     height: 100vh;
 }
 
-main > video{
+main .abaVideo > video{
     pointer-events: none;
 }
 
+
+main .abaVideo{
+    width: 800px;
+    height: 450px;
+
+    position: relative;
+    overflow: hidden;
+}
 .controller{
+    position: absolute;
+    bottom: -100px;
+
     height: 40px;
 
     display: flex;
@@ -37,16 +48,23 @@ main > video{
 
     width: 800px;
 
-    background-color: rgba(85, 85, 85, 0.213);
+    background-color: rgba(0, 0, 0, 0.193);
 
     user-select: none;
+    transition: 0.3s;
+}
+
+
+.abaVideo:hover .controller{
+    transition: 0.3s;
+    bottom: 0;
 }
 
 .controller .progresso{
-    height: 20px;
+    height: 15px;
     width: 700px;
 
-    border: 1px solid #444;
+    border: 1px solid #fff;
     margin: 0 20px 0 5px;
 
     position: relative;
@@ -58,7 +76,7 @@ main > video{
 .controller .progresso > div{
     position: relative;
 
-    background-color: #1c1c1c;
+    background-color: #ffffff;
     color: #fff;
 
     height: 100%;
