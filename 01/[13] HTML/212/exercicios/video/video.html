@@ -10,15 +10,16 @@
 </head>
 <body>
     <main>
-        <video id="meuVideo" width="800" height="450" controls autoplay controlsList="nodownload">
+        <video id="meuVideo" width="800" height="450" controlsList="nodownload">
             <source src="http://files.cod3r.com.br/curso-web/video.mp4" type="video/mp4">
         </video>
-        
-        <div wm-progresso="meuVideo" class="progresso">
-            <div class="progressoPorCento"></div>
-            <div>
-                <button wm-play="meuVideo">Play</button>
-                <button wm-pause="meuVideo">Pause</button>
+        <div class="controller">
+            <div class="buttons">
+                <button wm-play="meuVideo"><img src="play.svg" alt=""></button>
+                <button wm-pause="meuVideo"><img src="pause.svg" alt=""></button>
+            </div>
+            <div wm-progresso="meuVideo" class="progresso">
+                <div></div>
             </div>
         </div>
     </main>
