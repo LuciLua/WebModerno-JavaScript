@@ -1,0 +1,27 @@
+css =  cascating style sheet
+folha de estilo que funciona em cascata
+
+multiplos codigos um atras do outro
+
+
+boa pratica: simplicidade
+
+ir em direção a classe
+
+muita coisa em ma só classe: reuso é ruim
+
+dividir responsabilidade
+
+-> tentar manteer padronização de nomeclatura
+
+-> css acaba usando dash-case e nao camelCase
+
+-----------
+css usar => kebab-case ou dash-case
+snake_case
+camelCase
+UPPERCASE
+lowercase
+PascalCase
+dot.case
+-----------
