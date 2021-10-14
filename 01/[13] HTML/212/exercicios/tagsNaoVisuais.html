@@ -1,0 +1,42 @@
+<h1>Tags nao visuais</h1>
+<div class="tagsNaoVisuais">
+    <h2>Tags semânticas</h2>
+
+    <!-- 
+            section  - agrupamento temático de conteudo
+            article - semantica de alto auto-contido (tem começo meio e fim)
+            header - cabeçalho do documento
+            footer - rodapé do documento
+            nav - agrupamento de links
+            aside - de lado (ex. sidebar). Relacionado com o conteúdo em volta (adendo)
+            details - exibe os detalhes que podem ser exibidos- ou escondidos
+         -->
+
+    <!-- 
+             div - divisão de seção
+             span - agrupar elementos inline
+          -->
+
+
+    <div>Área 1</div>
+    <div>Área 2</div>
+
+    <p>
+        Esse é um texto com <span class="diferente"> muitas palavras </span> e ponto.
+    </p>
+</div>
+
+<style>
+    .tagsNaoVisuais>p,
+    .tagsNaoVisuais>div {
+        display: inline;
+    }
+
+    .tagsNaoVisuais p>span {
+        display: block;
+    }
+
+    .tagsNaoVisuais p>.diferente {
+        background-color: rgba(255, 255, 0, 0.445);
+    }
+</style>
