@@ -22,10 +22,6 @@ main{
     height: 100vh;
 }
 
-main .abaVideo > video{
-    pointer-events: none;
-}
-
 
 main .abaVideo{
     width: 800px;
@@ -62,10 +58,10 @@ main .abaVideo{
 
 .controller .progresso{
     height: 15px;
-    width: 700px;
+    width: 600px;
 
     border: 1px solid #fff;
-    margin: 0 20px 0 5px;
+    margin: 0 10px 0 5px;
 
     position: relative;
 
@@ -73,11 +69,31 @@ main .abaVideo{
     overflow: hidden;
 }
 
+.controller > span{
+    width: 50px;
+    height: 17px;
+
+    color: rgba(255, 255, 255, 0.679);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-right: 20px;
+
+
+    position: relative;
+
+    font-size: 13px;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .controller .progresso > div{
     position: relative;
 
     background-color: #ffffff;
-    color: #fff;
+    color: rgb(49, 49, 49);
 
     height: 100%;
     width: 0%;
@@ -85,6 +101,7 @@ main .abaVideo{
     text-align: right;
     font-size: 14px;
 }
+
 .controller .buttons{
     display: flex;
     justify-content: center;
