@@ -43,4 +43,34 @@ function fazAcontecer(){
 }
 
 fazAcontecer()
-    
+
+
+const colors = {
+    dark: '#33f',
+    nebula: '#ff00ff',
+    padrao: '#fff',
+    get(tag){
+        return this[tag] ? this[tag] : this.padrao
+    }
+}
+
+document.querySelectorAll('.card').forEach(e => {
+    e.style.background = colors.get('dark')
+
+
+    if(e.classList.contains('label')){
+
+        
+        const h2 = document.createElement('blockquote')
+        
+        h2.innerHTML = 'ola'
+        
+        h2.style.width = '100%'
+        h2.style.textAlign = 'center'
+        h2.style.background = colors.get('sadda')
+        
+        e.insertBefore(h2, e.childNodes[0])
+        console.log(e.childNodes)
+    }
+})
+
