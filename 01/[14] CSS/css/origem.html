@@ -4,12 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Origem CSS: Externo, Interno e Inline</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <!-- rel => relacao -->
+
+    <!-- prioridade de qual aplica primeiro depende da ordem de processamento,
+    geralmente queme sta primeiro -->
+
+
     <style>
-        /* ... */
+        body {
+            background-color: rgb(33, 39, 37);
+        }
     </style>
 </head>
+<!-- nao é rcomendado colocar propriedades inline -->
 
-<body>
+<!-- priorizar ccs externo, no arquivo -->
+
+<!-- style aplicado no elemento diretamente tem preferencia em tudo -->
+<body style="border: 2px solid #ff00ff;">
     <h1>E agora?</h1>
 </body>
 
