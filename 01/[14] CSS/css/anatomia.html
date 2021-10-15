@@ -5,7 +5,40 @@
     <meta charset="UTF-8">
     <title>Anatomia CSS</title>
     <style>
-        /* ... */
+        *::before, *, *::after{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .selector{
+            color: #fff;
+            font-size: 30px;
+            text-align: center; /*valores pre definidos*/
+
+            border:  solid 5px navy;
+            
+            /*funcoes*/
+            width: calc(100% - 100px);
+
+            background-color: rgb(41, 41, 41);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /*pseudo classe : */
+        
+        .selector:hover{
+            background-color: #992;
+        }
+
+        /*pseudo-elemento :: */
+
+        .selector::first-letter{
+            font-size: 40px;
+        }
+
+        /*usar padrão dash-case ou camel casse. importante ter conscistencia no padrao de nomeclatura*/
+
     </style>
 </head>
 
