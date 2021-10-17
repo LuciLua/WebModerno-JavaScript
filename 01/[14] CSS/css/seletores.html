@@ -6,7 +6,59 @@
     <title>CSS Selectors</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
+        *{
+            color: rgb(7, 255, 152);
+        }
+        #aprovados  li{
+            background-color: rgb(94, 131, 76);
+        }
+        #aninhado > div{
+            background-color: rgb(76, 120, 131);
+        }
+        #aninhado  section{ /*qualquer descendente aninhado do tpo section sera selecionado*/
+            background-color: rosybrown;
+        }
+         p + ul{
+             color: red;
+             background-color: blue;
+         }
+
+         p + ol{ /*nao da pois nao sao vizinhos*/
+             background-color: rgb(30, 167, 172); 
+         }
+         p ~ ol{ /*nao da pois nao sao vizinhos*/
+             background-color: rgb(242, 0, 255); 
+         }
+
+         [feira]{ /*prpriedade feira*/
+             background-color: rgb(100, 50, 100);
+         }
+
+         [feira=escritorio]{ /*prpriedade feira que tem como valor escritorio*/
+             background-color: rgb(32, 124, 14);
+         }
+
+         [feira~=escritorio]{ /*prpriedade feira que tem como valor escritorio e qualquer  outra coisa mais q tenha tambem depois ou antes */
+             background-color: rgb(31, 44, 28);
+         }
+
+         [feira*=sa]{ /*sa esta contido no valor da propriedade feira?*/
+            border-radius: 20px;
+         }
+
+         span:nth-child(1){
+             /*filho numero 1*/
+             color: #444;
+         }
+
+         section > :nth-child(odd){
+            /*seleciona impares*/
+         }
+
+         section > :nth-child(even){
+            /*seleciona pares*/
+         }
+
     </style>
 </head>
 
@@ -18,7 +70,7 @@
                 <li>Arroz</li>
                 <li>Feijão</li>
             </ul>
-            <ul class='tag' feira='escritorio empresa'>
+            <ul class='tag' feira='escritorio cadeira'>
                 <li>Café</li>
                 <li>Água</li>
             </ul>
@@ -29,7 +81,7 @@
             </ol>
             <div id='aninhado' class='tag'>
                 <div class="tag">
-                    <section class='tag'>
+                    <section class='tag nolabel'>
                         <span class='tag'>1</span>
                         <p class='tag'>2</p>
                         <span class='tag'>3</span>
