@@ -5,12 +5,58 @@
     <meta charset="UTF-8">
     <title>Especificidade CSS</title>
     <style>
-        /* https://specificity.keegan.st/ */
+        /* calculadora de especificidade:
+        https://specificity.keegan.st/
+
+        1.  elementos inline tem peso maior
+        2.  id
+        3.  classe, pseudo-classe, atributo
+        4.  Elemento, Pseudo-Elemento
+        */
+
+        body{
+            font-size: 40px;
+        }
+
+        div {
+            background-color: #00B;
+            color: #fff;
+        }
+
+
+        /*os 2 proximos estao empatados an especificidade: ganha o q for por ultimo*/
+        /*pseudo-classe e atributo*/
+
+        /*invertando da*/
+
+        
+        
+        div[wm-cor]{
+            background-color: rgb(9, 172, 96);
+        }
+       
+        /**/
+        
+        div.estilo{
+            background-color: rgb(134, 55, 68);
+        }
+
+        /*id ganha do hover, independente da posicao*/
+        #unico1, #unico2{
+            background-color: black;
+        }
+
+
+        div:hover{
+            background-color: purple;
+        }
+
     </style>
 </head>
 
 <body>
-    <div id="unico1" class="estilo">
+    <div id="unico1" class="estilo" style="background-color: lawngreen;">
+        <!-- inline passa de todos -->
         #unico1 vs .estilo vs inline
     </div>
     <div id="unico2" class="estilo">#unico2 vs .estilo</div>
