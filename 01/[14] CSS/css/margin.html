@@ -15,8 +15,10 @@
         }
 
         .m30 {
-            margin: 30px;
+            margin: 10px;
         }
+
+        /*margin collapse: quando as margens que estão em sequencia se sobrepõe*/
 
 
         .mb30 {
@@ -37,10 +39,19 @@
 
 <body>
     <div class="m30">Conteúdo 1</div>
-    <div class="m30" style="border: none"></div>
+
+    <div class="m30" style="border: none">
+        <!-- elemento vazio nao interfere na distancia -->
+    </div> 
     <div class="m30">Conteúdo 2</div>
+
+
+
     <div class="mb30">Conteúdo 3</div>
     <div class="mt30">Conteúdo 4</div>
+
+    <!-- por padrão o  margin collapse acontece -->
+    <!-- float, display inline-block, position absolute: consegue impedir margin collapse -->
 </body>
 
 </html>
