@@ -5,7 +5,36 @@
     <meta charset="UTF-8">
     <title>Box Model</title>
     <style>
-        /* ... */
+        /* conteudo > padding > margin > border */
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        div{
+            margin: 10px;
+            border: 1px solid #f00;
+        }
+
+        .c1{
+            padding: 10px; /*todos*/
+            background-color: rgb(192, 192, 192);
+
+        }
+        
+        .c2{
+            
+            padding: 10px 30px; /*1 valor em cima e em baixo. e o 2 valor : direita e esquerda*/
+            background-color: rgb(192, 192, 192);
+            
+        }
+
+        .c3{
+            padding: 100px 30px 9px 90px; /*cima direita baixo esquerda*/
+            background-color: rgb(192, 192, 192);
+        }
+
     </style>
 </head>
 
