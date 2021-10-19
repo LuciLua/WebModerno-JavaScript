@@ -5,7 +5,67 @@
     <meta charset="UTF-8">
     <title>Display</title>
     <style>
-        /* ... */
+        /* 
+
+        flex: para usar flexbox
+        block: 
+        inline: 
+        inline-block:
+        
+        */
+
+        body{
+            font-size: 30px;
+            color: #fff;
+            background-color: rgb(17, 14, 14);
+        }
+
+        ul{
+            padding: 0;
+            /*margin:0;*/
+        }
+
+        li{
+            background-color: rgb(95, 68, 133);
+        }
+
+        div{
+            background-color: #082;
+        }
+
+        span{
+            background-color: #05f;
+        }
+
+        div, span, li{
+            /*unidade relativa (de percentaul)*/
+            width: 50%;
+            
+            /*unidade de valores absolutes, com valor fixo)*/
+            width: 200px;
+
+            height: 40px;
+
+            margin: 2px;
+
+            padding-top: 30px;
+            text-align: center;
+
+            /* display padrão: display inline */
+            /* display padrao do li: list-item*/
+            
+            /* display block: cada elemento vai ter sua propria linha*/
+            display: block;
+            
+            /* display inline: cada elemento vai estar na mesma linha*/
+            /* com o display inline nao dpá para aumentar a largura/altura de um componente */
+            display: inline;
+            
+            /* display inline-block: cada elemento vai estar na mesma linha, considera
+            altura e largura*/
+            display: inline-block;
+        }
+        
     </style>
 </head>
 
