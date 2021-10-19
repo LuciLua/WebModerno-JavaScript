@@ -65,6 +65,48 @@
             altura e largura*/
             display: inline-block;
         }
+
+        main{
+            display: inline-block;
+
+            min-width: 200px;
+            height: fit-content;
+
+            margin: 0;
+            padding: 0;
+
+            background-color: rgba(28, 208, 130, 0.582);
+
+            position: relative;
+        }
+        
+        .teste{
+            position: relative;
+
+            display: inline-block;
+
+            width: 100px;
+            height: fit-content;
+
+            padding: 0;
+            margin: 0;
+
+            border: 1px solid rgb(220, 55, 192);
+            background-color: red;
+        }
+
+        .teste > div{
+            position: relative;
+
+            margin: 0;
+            padding: 0;
+
+            color: rgb(106, 106, 106);
+            background-color: #222;
+
+            width: 100%;
+            height: 60px;
+        }
         
     </style>
 </head>
@@ -78,6 +120,22 @@
         <li>Item 2</li>
         <li>Item 3</li>
     </ul>
+
+    <main>
+        <div class="teste">
+        <div>item</div>
+        <div>item</div>
+        <div>item</div>
+        <div>item</div>
+    </div>
+    <div class="teste">
+        <div>item</div>
+        <div>item</div>
+        <div>item</div>
+        <div>item</div>
+    </div>
+</main>
+
 </body>
 
 </html>
