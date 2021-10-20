@@ -5,7 +5,18 @@
     <meta charset="UTF-8">
     <title>Altura e Largura</title>
     <style>
+        *::before, *, *::after{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html{
+            height: 100%;
+        }
+
         body {
+            height: 100%;
             font-size: 40px;
             background-color: coral;
         }
@@ -17,12 +28,23 @@
         span {
             background-color: dodgerblue;
         }
+
+        span, div{
+            /*span por padrao desconsidera altura e largura, por ser display inline*/
+            width: 50%;
+            /*50 por cento em relação a onde ele esta*/
+            height: 50%;
+
+            /*agora os dois podem ter altura e largura*/
+            display: inline-block;
+
+        }
     </style>
 </head>
 
 <body>
-    <div>Título</div>
-    <span>Subtítulo</span>
+    <div>Título</div><!--
+    --><span>Subtítulo</span>
 </body>
 
 </html>
