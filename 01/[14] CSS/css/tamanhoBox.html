@@ -7,11 +7,60 @@
         body {
             font-size: 45px;
         }
+        div{
+            background-color: deepskyblue;
+            width: 100%;
+            /*100% tamanho do conteudo*/
+            height: 300px;
+            padding: 100px;
+            border: solid 20px #333;
+
+            /*considerar da borda para dentro como tamanho: border-box */
+            /*content-box, padding-box, border-box vai ser considerado para formar o tamanho */
+            /*considerando tudo: bordas, padding, conteudo => considera o tamanho q quero atingir*/
+            box-sizing: border-box;
+           
+            
+            /*se for: box-sizing: content-box => 
+            
+            se width: 600px
+            ele não considera a borda , padding e margem como esses 600px mas sim so o conteudo
+
+            o q pode causar scroll
+            */
+
+            position: relative;
+
+        }
+
+        div > span{
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
     </style>
 </head>
 <body>
     <div>
         O tamanho do Box é...
-    </div>
+        <span azinho>A</span>
+    </div> 
+    <input type="range" name="" id="" max="100" min="0" value="0" step="0">
+    <span id="body"></span>
+    <span id="box"></span>
 </body>
+<script>
+    setInterval( function() {
+        document.getElementById('body').innerHTML = `largura: ${window.innerWidth} \n altura: ${window.innerHeight}`
+    })
+
+    var selectorRange = document.querySelector('input')
+    var azinho = document.querySelector('[azinho]')
+    setInterval(e => {
+        azinho.style.left = `${(selectorRange.value) * 5}px`
+    })
+</script>
 </html>
