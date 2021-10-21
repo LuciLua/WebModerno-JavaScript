@@ -5,25 +5,40 @@
     <meta charset="UTF-8">
     <title>Float</title>
     <style>
+        /*evitar usar float, não é tao interessante mais*/
         body {
             background-color: #222;
         }
 
         .c1 {
             background-color: red;
+
+            /*faz com que os outros elmentos desconsidere a flutuação neste elemento*/
+            float: right;
         }
 
         .c2 {
-            background-color: green;
+            /*para considerar o float em c1*/
+            clear: right;
+            float: left;
+            background-color: green;            
         }
         
         .c3 {
+            clear: both;
             background-color: blue;
         }
 
         .c4 {
             background-color: orange;
+            float: right;
         }
+
+        div{
+            height: 150px;
+            width: 150px;
+        }
+
     </style>
 </head>
 
