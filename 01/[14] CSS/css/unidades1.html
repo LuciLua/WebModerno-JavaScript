@@ -5,6 +5,37 @@
     <meta charset="UTF-8">
     <title>Unidades #01</title>
     <style>
+        .unidades-absolutas{
+            position: absolute;
+            
+            padding: 20px;
+            border: 1px solid #333;
+            margin: 30px;
+
+            width: 4cm; /*unidades pouco usadas*/
+            height: 20mm; /*unidades pouco usadas*/
+
+            /*so aplicou top e left por causa da posição absoluta*/
+            top: 50px;
+            left: 200px;
+
+            font-size: 40px;
+        }
+
+        .unidades-relativas{
+            position: absolute;
+            font-size: 2em; /*boa pratica usar fontes relativas*/
+
+            padding: 5%;
+            border: solid #333 2px;
+            margin: .8%;
+
+            width: 20vw;
+            height: 15vh;
+
+            bottom: 5%;
+            right: 5%;
+        }
 
     </style>
 </head>
@@ -33,9 +64,8 @@
     em => valor de em multiplicado pelo valor do pai (2em) => se pai é 24 px vai ser => 2*24px = 48px | font relativa, que esta mais proxima
 
     % => caso especial
-
-
  -->
+
 
 <body>
     <div class="unidades-absolutas">Opa!</div>
