@@ -11,11 +11,94 @@
             margin: 0;
         }
 
+        html{
+            font-size: 10px;
+        }
+
         body {
             display: flex;
             flex-direction: column;
             align-items: center;
         }
+
+        div{
+            font-size: 50px;
+        }
+
+        p{
+            /*mesma coisa*/
+            font-size: 1em;
+            font-size: 100%;
+            font-size: 16px;
+            font-size: 12pt;
+            
+            /*unidades absolutas*/
+            
+            font-size: 100px; /*tamanho do pixel é relativo*/
+            font-size: 72pt; /*pontos*/
+            font-size: 1in; /*polegados*/
+
+            /*unidades relativas*/
+
+            font-size: 2em; /*100 px pois div fontsize é 50px. eem = 2*50px = 100px*/
+            font-size: 2rem; /*referencia mkaior, da raiz... 10px * 2 = 20px*/
+            /*baseada em viewport*/
+            font-size: 50vh; 
+            font-size: 3vw;
+            
+            font-family: monospace; /*letras ocupando mesmo espaço*/
+            font-family: Georgia, serif; /*virgula ideia de possibildiades*/
+            font-family: Verdana, sans-serif; /*fotnsem serifa*/
+            font-family: 'Indie Flower', cursive;  /*cursiva*/
+
+            /*peso da fonte*/
+            font-weight: lighter;
+            font-weight: 900;
+
+            /*estilo da fonte*/
+            font-style: italic;
+
+            text-transform: uppercase;
+
+            /*linhas no texto*/
+            text-decoration: overline; /*linha em baixo*/
+            text-decoration: underline; /*linha em baixo da palavra (mais colada)*/
+            text-decoration: line-through; /*linha riscando palavra*/
+
+            text-decoration: overline underline line-through #6fa;
+            text-decoration: none;
+
+            /*espaçamentos*/
+            word-spacing: 20px; /*espaço entre as palavras*/
+            letter-spacing: 20px; /*espaço entre as letras*/
+            line-height: 2.5em; /*espaço entre as linhas*/
+
+            text-align: center; /*center, right, left... (padrão: left)*/                   
+        }
+
+        .botao{
+            font-size: 28px;
+            text-decoration: none;
+
+            padding: 10px 30px;
+            border-radius: 25px 120px 30px / 50px 20px 55px 35px;
+        }
+
+        .destaque{
+            color: rgb(19, 19, 19);
+            background: #eee;
+            box-shadow:
+            #fff 0 0 3px  2px inset,
+            #000 0 0 3px 1px inset,
+            #fff 0 0 3px  2px inset,
+            #0003 0 0 15px inset;    
+        }
+        
+        .destaque:active{
+            color: rgb(19, 19, 19);
+            background: #fff;
+        }
+
     </style>
 </head>
 
