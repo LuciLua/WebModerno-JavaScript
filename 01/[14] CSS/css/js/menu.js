@@ -1,42 +1,17 @@
-function locationHashChanged() {
+function locationHashChanged(e){
 
-    const liMenu = document.querySelectorAll('nav.menu > ul li')
 
-        // if (location.hash === '#contato') {
-        //     liMenu[0].style.background = '#fff'
-        // }
-        
-        switch (location.hash){
-            case '#inicio':
-                liMenu[0].classList.add('active')
+    // e (evento) . oldURL e newURL => valores fixos
+    const newURL = e.newURL.split('#')[1] // pega url nova depois do #
+    const oldURL = e.oldURL.split('#')[1] // pega url antiga depois do #
 
-                liMenu[1].classList.remove('active')
-                liMenu[2].classList.remove('active')
-                liMenu[3].classList.remove('active')
-                break
-            case '#cursos':
-                liMenu[1].classList.add('active')
+    const ativo = document.querySelector(`nav.menu > ul li a[href="#${newURL}"]`)
+    const desativado = document.querySelector(`nav.menu > ul li a[href="#${oldURL}"]`)
 
-                liMenu[0].classList.remove('active')
-                liMenu[2].classList.remove('active')
-                liMenu[3].classList.remove('active')
-                break
-            case '#sobre':
-                liMenu[2].classList.add('active')
+    ativo && ativo.classList.add('active')
+    desativado && desativado.classList.remove('active')
 
-                liMenu[0].classList.remove('active')
-                liMenu[1].classList.remove('active')
-                liMenu[3].classList.remove('active')
-                break
-            case '#contato':
-                liMenu[3].classList.add('active')
-
-                liMenu[0].classList.remove('active')
-                liMenu[1].classList.remove('active')
-                liMenu[2].classList.remove('active')
-                break
-        }
-
+    // && => para checar se 'ativo' é diferente de null/undefined e para  checar 'ativo'.classList.remove('active')! Se não fizessemos a primeira checagem e 'ativo' fosse null ou undefined, a segunda checagem poderia gerar um erro!
 }
   
-  window.onhashchange = locationHashChanged;
+window.onhashchange = locationHashChanged;

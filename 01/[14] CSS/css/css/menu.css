@@ -117,7 +117,7 @@ header.cabecalho > nav.menu ul li a{
 
 header.cabecalho > nav.menu ul li a:hover,
 header.cabecalho > nav.menu ul li a:active,
-header.cabecalho > nav.menu ul li.active a{
+header.cabecalho > nav.menu ul li a.active{
     background-color: #69AADA;
     color: #222;
 }
