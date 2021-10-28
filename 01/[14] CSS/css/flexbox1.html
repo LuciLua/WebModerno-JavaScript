@@ -30,10 +30,66 @@
 
         main size: tamanho do eixo principal => (main start ... main end)
         cross size => (cross start .. cross end)
-
-
         
         */
+
+        .big{
+            font-size: 1.5em;
+        }
+
+        .flex-container{
+            /*main axes por padrão é uma linha (row)*/
+            /*coluna é column*/
+            display: flex;
+            flex-direction: column; /*main azes passou a ser eixo da coluna*/
+
+            flex-direction: column-reverse; /*inverte ordem*/
+
+            flex-direction: row-reverse; /*reverte a ordem e coloca pra direita*/
+            
+            flex-direction: row; /*propriedade padrão*/
+
+            width: 50%;
+            height: 200px;
+
+            flex-wrap: wrap; /*para quebrar linha se acabar linha*/
+            flex-wrap: wrap-reverse; /*inverte quebra de linha*/
+
+            flex-flow: row wrap;
+            flex-flow: column-reverse wrap; /*PASSA A ser coluna ao contrario*/
+            flex-flow: nowrap; /*padrão*/
+            flex-flow: wrap; 
+
+            flex-flow: row wrap;
+
+            justify-content: flex-start;
+            justify-content: flex-end;
+            justify-content: center;
+            justify-content: space-around; /*half equals equals equals half*/
+            justify-content: space-between; /*apenas espaço entre os elementos*/
+
+            /*para cross axis*/
+
+            height: 300px;
+
+            align-items: stretch /*padrao*/;
+            align-items: baseline; /*pela linha de base das fontes*/ 
+            align-items: flex-start; /*alinha por cima, inicio*/
+            align-items: flex-end; /*alinha por baixo, fim*/
+            align-items: center;
+
+            /*mais de uma liha*/
+
+            align-content: flex-start; /*linhas vao para inicio do felx container*/
+            align-content: flex-end;
+            align-content: center;
+            align-content: space-around;
+            align-content: space-between;
+        }
+
+
+
+
     </style>
 </head>
 
