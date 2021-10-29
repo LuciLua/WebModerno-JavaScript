@@ -4,9 +4,83 @@
 <head>
     <meta charset="UTF-8">
     <title>Flexbox #02</title>
-    <link rel="stylesheet" href="css/tag.css">
+    <!-- <link rel="stylesheet" href="css/tag.css"> -->
     <style>
-        /* ... */
+       div{
+           border: solid 5px dodgerblue;
+           font-size: 40px;
+       }
+
+       .flex-container div{
+            box-sizing: border-box;
+       }
+
+       .flex-container{
+           display: flex;
+           height: 300px;
+           width: 600px;
+
+       }
+
+       .flex-container div:nth-child(3){
+           background: orangered;
+
+           order: 0;/*mesma ordem q todos elementos, exibe na ordem q foi definido no html*/
+           order: 1; /*passa a ter ordem maior q os outros, passando a ser ultimo elementos dos flex itens*/
+
+            /*alinhar elemento*/
+           align-self: stretch; /*padrao*/
+           align-self: center;
+           align-self: flex-end;
+           align-self: flex-start;
+       }
+
+       .flex-container div{
+           width: 100px;
+           height: 100px;
+
+           flex-grow: 1;
+
+           /*
+           flex-grow: 
+           
+           da um peso pra ele
+
+           divide os pixels, distribuindo: para q os elementos ocupem o mesmo espaço
+
+           se quero aplicar flex-grow diferente so pra um elementos:
+
+           ex: 4 elementos
+           1 ,2 ,1 , 1
+           40px, 80px, 40px, 40px
+
+           primeiro, terceiro e ultimo cresce 40px, e o segundo 80px fica assim mesmo
+
+           na pratica: 
+
+           4 elemntos: 100px , 100px, 100px, 100px
+           flex-grow: 1, 2, 1, 1
+           resultado: 140px, 180px, 140px, 140px
+           
+           */
+       }
+
+       .flex-container div:nth-child(1){
+           background-color: wheat;
+
+           flex-grow: 2;
+       }
+
+       .flex-container {
+        width: 300px;
+        flex-shrink: 1; /*encolher de forma equivalente*/
+       }
+
+       .flex-container div:nth-child(1){
+           flex-shrink: 5; /*pega 5 parte de 1 inteiro*/
+       }
+
+
     </style>
 </head>
 
