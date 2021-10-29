@@ -6,7 +6,32 @@
     <title>Flexbox #03</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
+        .flex-container{
+            display: flex;
+            flex-direction: column;
+            flex-direction: row;
+
+            width: 500px;
+            background-color: #111;
+        }
+
+        .flex-container div{
+            box-sizing: border-box;
+            flex-basis: 100px; /*pode ser no sentido da coluna ou sa linha dfependendo da direção do flex container*/
+
+            width: 200px; /*nao faz diferença pois o flex-basis é mais forte*/
+            
+            padding: 10px;
+            background-color: #222;
+            color: #999;
+        }
+
+
+        .flex-container div:nth-child(4){
+            /*grow shrink basis*/
+            flex: 3 6 100px;
+        }
+
     </style>
 </head>
 
