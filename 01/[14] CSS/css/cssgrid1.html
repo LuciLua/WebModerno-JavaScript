@@ -7,37 +7,112 @@
     <style>
         /* https://caniuse.com/#feat=css-grid */
         
+        *::before, *, *::after{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         html,
         body {
-            margin: 20px;
-            height: calc(100% - 40px);
+            height: calc(100% - 20px);
             background-color: lightgray;
+
+            position: relative;
         }
         
-        div {
+        
+        .container{
+            position: relative;
+            height: fit-content;
+
+            min-height: 300px;
+
+            margin: 20px;
+            
+            display: grid;
+            grid-template-columns: 50% 50%; /*como vai ser organizacao da grid*/
+            grid-template-columns: repeat(4, 8.33% 8.33% 8.33%); /* 4 * 8.33% = 12colunas*/
+            grid-template-columns: repeat(4, 8.33%); 
+            grid-template-columns: repeat(7, 100px) 100px;  /*7 vezes mais 100px*/
+
+            grid-template-columns: 200px 20% 1fr; /*3 colunas: 1ª: 200px, 2ª: 20%, 3ª: todo o resto que sobrou dos 200px - 20%*/
+
+            grid-template-columns: 3fr 6fr 3fr; /*3/12 - 6/12(50%) - 3/12 = 12/12 fragmentos*/
+            
+
+            grid-template-rows: 50% 25% 12.5% 12.5%;
+            grid-template-rows: 100px 1fr; /*browser sempre tenta colocar o minimo necessario para as linhnas q n foram definidas*/
+
+
+            grid-template-rows: 100px auto; /*auto de automatico> pega as linhas restantes e divide de forma igualitaria*/
+
+            grid-template-rows: 100px auto auto auto;
+
+        }
+        
+        div.d{ 
             display: flex;
             align-items: center;
             justify-content: center;
+
             font-size: 30px;
+
             border: solid 5px dodgerblue;
             background: #fff;
+
+            position: relative;
+
         }
+
+        div.d8{
+            /*espaços q linha ocupa na coluna*/
+            grid-column-start: 2;            
+            grid-column-end: 4;   
+            
+            grid-column-end: span 2; /*começa a partir da linha 2(start) e dê um span de 2 casas*/
+
+            grid-row-start: 3;
+            grid-row-end: 5;
+            grid-row-end: span 2;
+
+            /*é possivel ahver sobreposicao de celulas! cuidado!*/
+        }
+
+        div.d10, div.d11{
+            /*podem se sobrepor*/
+
+            grid-column-start: 1;
+            grid-column-end: 3;
+
+            grid-row-start: 5;
+            grid-row-end: span 1;
+            /*elemento 10 e 11 ocupando a mesma casa*/
+        }
+
+        div.d10{
+            /*profundidade dos elementos*/
+            z-index: 10;
+        }
+
     </style>
 </head>
 
 <body>
-    <div class="d1">1</div>
-    <div class="d2">2</div>
-    <div class="d3">3</div>
-    <div class="d4">4</div>
-    <div class="d5">5</div>
-    <div class="d6">6</div>
-    <div class="d7">7</div>
-    <div class="d8">8</div>
-    <div class="d9">9</div>
-    <div class="d10">10</div>
-    <div class="d11">11</div>
-    <div class="d12">12</div>
+    <div class="container">
+        <div class="d d1">1</div>
+        <div class="d d2">2</div>
+        <div class="d d3">3</div>
+        <div class="d d4">4</div>
+        <div class="d d5">5</div>
+        <div class="d d6">6</div>
+        <div class="d d7">7</div>
+        <div class="d d8">8</div>
+        <div class="d d9">9</div>
+        <div class="d d10">10</div>
+        <div class="d d11">11</div>
+        <div class="d d12">12</div>
+    </div>
 </body>
 
 </html>
