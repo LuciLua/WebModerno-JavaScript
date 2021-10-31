@@ -17,9 +17,51 @@
             align-items: center;
             justify-content: center;
             font-size: 30px;
-            border: solid 5px dodgerblue;
+            border: solid 2px dodgerblue;
             background: #fff;
+
+            box-shadow: 5px 12px 19px rgba(4, 89, 216, 0.104);
         }
+        body{
+            display: grid;
+            /*nome para as colunas*/
+            grid-template-columns: 
+            [inicio] 1fr 
+            [metade-1 meio-1] 1fr 
+            [metade-2 meio-2] 1fr
+            [fim];
+
+            grid-template-rows: repeat(3, 1fr);
+            grid-template-rows: [inicio-row] 1fr 
+            [metade-1-row meio-1-row] 1fr 
+            [metade-2-row meio-2-row] 1fr
+            [fim-row];
+
+
+            column-gap: 20px;
+            row-gap: 1px;
+
+            /*linhas + colunas*/
+            gap: 4px;
+            
+            /*linhas colunas*/
+            gap: 5px 15px;
+
+        }
+
+        .d1{
+            grid-column-start: metade-2;
+            grid-column-end: fim;
+
+            grid-column: meio-1 / fim; /*shortcut: grid-c-start e grid-c-end juntos*/
+
+            grid-row: 1 / span 2; /*camera na linha 1 e da 2 spans */
+
+            /*row-start column-start row-end column-end*/
+            grid-area: inicio-row / meio-1 / 3 span / fim;
+            grid-area: inicio-row / meio-1 / metade-2-row / fim;
+        }
+
     </style>
 </head>
 
