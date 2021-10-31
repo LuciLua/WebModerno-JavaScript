@@ -53,3 +53,7 @@ body {
     color: greenyellow;
     font-weight: bold;
 }
+
+.exercicio .borda{
+    border-radius: 10px;
+}
