@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #01</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body class="conteudo exercicio">
+    <div id="primeiro" class="borda">#primeiro</div>
+    <div class="borda">Segundo</div>
+    <div class="terceiro ultimo borda">.terceiro .ultimo</div>
+    <script>              
+        document.getElementById('primeiro').classList.add('destaque')
+
+        const divs = document.getElementsByTagName('div')
+
+        // dir(elemento) => so funcion no console
+
+        Array.from(divs).forEach( e => e.classList.remove('borda')) // pois vem dentro de um htmlCollection
+        const divsArray = [...divs] // operador spread
+
+        // nao existe forEach para HTMLCollection
+
+        divsArray.forEach( e => e.classList.add('destaque'))
+
+        const ultimosElementos = document.getElementsByClassName('ultimo')
+        
+        for (let e of ultimosElementos) {
+            e.classList.remove('destaque')
+        }
+
+
+    </script>
+</body>
+</html>
