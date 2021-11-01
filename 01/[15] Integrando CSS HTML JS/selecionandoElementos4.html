@@ -22,7 +22,46 @@
         <p>Fim</p>
     </div>
     <script>
-        // ...
+
+        function log(){
+            console.log(this)
+        }
+        
+        // executa a funcao log sempre que usar algum dos "verdes"."log"... o log que deve ser escrito é definito antes do '='. prototype é para indicar este comportamento
+        HTMLCollection.prototype.log = log
+        HTMLElement.prototype.log = log
+        NodeList.prototype.log = log
+        Node.prototype.log = log
+
+        const lista = document.querySelector('div ul')
+
+        lista.parentNode.log() // esssa funcao log so ta disponivel pq fiz ali no protptype
+        // para pegar o elemento pai
+
+        lista.childNodes.log() // efeito text li text li... text pois tem espaços no html
+        // filhos
+
+        
+        const primeiroElemento = lista.firstChild
+        primeiroElemento.log()
+
+        primeiroElemento.nextSibling.log() // irmao do primeiro elemento | pedro
+
+        const ultimoElemento = lista.lastChild
+        ultimoElemento.log()
+        ultimoElemento.previousSibling.log() // bia
+
+
+        lista.children.log()
+        lista.firstElementChild.log() // traz primeiro elemento de fato q foi definida dentro da lista
+        lista.lastElementChild.log()
+
+        lista.parentNode.previousSibling.log() // elementso irmao anterior ao parent(pai) da lista | div inicio
+
+        lista.parentNode.nextSibling.log() // irmao depois do pai
+
+        document.querySelectorAll('div ul li').log()
+
     </script>
 </body>
 
