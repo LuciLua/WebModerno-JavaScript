@@ -22,16 +22,89 @@
 
 <body class="conteudo exercicio">
     <h1>Formulário</h1>
-    <form name="pesquisa" action="http://www.google.com.br/search">
-        <input type="text" name="q" placeholder="Digite o termo...">
-        <select name="hl">
+    <!-- importante colocar names='' dentro das entrada, inputs, form -->
+    <!-- não sao nomes aleatorios, mas sim parametros que a  pesqusa do google suporta -->
+    <!-- https://moz.com/blog/the-ultimate-guide-to-the-google-search-parameters -->
+    <form name="pesquisa" action="http://www.google.com.br/search?" target="_blank">
+        <label for="pesquisar">pesquisar</label>
+        <input type="text" id="pesquisar" name="q" placeholder="Digite o termo...">
+        <label for="linguagem">linguagem</label>
+        <select name="hl" id="linguagem">
+            <option value="">Selecionar</option>
             <option value="pt-br">Português (Brasil)</option>
             <option value="en-us">Inglês (Americano)</option>
         </select>
+        <label for="numero-de-resultados">numero de resultados</label>
+        <select name="num" id="numero-de-resultados">
+            <option value="">Selecionar</option>
+            <option value="1">1</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+        </select>
+        <label for="tipo-de-arquivo">tipo de arquivo</label>
+        <select name="as_filetype" id="tipo-de-arquivo">
+            <option value="">Selecionar</option>
+            <option value="txt">txt</option>
+            <option value="exe">exe</option>
+            <option value="doc">doc</option>
+            <option value="pdf">pdf</option>
+            <option value="ppt">ppt</option>
+            <option value="jpeg">jpeg</option>
+            <option value="png">png</option>
+            <option value="eps">eps</option>
+            <option value="psd">psd</option>
+            <option value="cdr">cdr</option>
+            <option value="ai">ai</option>
+            <option value="xml">xml</option>
+            <option value="wmv">wmv</option>
+            <option value="wav">wav</option>
+            <option value="tmp">tmp</option>
+            <option value="sys">sys</option>
+            <option value="swf">swf</option>
+            <option value="rtf">rtf</option>
+            <option value="pub">pub</option>
+            <option value="rar">rar</option>
+            <option value="pptx">pptx</option>
+            <option value="msi">msi</option>
+            <option value="mp4">mp4</option>
+            <option value="mp3">mp3</option>
+            <option value="mov">mov</option>
+            <option value="mid">mid</option>
+            <option value="midi">midi</option>
+            <option value="iso">iso</option>
+            <option value="ini">ini</option>
+            <option value="html">html</option>
+            <option value="json">json</option>
+            <option value="gif">gif</option>
+            <option value="dif">dif</option>
+            <option value="bin">bin</option>
+            <option value="avi">avi</option>
+            <option value="bat">bat</option>
+        </select>
+        <label for="site-especifico">site especifico</label>
+        <input type="text" id="site-especifico" name="as_sitesearch" placeholder="site especifico?" id="">
+        <input type="hidden" name="adtest=on">
+        <input type="hidden" name="pws=1">
         <button>Pesquisar</button>
     </form>
     <script>
-        // ...
+        console.log(document.forms)
+        console.log(document.forms[0])
+        console.log(document.getElementsByName('pesquisa'))
+
+        console.log(document.pesquisa)
+        console.log(document.pesquisa.q)
+
+        document.pesquisa.q.value = 'linux Brasil'
+
+        document.pesquisa.hl.value = 'en-us'
+
+        console.log(document.pesquisa.hl.selectedIndex)
+
+
     </script>
 </body>
 
