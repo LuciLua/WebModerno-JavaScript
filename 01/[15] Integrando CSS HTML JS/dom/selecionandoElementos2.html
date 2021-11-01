@@ -10,7 +10,52 @@
     <div>Segundo</div>
     <div class="terceiro ultimo"><span wb-attrib>.terceiro .ultimo</span></div>
     <script>              
+        const selecionar = (seletor) => {
+            document.querySelectorAll(seletor).forEach(e => e.classList.add('destaque'))
+
+            // querySelectorAll => gera uma nodeList
+            // getElements... => gera uma HTMLCollection
+
+            // por vezes precisa-se converter para array pois as vewzes n tem outras funcoes importantes
+
+        }
+
+        const desselecionar = (seletor) => {
+            document.querySelectorAll(seletor).forEach(e => e.classList.remove('destaque'))
+        }
+
+        // como trasnformar em array
+        //Array.from(...)
+        //var newarray = [...nodelistaouhtmlcollection]
+
+
+        selecionar('#primeiro')
+        selecionar('div')
+        desselecionar('*') // seletor geral
         
+        selecionar('.terceiro.ultimo') // selecionar todos que tem classe terceiro e ultimo no mesmo elemento
+
+        desselecionar('*')
+
+
+        selecionar(':not(#primeiro)') // todo mundo que nao é primeiro é selecionado
+
+
+        desselecionar('*')
+
+
+        selecionar(':nth-child(1)') // primeiro filho do body e primeiro filho de qualquer um que seja pai
+
+        desselecionar('*')
+
+        selecionar('div:nth-child(1)') // primeiro elemento do tipo div
+
+        desselecionar('*')
+
+
+        selecionar('[wb-attrib]') // por atributo
+
+
     </script>
 </body>
 </html>
