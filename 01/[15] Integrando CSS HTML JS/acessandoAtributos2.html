@@ -10,14 +10,53 @@
 <body class='conteudo exercicio'>
     <div>
         <label for="compras">Compras</label>
-        <ul id="compras" destino='escritório' data-urgencia="5">
+        <ul id="compras" destino='escritório' data-urgencia="5" data-blabla="opa">
             <li>Café</li>
             <li>Água</li>
             <li>Copo Descartável</li>
         </ul>
     </div>
     <script>
-        // ...
+        const lista = document.querySelector('div ul[destino="escritório"]')
+        console.log('elemento ul....')
+
+        console.log('childNodes: ', lista.childNodes)
+        console.log('id: ', lista.id)
+
+        console.log('getAttribute: ', lista.getAttribute('destino'))
+        console.log('hasAttribute: ', lista.hasAttribute('destino')) // para saber se attr esta ou n no elemneto
+
+
+        // setAttribute = para alterar ou adicionar atributo
+        // atributo , valor
+        lista.setAttribute('destino', 'empresa')
+        lista.setAttribute('status', 'aberto')
+
+        // removendo atributo
+        lista.removeAttribute('destino')
+
+        // para criação de atributos personalizados:
+        // recomenda-se usar 'data-'
+        // pois sao tratados ligeriramente diferentes dos atributos que nao tem esse prefixo
+
+        console.log(lista.dataset)
+        console.log(lista.dataset.urgencia)
+        lista.dataset.urgencia = 4 // dataset também consegue alterar valor
+        console.log(lista.dataset.urgencia)
+
+        console.log(lista.getAttribute('data-urgencia'))
+
+
+        // nem sempre alguma attributo do html ta disponivel no js para acessar diretamente
+
+        const label = document.querySelector('label')
+        console.log(label.for) // nao consegue acessar
+
+        console.log(label.htmlFor) // agora consegue acessar diretamente
+        console.log(label.getAttribute('for')) // agora consegue acessar!
+
+
+
     </script>
 </body>
 
