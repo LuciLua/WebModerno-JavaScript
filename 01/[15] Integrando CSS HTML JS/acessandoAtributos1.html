@@ -14,8 +14,43 @@
     <div id='primeiro'>
         <img src='http://files.cod3r.com.br/curso-web/logo-estreita.png' alt='logo'>
     </div>
+
+    <!-- nodetype: https://www.w3schools.com/jsref/prop_node_nodetype.asp -->
     <script>
-        // ...
+        const img = document.querySelector('img')
+        console.log('getAttribute: ', img.getAttribute('src'))
+        console.log('src: ', img.src)
+        console.log("['src']: ", img['src'])
+        console.log('alt:', img.alt)
+        
+        console.log('Elemento "img"....:')
+        
+        console.log('nodeType: ', img.nodeType)
+        console.log('nodeName: ', img.nodeName)       
+        
+        console.log('Atributo "src"......:')
+        const src = img.getAttributeNode('src') // dá um nó que representa o atributo
+        
+        console.log('nodeType: ',src.nodeType)
+        console.log('nodeName: ',src.nodeName)
+        console.log('nodeValue: ',src.nodeValue)
+        
+        console.log('Elemento "a"......:')
+        const link = document.querySelector('a')
+
+
+        console.log('href: ', link.href)
+        console.log('firstChild.nodeType: ', link.firstChild.nodeType) //primeiro elemento filho é do tipo 3 (texto)
+
+        //alterando:
+
+        // ja que é do tipo texto, da pra alterar tranquilo
+        link.firstChild.nodeValue = 'Novo texto!'
+
+
+
+
+
     </script>
 </body>
 
