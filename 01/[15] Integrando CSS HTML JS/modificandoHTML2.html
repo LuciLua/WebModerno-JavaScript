@@ -12,7 +12,27 @@
         <p>Texto Inicial</p>
     </div>
     <script>
-        // ...
+        
+
+        const div = document.querySelector('div')
+
+        div.innerHTML = 'Texto Alterado' // innderHTML => substitui tudo o q esta dentro do elemento pelo valor colocado
+
+        // div.outerHTML = 'TExto Alterado2' // substitui o que ta dentro e o proprio elemento pelo valor colocado
+
+        
+        div.insertAdjacentHTML('beforebegin', '<p>Antes de inicio</p>') // antes de coemcar o eemento, coloque um determinado HTML
+        div.insertAdjacentHTML('afterbegin', '<p>Depois do inicio...</p>')
+
+
+        div.insertAdjacentHTML('beforeend', '<p>Antes do fim...</p>')
+        div.insertAdjacentHTML('afterend', '<p>Depois do fim...</p>')
+        
+
+        // somente textos (sem tag)
+        console.log(div.innerText)
+
+
     </script>
 </body>
 
