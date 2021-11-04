@@ -9,9 +9,57 @@
 
 <body class="conteudo exercicio">
     <div>
-        <a href="https://google.com.br">Google</a>
+        <a wait href="https://google.com.br">Google 1: wait</a>
     </div>
+    <div>
+        <a wait="1" href="https://google.com.br">Google 2: wait 1</a> 
+    </div>
+    <div>
+        <a wait="3" href="https://google.com.br">Google 3: wait 3</a> 
+    </div>
+
+        <!-- passar o event mesmo como parametro, se n, n da certo -->
+        <!-- 
+            onclick="navegarEmSegundos(event)" 
+            
+            é interessante onclick direito pois fica explicito
+        e nao é, pois tem que colocar de forma hard coded, que é má pratica. dificil de mudar depois -->
+
     <script>
-        // ...
+
+        function navegarEmSegundos(e){
+
+            e.preventDefault() // previne comportamento padrao
+
+            var seg = this.getAttribute('wait') // this é o proprio elemento
+            seg <= 0 ? seg = 2 : seg // se não tiver valor, defina 2 para padrao
+            
+
+            console.log(`saindo em ${seg} segundos...`)
+            setTimeout( () => {
+                const link = e.target  // acessar a tag inteira 
+                window.location.href = link.href // atributo href da tag
+            }, `${seg}000`)
+        }
+
+        const wait = document.querySelectorAll('[wait]')
+        wait.forEach( a => a.onclick = navegarEmSegundos)
+
+
     </script>
 </body>
+
+<!-- um dos padrões mais usados na web é o observer
+    pois javascrpt é uma linguaguem fortemente baseada 
+    no padrão observer
+    
+    não so o tratamento de eventos
+    mas o ajax
+
+    quando um evento ocorre é invocado observers
+    para fazer tratamento em cima de algum evento que aconteceu
+
+-->
+
+
+
