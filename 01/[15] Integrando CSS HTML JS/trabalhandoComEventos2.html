@@ -8,8 +8,24 @@
 </head>
 
 <body class="conteudo exercicio">
-    <div>Elemento</div>
+    <div style="user-select: none;">Elemento</div>
     <script>
-        // ...
+        // dentro d um evento, tem varias informações, como quem disparou, em que posição...
+
+        // gerou um evento a partir de alguma interação que foi feita na página e isso chama
+        // funcoes, que recebem como parametro o evento
+
+        const item = document.querySelector('div')
+        item.style.position='absolute'
+
+        item.onmousemove = e => {
+            item.style.cursor = 'move'
+            if (e.buttons){ // se for diferente de zero é verdadeiro
+                e.target.style.top = `${e.clientY - (item.clientHeight / 2)}px`
+                e.target.style.left = `${e.clientX - (item.clientWidth / 2)}px`
+            }
+        }
+
+
     </script>
-</body>
+</body> 
