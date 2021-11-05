@@ -45,7 +45,41 @@
     </div>
     <div class="direita" wm-dropzone></div>
     <script>
-        // ...
+
+        const items = document.querySelectorAll('[wm-dropzone] .item')
+        items.forEach( (item, index) => {
+
+            item.draggable = true
+            item.id = item.id || `draggable-item-${index}` // definindo ids diferentes para cada item
+
+            // começa
+            item.ondragstart = e => {
+                e.dataTransfer.setData('item-id', e.target.id)
+                console.log('ola')
+            }
+
+            // ondrag => começa 
+            // ondrop => quando solta o item que acabou de arrastar
+
+
+            // dropzones
+            const dropzones = document.querySelectorAll('[wm-dropzone]')
+            dropzones.forEach( dropzone => {
+
+                // enquanto ocorre
+                dropzone.ondragover = e => e.preventDefault()
+
+                // quando solta
+                dropzone.ondrop = e => {
+                    const id = e.dataTransfer.getData('item-id')
+                    const item = document.getElementById(id)
+                    // e.target.appendChild(item) // um dentro do outro
+
+                    dropzone.appendChild(item) // coloca item em outro lugar
+                }
+            })
+        })
+
     </script>
 </body>
 
