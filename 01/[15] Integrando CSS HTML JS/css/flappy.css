@@ -100,5 +100,6 @@
     right: 10px;
 
     font-family: 'Pixel';
+    z-index: 100;
 }
 
