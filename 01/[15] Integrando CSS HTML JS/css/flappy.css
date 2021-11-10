@@ -32,6 +32,8 @@
 .bird{
     width: 60px;
     left: calc(50% - 30px); /*posiciona no meio*/
+
+    bottom: 50%;
     
     position: absolute;
 
@@ -39,7 +41,6 @@
     justify-content: center;
     align-items: center;
 
-    transition: 0.2s;
 }
 
 .bird img{
@@ -74,8 +75,6 @@
     width: 130px;
     background: linear-gradient(90deg, #639301, #A5E82E);
     border: solid #000 2px;
-
-    /* position: absolute; */
 }
 
 .barreira:nth-child(1) .borda{
@@ -100,6 +99,8 @@
     right: 10px;
 
     font-family: 'Pixel';
+
     z-index: 100;
+    font-size: 23px;
 }
 
