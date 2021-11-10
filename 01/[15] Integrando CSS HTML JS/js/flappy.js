@@ -168,12 +168,56 @@ function Barreiras(altura, largura, abertura, espacoEntreAsBarreiras, notificarP
 
 }
 
+    function Passaro(alturaJogo){
+        let voando = false
+
+        this.elemento = novoElemento('img', 'bird')
+        this.elemento.src = 'imgs/passaro.png'
+
+        this.getY = () => parseInt(this.elemento.style.bottom.split('px'[0]))
+        this.setY = y => this.elemento.style.bottom = `${y}px`
+        
+        window.onkeydown = e => voando = true
+        window.onkeyup = e => voando = false
+
+        this.animar = () => {
+            // quanto sobe, quanto cai
+            const novoY = this.getY() + (voando ? 8 : -5)
+
+            // no maximo encostar ate o teto
+            const alturaMaxima = alturaJogo - this.elemento.clientHeight
+
+            // se ta no chao
+            if (novoY <= 0){
+                this.setY(0)
+            } 
+            // nao passa do ceu
+            else if (novoY >= alturaMaxima){
+                this.setY(alturaMaxima)
+            }
+            else {
+                this.setY(novoY)
+            }
+        }
+
+        this.setY(alturaJogo / 2)
+        
+    }
+    
+
 const barreiras = new Barreiras(700, 1200, 200, 400)
+
+const passaro = new Passaro(700)
+
 const areaDoJogo = document.querySelector('[wm-flappy]')
+areaDoJogo.appendChild(passaro.elemento)
+
 barreiras.pares.forEach(par => areaDoJogo.appendChild(par.elemento))
 
 setInterval(() => {
     barreiras.animar()
+    passaro.animar()
 }, 20);
+
 
 
