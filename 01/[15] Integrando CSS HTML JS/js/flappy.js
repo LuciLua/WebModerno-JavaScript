@@ -129,6 +129,51 @@ function ParDeBarreiras(altura, abertura, positionX){
 }
 
 
-const pb = new ParDeBarreiras(700, 200, 800) // altura do jogo é 700px (ja definida no css, 200 abertura, 400 posição do x)
+// const pb = new ParDeBarreiras(700, 200, 800) // altura do jogo é 700px (ja definida no css, 200 abertura, 400 posição do x)
 
-document.querySelector('[wm-flappy]').appendChild(pb.elemento)
+// document.querySelector('[wm-flappy]').appendChild(pb.elemento)
+
+
+function Barreiras(altura, largura, abertura, espacoEntreAsBarreiras, notificarPonto){
+
+    // posicao X da primeira barreira vai ser a posicao do jogo (1200px)
+    this.pares = [
+        new ParDeBarreiras(altura, abertura, largura),
+        new ParDeBarreiras(altura, abertura, largura + espacoEntreAsBarreiras),
+        new ParDeBarreiras(altura, abertura, largura + espacoEntreAsBarreiras * 2),
+        new ParDeBarreiras(altura, abertura, largura + espacoEntreAsBarreiras * 3)
+    ]
+
+    // como vai ser o deslocamento das barreiras
+    const deslocamento = 3
+
+    this.animar = () => {
+        this.pares.forEach(par => {
+            par.setX(par.getX() - deslocamento)
+
+            // quando o elemento sair da tela
+            if (par.getX() < -par.getLargura()){
+                par.setX(par.getX() + espacoEntreAsBarreiras * this.pares.length)
+                // sempre gerar barreiras randomicas quando terminar
+                par.sortearAbertura()
+            }
+
+            const meio = largura / 2
+            const cruzouMeio = par.getX() + deslocamento >= meio
+                && par.getX() < meio
+
+            if (cruzouMeio) notificarPonto()
+        })
+    }
+
+}
+
+const barreiras = new Barreiras(700, 1200, 200, 400)
+const areaDoJogo = document.querySelector('[wm-flappy]')
+barreiras.pares.forEach(par => areaDoJogo.appendChild(par.elemento))
+
+setInterval(() => {
+    barreiras.animar()
+}, 20);
+
+
