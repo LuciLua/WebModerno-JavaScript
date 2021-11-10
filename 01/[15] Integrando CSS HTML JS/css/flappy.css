@@ -4,25 +4,108 @@
     box-sizing: border-box;
 }
 
-.conteudo{
-    width: 100%;
-    height: 100%;
+@font-face{
+    font-family: 'Pixel';
+    src: url('../fonts/Pixel.ttf');
 }
+
+@font-face{
+    font-family: 'Oswald';
+    src: url('../fonts/Oswald-Regular.ttf');
+}
+
+
 
 .conteudo > [wm-flappy]{
     margin-top: 50px;
-    width: 800px;
-    height: 500px;
+    width: 1200px;
+    height: 700px;
 
-    background: linear-gradient(rgb(121, 208, 235), rgb(59, 202, 245));
+    background: linear-gradient(rgb(13, 193, 253), rgb(2, 183, 243));
 
     display: flex;
     flex-direction: row;
 
+    overflow: hidden;
+
+    position: relative;
+}
+
+.bird{
+    width: 60px;
+    left: calc(50% - 30px); /*posiciona no meio*/
+
+    bottom: 50%;
+    
+    position: absolute;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: 0.2s;
+}
+
+.bird img{
+    max-width: 100%;
+    position: relative;
+}
+
+.par-de-barreiras{
+    position: absolute;
+    top: 0;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+}
+
+.barreira{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     position: relative;
 
-
+    border: 1px solid rgba(0, 0, 0, 0.398);
+    width: 130px;
 }
+
+.barreira .borda{
+    height: 30px;
+    width: 130px;
+    background: linear-gradient(90deg, #639301, #A5E82E);
+    border: solid #000 2px;
+
+    position: absolute;
+}
+
+.barreira:nth-child(1) .borda{
+    bottom: 0;
+}
+.barreira:nth-child(2) .borda{
+    top: 0;
+}
+
+.barreira .corpo{
+    height: 150px;
+    width: 110px;
+    
+    background: linear-gradient(90deg, #639301, #A5E82E);
+    border-left: solid #000 2px;
+    border-right: solid #000 2px;
+}
+
+.progresso{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    font-family: 'Pixel';
+}
+
 
 .conteudo .colunas{
     width: 80px;
@@ -40,8 +123,6 @@
 
     width: 100%;
     height: 100%;
-
-
 
     position: absolute;
 
@@ -85,23 +166,3 @@
     top: -3px;
 }
 
-.bird{
-    width: 50px;
-    height: 50px;
-
-    top: 40%;
-    left: 20%;
-    
-    position: absolute;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    transition: 0.2s;
-}
-
-.bird img{
-    max-width: 100%;
-    position: relative;
-}

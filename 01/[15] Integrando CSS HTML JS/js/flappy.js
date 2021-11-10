@@ -46,18 +46,6 @@ function flappy(){
     }
 
     
-    function createBird(){
-        var birdElement = document.createElement('div')
-        birdElement.classList = 'bird'
-        
-        var imgBirdElement = document.createElement('img')
-        imgBirdElement.src='./imgs/passaro.png'
-        
-        birdElement.appendChild(imgBirdElement)
-
-        wmFlappy.appendChild(birdElement)    
-    }
-
     function birdDesce(){
         var bird = document.querySelector('.bird')
         var valor = 40
@@ -80,7 +68,6 @@ function flappy(){
 
 
 
-    createBird()
     birdDesce()
     cenarioMovimento()
 
