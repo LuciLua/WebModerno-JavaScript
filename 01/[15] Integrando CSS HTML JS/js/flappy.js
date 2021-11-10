@@ -65,12 +65,70 @@ function flappy(){
     }
 
 
-
-
-
     birdDesce()
     cenarioMovimento()
 
 }
 
-flappy()
+// flappy()
+
+function novoElemento(tagName, className){
+    const element = document.createElement(tagName)
+    element.className = className
+    return element
+}
+
+// funcao construtora
+function Barreira (reversa = false){
+    this.elemento = novoElemento('div', 'barreira')
+
+    const borda = novoElemento('div', 'borda')
+    const corpo = novoElemento('div', 'corpo')
+    // normal: borda, corpo (inferior) | reversa: corpo, borda (superior)
+    this.elemento.appendChild(reversa ? corpo : borda)
+    this.elemento.appendChild(reversa ? borda : corpo)
+
+    this.setAltura = altura => corpo.style.height = `${altura}px`
+    
+}
+
+function ParDeBarreiras(altura, abertura, positionX){
+    this.elemento = novoElemento('div', 'par-de-barreiras')
+
+    // elemento 'par-de-barreiras' tem barreira superior e inferior
+    this.superior = new Barreira(true) // corpo, borda
+    this.inferior = new Barreira(false) // borda, corpo
+
+    // adiciona dentro de 'par-de-barreiras' o elemento superior
+    this.elemento.appendChild(this.superior.elemento)
+    // adiciona dentro de 'par-de-barreiras' o elemento inferior
+    this.elemento.appendChild(this.inferior.elemento)
+
+    // lembrando: this torna atributo visivel la fora 
+    // para tornar privado: basta armazenar em uma const
+    this.sortearAbertura = () => {
+
+        // de 0 a 500
+        const alturaSuperior = Math.random() * (altura - abertura) 
+
+        // 500 - (alturaSuperior => de 0 a 500)
+        const alturaInferior = altura - abertura - alturaSuperior
+
+        // setando altura ao corpo de cada barreira
+        this.superior.setAltura(alturaSuperior)
+        this.inferior.setAltura(alturaInferior)
+    }
+
+    // posição que as barreiras (par-de-barreiras) irão aparecer
+    this.getX = () => parseInt(this.elemento.style.left.split('px')[0])
+    this.setX = x => this.elemento.style.left = `${x}px`
+    this.getLargura = () => this.elemento.clientWidth
+
+    this.sortearAbertura()
+    this.setX(positionX)
+}
+
+
+const pb = new ParDeBarreiras(700, 200, 800) // altura do jogo é 700px (ja definida no css, 200 abertura, 400 posição do x)
+
+document.querySelector('[wm-flappy]').appendChild(pb.elemento)
