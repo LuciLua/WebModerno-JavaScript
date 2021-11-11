@@ -1,0 +1,169 @@
+*::before, *, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face{
+    font-family: 'Pixel';
+    src: url('Pixel.ttf');
+}
+
+.conteudo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(36, 36, 36);
+
+    font-family: 'Pixel';
+}
+
+.conteudo > h1{
+    color: #fff;
+    font-family: 'Pixel';
+
+    margin-top: 50px;
+}
+
+.container{
+    width: 1200px;
+    height: 700px;
+
+    top: 50px;
+
+    position: absolute;
+}
+
+.container > .game-over{
+    width: 450px;
+    height: 200px;
+
+    color: #fff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    position: absolute;
+
+    left: calc(50% - 225px);
+    bottom: calc(50% - 100px);
+
+    z-index: 100;
+}
+
+.embacado{
+    filter: blur(5px);
+}
+
+.embacado:after{
+    content: '';
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.652);
+    width: 100%;
+    height: 100%;
+
+    top: 0;
+}
+
+.container > .game-over h1{
+    font-size: 6em;
+}
+
+.container > .game-over h2{
+    font-family: 'Arial';
+    font-size: 30px;
+}
+
+[wm-flappy]{
+    color: #fff;
+
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(rgb(13, 193, 253), rgb(2, 183, 243));
+
+    display: flex;
+    flex-direction: row;
+
+    overflow: hidden;
+
+    position: relative;
+}
+
+.bird{
+    width: 60px;
+    left: calc(50% - 30px); /*posiciona no meio*/
+
+    bottom: 50%;
+    border-radius: 60% 90% 90% 40%/ 90% 90% 90% 90%;
+    
+    position: absolute;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.bird img{
+    max-width: 100%;
+    position: relative;
+}
+
+.par-de-barreiras{
+    top: 0;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    position: absolute;
+
+    justify-content: space-between;
+}
+
+.barreira{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: relative;
+
+    width: 130px;
+}
+
+.barreira .borda{
+    height: 30px;
+    width: 130px;
+    background: linear-gradient(90deg, #639301, #A5E82E);
+    border: solid #000 2px;
+}
+
+.barreira:nth-child(1) .borda{
+    bottom: 0;
+}
+.barreira:nth-child(2) .borda{
+    top: 0;
+}
+
+.barreira .corpo{
+    height: 150px;
+    width: 110px;
+    
+    background: linear-gradient(90deg, #639301, #A5E82E);
+    border-left: solid #000 2px;
+    border-right: solid #000 2px;
+}
+
+.progresso{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    z-index: 100;
+    font-size: 23px;
+}
+
