@@ -65,11 +65,14 @@ function Barreiras(
         par.setX(par.getX() + espacoEntreAsBarreiras * this.pares.length);
         par.sortearAbertura();
       }
-
       const meio = largura / 2;
       const cruzouMeio = par.getX() + deslocamento >= meio && par.getX() < meio;
 
-      if (cruzouMeio) notificarPonto();
+      if (cruzouMeio) {
+        notificarPonto();
+        const passa = new Audio('win.mp3')
+        passa.play()
+      }
     });
   };
 }
@@ -90,6 +93,9 @@ function GameOver() {
   this.perdeu = () => {
     container.appendChild(gameOver);
     flappy.classList.add("embacado");
+
+    const over = new Audio('over.mp3')
+    over.play()
   };
 }
 
@@ -102,8 +108,15 @@ function Passaro(alturaJogo) {
   this.getY = () => parseInt(this.elemento.style.bottom.split("px"[0]));
   this.setY = (y) => (this.elemento.style.bottom = `${y}px`);
 
+
+  function voar (){
+    voando = true
+    const audio = new Audio('jump.mp3')
+    audio.play()
+  }
+
   window.onkeydown = (e) => {
-    e.key == "r" ? window.location.reload() : (voando = true);
+    e.key == "r" ? window.location.reload() : voar();
   };
   window.onkeyup = (e) => (voando = false);
 
