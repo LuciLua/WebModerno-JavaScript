@@ -4,6 +4,41 @@ function novoElemento(tagName, className) {
   return element;
 }
 
+function fundos(){
+
+  const allFundos = [
+    fundo1 = 'linear-gradient(180deg, rgba(131,141,214,1) 0%, rgba(14,85,99,1) 100%)',
+    fundo2 =  "linear-gradient(rgba(13, 193, 253, 0.481), rgba(147, 228, 155, 0.37))",
+    fundo3 =  "repeating-radial-gradient(ellipse at 80% 50%,rgba(0,0,0,0.5), rgba(0,0,0,0.5) 15px, rgba(255,255,255,0.5) 15px, rgba(255,255,255,0.5) 30px) top left no-repeat, repeating-radial-gradient(ellipse at 20% 50%,rgba(0,0,0,0.5), rgba(0,0,0,0.5) 10px, rgba(255,255,255,0.5) 10px, rgba(255,255,255,0.5) 20px) top left no-repeat yellow",
+    fundo4 = 'linear-gradient(357deg, rgba(11,12,13,1) 0%, rgba(2,0,36,1) 27%, rgba(0,212,255,1) 100%)',
+    fundo5 = "url('nuvemart.png')",
+    fundo6 = '#ff2',
+    fundo7 = '#d92d22',
+    fundo8 = "linear-gradient(180deg, rgba(240,255,181,1) 0%, rgba(182,249,255,1) 38%, rgba(172,241,255,1) 47%, rgba(0,212,255,1) 100%)",
+  ]
+
+  const tela = document.querySelector('[wm-flappy]')
+  const seletor = novoElemento("div", "seletorDeFundos")
+  tela.appendChild(seletor)
+
+  tela.style.background = allFundos[0]
+    
+  allFundos.forEach(f => {
+    var fundo = novoElemento("div", "fundo")
+    seletor.appendChild(fundo)
+    fundo.style.background = f
+  })
+
+  const fundosLista = document.querySelectorAll('.fundo')
+  fundosLista.forEach( fl => { 
+      fl.addEventListener('click', function(){
+        tela.style.background = fl.style.background
+      })
+    })
+}
+
+fundos()
+
 function Barreira(reversa = false) {
   this.elemento = novoElemento("div", "barreira");
 
@@ -108,17 +143,31 @@ function Passaro(alturaJogo) {
   this.getY = () => parseInt(this.elemento.style.bottom.split("px"[0]));
   this.setY = (y) => (this.elemento.style.bottom = `${y}px`);
 
+  const inclinado = () => {
+    const passaro = document.querySelector('.bird')
+    passaro.classList.add('inclinado')
+  }
+
+  const normal = () => {
+    voando = false
+    const passaro = document.querySelector('.bird')
+    passaro.classList.remove('inclinado')
+  }
 
   function voar (){
     voando = true
     const audio = new Audio('jump.mp3')
     audio.play()
+    inclinado()
   }
 
   window.onkeydown = (e) => {
     e.key == "r" ? window.location.reload() : voar();
-  };
-  window.onkeyup = (e) => (voando = false);
+ };
+
+  
+
+  window.onkeyup = (e) => normal();
 
   this.animar = () => {
     const novoY = this.getY() + (voando ? 8 : -5);
