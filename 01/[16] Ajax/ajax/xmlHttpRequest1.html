@@ -12,5 +12,71 @@
 
     <script>
         // ...
+
+        function ajax(config){
+            const xhr = new XMLHttpRequest()
+             // XMLHttpRequest() => objeto padronizado javascript
+
+             xhr.open(config.metodo, config.url, true)
+             // metodo, url, vai ser uma requisicao assincrona
+
+
+             xhr.onload = e => {
+                 if (xhr.status === 200){
+                     config.sucesso(xhr.response)
+                 } else if (xhr.status >= 400){ // ou erro do client ou do servidor
+                    config.erro({
+                        codigo: xhr.status,
+                        texto: xhr.statusText
+                    })
+                 }
+            }
+            xhr.send()
+        }
+
+        function criartabela(estados){
+
+            // transformando cada objeto em uma TableRoll
+            const linhas = estados.map(estado => {
+
+                const tdId = document.createElement('td')
+                tdId.innerHTML = estado.id
+
+                const tdNome = document.createElement('td')
+                tdNome.innerHTML = estado.nome
+                
+                const tdSigla = document.createElement('td')
+                tdSigla.innerHTML = estado.sigla
+
+                const tr = document.createElement('tr')
+
+                tr.appendChild(tdId)
+                tr.appendChild(tdNome)
+                tr.appendChild(tdSigla)
+
+                return tr
+            })
+
+            // adicionei todas as linha na tabela
+            const tabela = document.createElement('table')
+            linhas.forEach(linha => tabela.appendChild(linha))
+
+            document.body.appendChild(tabela)
+
+        }
+
+        ajax({
+            url: "dados/estados.json",
+            metodo: "GET",
+            sucesso(resposta){
+                const estados = JSON.parse(resposta)
+                criartabela(estados)
+            }, 
+            erro(e){
+                const msg = document.createTextNode(`${e.codigo}: ${e.texto}`)
+                document.body.appendChild(msg)
+            }
+        })
+        
     </script>
 </body>
