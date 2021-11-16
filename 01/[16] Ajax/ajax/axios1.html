@@ -11,7 +11,16 @@
 <body class="conteudo exercicio">
     <h1>Estados</h1>
 
+    <!-- axios é tambem client http, mas é biblioteca de terceiros... nao é suportado por padrao no browser -->
+    <!-- é baseado em promises -->
     <script>
-        // ...
+        const url = 'dados/estados.json'
+        axios(url)
+            .then(resp=>{
+                const itens = resp.data.reduce( // ja tenho json convertido em resp.data
+                    (html, estado) => html + `<li>${estado.nome}</li>`, '' 
+                )
+            document.body.insertAdjacentHTML("beforeend", `<ul>${itens}</ul>`)
+        })
     </script>
 </body>
