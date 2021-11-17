@@ -14,6 +14,30 @@
     <div id="post"></div>
 
     <script>
-        // ...
+        function exibirResultado(id, dados){
+            const texto = JSON.stringify(dados)
+            document.getElementById(id).innerHTML = texto
+        }
+
+        // axios('parOuImpar?numero=2').then(resp => exibirResultado('get', resp.data))
+
+        
+        axios.get('parOuImpar', {
+            params: {
+                numero: 6
+            }
+        })
+        .then(resp => exibirResultado('get', resp.data))
+
+
+        // 1º url
+        // 2º dados que quero passar pro servidor
+        axios.post('formulario', {
+            nome: 'Joao',
+            sobrenome: 'Silva',
+            idade: 23
+        })
+        .then(resp => exibirResultado('post', resp.data)) // exibe resultado de todos os dados, tando do body (nome, sobrenome e idade) quanto do servidor (id, luciteste)
+
     </script>
 </body>

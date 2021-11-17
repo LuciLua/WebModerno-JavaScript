@@ -42,11 +42,22 @@ app.post('/upload', (req, res) => {
 // aqui vai precisar do body-parser
 app.post('/formulario', (req,res) => {
     res.send({
-        ...req.body, // tudo que veio no body
-        id: 7 // mais o id
+        ...req.body, // tudo que veio no body (la no axios.post)
+        id: 6, // mais o id
+        luciteste: 'olaluci'
     })
 })
 
+app.get('/parOuImpar', (req, res) => {
+    // req.body
+    // req.query
+    // req.params
+    const par = parseInt(req.query.numero) % 2 === 0
+
+    res.send({
+        resultado: par ? 'par' : 'impar'
+    })
+})
 
 app.listen(8080, () => console.log('Executando...'))
 
