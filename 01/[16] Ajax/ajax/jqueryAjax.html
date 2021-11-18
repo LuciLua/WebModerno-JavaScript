@@ -14,6 +14,43 @@
     <div id="post"></div>
 
     <script>
-        // ...
+        // axios e fetch usam promises (mais moderna)
+        // jquery é por callback
+
+
+        // jquery é referenciado a partir do $
+        // ou pode ser tambem por jQuery
+
+
+        function exibirResultado(id, dados){
+            const texto = JSON.stringify(dados)
+            document.getElementById(id).innerHTML = texto
+        }
+
+        $.ajax({
+            url: 'parOuImpar',
+            data: {
+                numero: 7
+            },
+            success(data){ // tem que ser com esse nome
+                exibirResultado('get', data)
+            }
+        })
+
+        $.ajax({
+            url: 'formulario',
+            method: 'post',
+            data: {
+                nome: 'Joao',
+                sobrenome: 'silva',
+                idade: 40
+            },
+            success(data){
+                exibirResultado('post', data)
+            }, 
+            error(e){
+                exibirResultado('post', e)
+            }
+        })
     </script>
 </body>
