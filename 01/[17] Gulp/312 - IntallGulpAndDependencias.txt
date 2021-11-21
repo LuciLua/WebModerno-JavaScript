@@ -1,0 +1,5 @@
+CLI popular: DOS (Disk Operating Systems)
+
+gui: graphical user interface
+cli: command line interface
+npm i -g gulp-cli
