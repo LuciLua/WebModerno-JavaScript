@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "preshrinkwrap": "git checkout -- npm-shrinkwrap.json",
+    "postshrinkwrap": "git checkout -- npm-shrinkwrap.json"
   },
   "keywords": [],
   "author": "Cod3r",
@@ -12,13 +14,18 @@
   "devDependencies": {
     "babel-core": "6.26.3",
     "babel-preset-env": "1.6.1",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-babel": "7.0.1",
     "gulp-concat": "2.6.1",
     "gulp-sass": "^5.0.0",
-    "gulp-typescript": "^2.12.2",
+    "gulp-typescript": "^6.0.0-alpha.1",
     "gulp-uglify": "3.0.0",
     "gulp-uglifycss": "^1.1.0",
     "typescript": "2.8.3"
+  },
+  "dependencies": {
+    "gulp-cli": "^2.3.0",
+    "npm": "^8.1.4",
+    "update": "^0.4.2"
   }
 }

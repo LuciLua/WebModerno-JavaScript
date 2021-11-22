@@ -1,0 +1,3 @@
+Gulp é um framework baseado em funções
+funções são conhecidas como tarefas (tasks)
+
