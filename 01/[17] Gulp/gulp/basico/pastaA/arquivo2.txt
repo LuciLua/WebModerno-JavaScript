@@ -1,1 +1,1 @@
-Exercício Gulp!!!
+arquivo2
