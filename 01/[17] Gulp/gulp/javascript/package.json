@@ -1,13 +1,13 @@
 {
-  "name": "gulp",
+  "name": "javascript",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "Cod3r",
+  "author": "",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "6.26.3",
