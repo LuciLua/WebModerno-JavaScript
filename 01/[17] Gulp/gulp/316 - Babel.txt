@@ -1,0 +1,9 @@
+http://babeljs.io
+
+serve para usar recursos hoje do javascript de amanhã
+é legal mas talveez n seja mt legal de usar pois os navegadores n vai entende, disponivel em pocos browsers
+
+bom pois pega tudo o que é muito novo e transforma na mesma coisa só que como todos os browsers suporta
+
+
+
