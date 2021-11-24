@@ -1,6 +1,6 @@
 import { Carro, Vendavel } from './produto'
 
-function exibir(v: Vendavel) {
+function exibir(v: Vendavel) { // parametro v, que é do tipo vendavel
     console.log(`${v.nome} custa ${v.preco}!`)
 }
 
