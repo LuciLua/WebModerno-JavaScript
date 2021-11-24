@@ -1,0 +1,11 @@
+é um super set/conjunto do javascript, tudo que é JavaScript é suportado pelo Typescript
+
+o codigo no final é sempre convertido em javascript
+
+!!! coração do typescript: colocar tipos dentro do javascript
+
+é uma linguagem tipada
+
+precisa de alguma ferramenta para covnerter de ts para js... gulp pode ser uma delas
+
+
