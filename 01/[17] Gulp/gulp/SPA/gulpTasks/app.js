@@ -14,7 +14,7 @@ function appHTML(){
     .pipe(gulp.dest('build'))
 }
 
-function appCSS(cb){
+function appCSS(){
 
     return gulp.src('src/assets/sass/index.scss')
     .pipe(sass().on('Error', sass.logError))
@@ -31,11 +31,18 @@ function appJS(){
     .pipe(concat('app.min.js'))
     .pipe(gulp.dest('build/assets/js'))
 }
-function appIMG(cb){
+function appIMG(){
 
     return gulp.src('src/assets/imgs/**/*.*') // para qualwuer imagem png, jpg....
     .pipe(gulp.dest('build/assets/imgs'))
 }
+
+// registrar task
+gulp.task('appHTML', appHTML)
+gulp.task('appCSS', appCSS)
+gulp.task('appJS', appJS)
+gulp.task('appIMG', appIMG)
+
 
 module.exports = {
     appHTML,
