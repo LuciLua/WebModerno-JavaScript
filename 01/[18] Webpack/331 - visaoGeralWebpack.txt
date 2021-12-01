@@ -21,3 +21,4 @@ a partir do sistema de módulos, tem que importar arquivos
 
 entry => loader > static assets
 
+faz o build automatico
