@@ -1,0 +1,23 @@
+Completamente baseado no sistema de módulos
+
+2 grandes, principais sitemas de modulos
+- commons js (require, module.exports...) que o node se baseia
+- baseado em import e export
+
+entry
+vai refernciando os arquivos, passa entrada pelo webpack, navega peloas arquivos da aplicação
+
+loader: aplica um tipo de logica para renderizar aquele arquivos
+
+no finalm, o arquivos sao gerados 
+static assets
+
+----
+
+gulp: coloca expressão para obter tal arquivo...
+
+webpack: tudo começa a partir do javascript e começa a carregar todos os arquivos 
+a partir do sistema de módulos, tem que importar arquivos
+
+entry => loader > static assets
+
