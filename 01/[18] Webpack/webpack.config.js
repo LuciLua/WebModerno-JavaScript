@@ -7,6 +7,10 @@ module.exports = {
 
     // estou em modo de desenvolvimento ou producao?
     mode: 'development',
-    entry: './src/principal.js'
+    entry: './src/principal.js',
+    output: {
+        filename: 'principal.js', 
+        path: __dirname + '/public' 
+    }
 
 }
