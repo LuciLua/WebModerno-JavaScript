@@ -71,6 +71,28 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/modulos/moduloA.js":
+/*!********************************!*\
+  !*** ./src/modulos/moduloA.js ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("const moduloB = __webpack_require__(/*! ./moduloB */ \"./src/modulos/moduloB.js\")\r\nconsole.log(moduloB.saudacao())\r\n\r\n\n\n//# sourceURL=webpack:///./src/modulos/moduloA.js?");
+
+/***/ }),
+
+/***/ "./src/modulos/moduloB.js":
+/*!********************************!*\
+  !*** ./src/modulos/moduloB.js ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("// esse sitema de modulos é o commons js\r\nmodule.exports = {\r\n    saudacao(){return 'Olá, eu sou o módulo B'}\r\n}\r\n\r\n\r\n// o import ... from... é o do EcmaScript\n\n//# sourceURL=webpack:///./src/modulos/moduloB.js?");
+
+/***/ }),
+
 /***/ "./src/pessoa.js":
 /*!***********************!*\
   !*** ./src/pessoa.js ***!
@@ -79,7 +101,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Pessoa; });\nclass Pessoa {\r\n// module.exports = class Pessoa {\r\n    cumprimentar(){\r\n        return 'Bom dia!'\r\n    }\r\n}\n\n//# sourceURL=webpack:///./src/pessoa.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Pessoa; });\n/* harmony import */ var _modulos_moduloA__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modulos/moduloA */ \"./src/modulos/moduloA.js\");\n/* harmony import */ var _modulos_moduloA__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_modulos_moduloA__WEBPACK_IMPORTED_MODULE_0__);\n\r\nclass Pessoa {\r\n// module.exports = class Pessoa {\r\n    cumprimentar(){\r\n        return 'Bom dia!'\r\n    }\r\n}\n\n//# sourceURL=webpack:///./src/pessoa.js?");
 
 /***/ }),
 
