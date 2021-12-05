@@ -22,12 +22,13 @@ module.exports = {
     module: {
         rules: [{
             // vão ter varios loaders aqui
-            test: /\.css$/,
+            test: /\.s?[ac]ss$/, // https://regex101.com/
             use: [
                 MiniCssExtractorPlugin.loader, // esse conflita com o style-loader
                 // plugins
                 // 'style-loader', // adiciona CSS dentro da DOM injetando a tag <style>
-                'css-loader' // interpretar @import, url()...
+                'css-loader', // interpretar @import, url()...
+                'sass-loader'
             ]
         }]
     }
