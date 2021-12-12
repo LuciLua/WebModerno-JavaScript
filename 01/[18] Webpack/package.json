@@ -15,7 +15,9 @@
   "license": "ISC",
   "devDependencies": {
     "cross-env": "5.1.5",
+    "file-loader": "1.1.11",
     "optimize-css-assets-webpack-plugin": "4.0.1",
+    "uglifyjs-webpack-plugin": "1.2.5",
     "css-loader": "0.28.11",
     "mini-css-extract-plugin": "0.4.0",
     "node-sass": "^6.0.1",
