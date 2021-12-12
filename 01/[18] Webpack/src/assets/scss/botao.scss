@@ -2,4 +2,20 @@
     background-color: $cor-bg-botao-padrao;
     color: $cor-botao-padrao;
     font-size: 1.8em;
+    
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    
+    margin: 20px;
+    cursor: pointer;
+}
+
+.botao:hover{
+    background-color: $cor-bg-botao-hover;
+    color: $cor-botao-hover;
+}
+.botao:active{
+    background-color: $cor-bg-botao-active;
+    color: $cor-botao-active;
 }

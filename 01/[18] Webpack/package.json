@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack",
+    "start": "webpack-dev-server",
     "build": "cross-env NODE_ENV=production webpack"
   },
   "keywords": [
@@ -14,6 +14,7 @@
   "author": "LuciLua",
   "license": "ISC",
   "devDependencies": {
+    "webpack-dev-server": "3.1.4",
     "cross-env": "5.1.5",
     "file-loader": "1.1.11",
     "optimize-css-assets-webpack-plugin": "4.0.1",
