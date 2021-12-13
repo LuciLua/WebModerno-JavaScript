@@ -14,6 +14,40 @@
     <div>2</div>
 
     <script>
-        // ...
+        // $ => para  usar jquery
+
+        //$('div').hide(5000)// esconde conjunto de divs em 5segundos
+        $('div').hide(5000).show(5000).fadeOut(5000) 
+
+        console.log($('div').get(0)) // elemento de indice 0 obtido a partir da lista dessse seletor
+
+        // na OO, extende um bojeto a aprtir da herança
+        // no caso do jQuery não é herança, é um padrão de projeto chamado Decorator
+
+        //Decorator: adicionar novas funcionalidades a um objeto sem a necessidade de ter uma herança
+
+        // jQuery  trabalha com objetosque não saão os diretamente da DOM, mas um objeto que dentro dele tem o nó da DOM
+
+
+        // JQuery API com foco grande em consultar elementos da apagina e manipular elementos
+
+        // para pegar Objeto da DOM especificamente: usa função get()
+        // se tiver mais de 1, especifica indice , ex: get(0)
+
+        console.log($.isEmptyObject({}))
+        console.log($.isEmptyObject({nome: null}))
+        
+        console.log(jQuery.inArray(3, [1,2,3])) // Retorna -1 se nao, retorna o proprio indice se tiver
+
+
+        // funcao que eu estou criando, minha
+        $.fn.fundoVerde = function(){
+            this.css('background-color', 'green')
+            return this
+        }
+
+        // aplicando funcao criada no body
+        $('body').fundoVerde().fadeOut(10000) // so funciona com return na funcao criada....
+
     </script>
 </body>
