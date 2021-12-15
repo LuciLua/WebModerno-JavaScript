@@ -41,14 +41,44 @@
         </ul>
     </div>
     <form>
-        <input type='text' name='texto'>
-        <input type='password' name='senha'>
-        <input type='checkbox' name='check1'>
-        <input type='radio' name='radio1'>
+        <input type='text' name='texto' placeholder="text here">
+        <input type='password' name='senha' placeholder="password">
+        <label for="check">Checkbox</label>
+        <input type='checkbox' id="check" name='check1'>
+        <label for="radio">Radio</label>
+        <input type='radio' id='radio'  name='radio1'>
         <input type='file' name='arquivo'>
     </form>
 
     <script>
+        // forma mais direta de pegar elementos: por id, ou classe
+
+        // evitar seletores malucos, por exemplo 3 elementos da quarta div com classe tal
+    
+        $('#feira').addClass('destaque').removeClass('destaque')
+        $('li').addClass('destaque')
+        $('[wm-obrigatorio]').removeClass('destaque')
+        $('li.opcional').removeClass('destaque')
+        $('div p span').addClass('destaque')
+
+        // exclusivos jQuery
+
+        $('li:first').css('border', 'solid 1px yellow') //primeiro li
+        $('li:odd').css('border', 'solid 1px blue') // todos os impares
+        $('li:gt(2)').css('background', '#f80') // greater then (maior que), a partir do elemento de indice X, no caso maior que X
+        $('li:not(:last)').css('color', 'green') // todos li, menos o ultimo
+        $('li:contains("rr")').css('background', '#9f4') // apenas nos que tem a letra X
+
+        $('form *').hide() // esconde todos os elementos X
+        $('form :text').show() // se tiver um input do tipo text, mostre-o
+        $('form :password').show()
+        $('form :checkbox').show()
+        $('form label').show()
+        $('form :radio').show()
+        $('form :file').show()
+        $('form :file').css('width', '400px')
+        
+
         // ...
     </script>
 </body>
