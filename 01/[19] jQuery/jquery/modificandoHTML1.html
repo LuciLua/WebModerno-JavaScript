@@ -13,8 +13,41 @@
     <div id='conteudo1'></div>
     <div id='conteudo2'></div>
     <div id='conteudo3'></div>
+    
+    <div>Sem ID</div>
 
     <script>
-        // ...
+        // Conteudo 1
+        $('#conteudo1').append('<p>1</p>')
+
+        // Conteudo 2
+        const elementos = [
+            $('<li></li>').append('Arroz'),
+            $('<li>').append('Feijão'),
+            $('<li>').append('Carne'),
+        ]
+
+        const lista = $('<ul><li>Sorvete</li></ul>').prepend(elementos)
+        $('#conteudo2').append(lista)
+
+        // prepend: apenda antes dos elementos que ja estavam
+
+        // Conteudo 3
+
+        //       $('#conteudo3').append('<h1>1</h1>')
+        //                .append('<h2>2</h2>')
+        $('#conteudo3').append(['<h1>1</h1>', '<h2>2</h2>'])
+        .prepend('<h1>0</h1>') // coloca 0 antes do 1 do dois
+        
+        // append: anexas novos items dentro do seletor
+        // ja o html substituir o conteudo dos elementos que selecionei 
+        $('#conteudo3').html('<h1>123</h1>')
+        
+        // coloca em formato texto e nao html
+        $('#conteudo3').text('<h1>123</h1>')
+
+        // Alterando todos que possuem atributo ID
+        $('div[id]').html('<strong>Todos!</strong>')
+
     </script>
 </body>
