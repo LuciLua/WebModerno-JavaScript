@@ -12,24 +12,41 @@
     <h1>Modificando HTML #03</h1>
     <div id='conteudo'></div>
     <script>
-        const pessoas = [
-            { nome: 'Ana', nota: 9.1 },
-            { nome: 'Bianca', nota: 8.4 },
-            { nome: 'Carlos', nota: 7.6 },
-            { nome: 'Julia', nota: 9.7 }
-        ]
-        
-        // criar tabela de 2 colunas (nome e nota) e colocar tabela dentro da div
+        // Desafio: criar tabela de 2 colunas (nome e nota) e colocar tabela dentro da div
 
-        // cria tabela e insere em #conteudo
-        $('<table id="pessoas">').appendTo('#conteudo')
-        $(pessoas).each( (i, p) => 
-            $('#pessoas').append(inserirNaTabela(p))
-        )
+        // so executa se a página/documento ja estiver pronto
+        $(document).ready(function(){
 
-        function inserirNaTabela(p){
-            return `<tr><td>${p.nome}</td><td>${p.nota}</td></tr>`
-        } 
-        
+            const alunos = [
+                { nome: 'Ana', nota: 9.1 },
+                { nome: 'Bianca', nota: 8.4 },
+                { nome: 'Carlos', nota: 7.6 },
+                { nome: 'Julia', nota: 9.7 }
+            ]
+    
+            // Minha resolução:
+
+            $('<table>').appendTo('#conteudo') // insere tabela em #conteudo
+            $(alunos).each( (index, aluno) => 
+                $('table').append(inserirNaTabela(aluno)) // inserir cada aluno na tabela 
+            )
+            function inserirNaTabela(aluno){
+                return $('<tr>').append($('<td>').text(aluno.nome), $('<td>').text(aluno.nota))
+            } 
+
+            // Resolucao do professor
+            /*
+            const linhas = alunos.map(p => {
+                const tdNome = $('<td>').html(p.nome)
+                const tdNota = $('<td>').html(p.nota)
+                return $('<tr>').append(tdNome, tdNota)
+            })
+
+            const tabela = $('<table>').append(linhas)
+                                       .css('border', 'solid 5px')
+            
+            $('#conteudo').append(tabela)
+            */
+        })
     </script>
 </body>
