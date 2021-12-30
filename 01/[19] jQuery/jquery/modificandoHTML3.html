@@ -11,7 +11,6 @@
 <body class='conteudo exercicio'>
     <h1>Modificando HTML #03</h1>
     <div id='conteudo'></div>
-
     <script>
         const pessoas = [
             { nome: 'Ana', nota: 9.1 },
@@ -20,6 +19,17 @@
             { nome: 'Julia', nota: 9.7 }
         ]
         
-        // ...
+        // criar tabela de 2 colunas (nome e nota) e colocar tabela dentro da div
+
+        // cria tabela e insere em #conteudo
+        $('<table id="pessoas">').appendTo('#conteudo')
+        $(pessoas).each( (i, p) => 
+            $('#pessoas').append(inserirNaTabela(p))
+        )
+
+        function inserirNaTabela(p){
+            return `<tr><td>${p.nome}</td><td>${p.nota}</td></tr>`
+        } 
+        
     </script>
 </body>
