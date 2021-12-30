@@ -17,6 +17,76 @@
     <p class='numero'>5</p>
 
     <script>
-        // ...
+
+        /*
+        > append
+        > prepend
+        
+        > prependTo
+        > appendTo
+
+        > before
+        > after
+
+        > intertAfter
+        > intertBefore
+
+        > wrap
+        > wrapAll
+
+        > empty
+
+        > replaceAll
+        > replaceWidth
+
+        */
+
+        // ---------- append e prepend ----------
+        $('#div1').append(', 2') // depois
+        $('#div1').prepend('0, ') // antes
+
+        // ---------- appendTo e prependTo ----------
+        // criar elemento para apendar
+        $('<span>, 3</span>').appendTo('#div1') // aplica em todos os selecionados '#div1' (depois)
+        $('<span>-1, </span>').prependTo('#div1') // aplica em todos os selecionados '#div1' (antes)
+
+        // ---------- Before e After ----------
+        $('#div2').before('<p>Antes 2</p>')
+        $('#div2').after('<p>Depois 2</p>')
+
+        // ---------- insetBefore e InsertAfter ----------
+        // criar elemento para inserir
+        $('<p>Antes 3</p>').insertBefore('#div3')
+        $('<p>Depois 3</p>').insertAfter('#div3')
+
+        // ---------- wrap e wrapAll----------
+        // envolve elemento em uma <div>
+        // $('p.numero').wrap('<div>')
+        $('p.numero').wrapAll('<div id="div4">') // todos juntos, como em um pacote, com id="div4", 1 unica div
+
+        // ---------- empty ----------
+        // div continua existindom mas limpa conteudo da div, deixa ela vazia
+        $('#div4').empty()
+        
+        // ---------- prev remove ----------
+        // remove o que está anterior a #div3 e anterior a #div4
+        $('#div3, #div4').prev().remove()
+        
+        // ---------- replaceAll e replaceWidth ----------
+        // !!! sempre que se define as tags, você está criando um elemento !!!
+        // todos os paragrafos dentro do body vai ser substituido por essa div ...
+        // $('<div>Substituto</div>').replaceAll('body > p') 
+        // resultado é o mesmo... => 
+        // $('body > p').replaceWith('<div>Substituto</div>')
+        
+        // funcao callback é mais flexivel do que o wrap, mas não torna mais simples e direto... depende do caso
+        // "todo p vira div"
+        $('body > p').replaceWith(function(){
+            // html atual esta sendo colocado dentro da div que acabei de criar
+            return $('<div>') // elemento que vai substituir o p
+                .html($(this).html()) // conteudo ... this é o p... html do this é o conteudo do p
+        })
+
+
     </script>
 </body>
