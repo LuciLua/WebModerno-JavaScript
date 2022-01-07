@@ -12,9 +12,30 @@
     <h1>Manipulando CSS</h1>
     <div id='div1'>1</div>
     <div id='div2'>2</div>
-    <div id='div3'>3</div>
     <div id='resultado'></div>
     <script>
-        // ...
+        const fonte = $('#div1').css('font-family')
+        $('#resultado').append(`Fonte é: ${fonte}`)
+
+
+        $('#div1').css({'font-size': '3em', 'color': '#1afa9a'})
+        $('#div1').css('font-size', function() {
+            return `${2*2}em`
+        })
+
+        $('#div2').addClass('destaque') // add classe
+
+        // verifica se tem uma classe ou nao
+        const temClasse = $('#div2').hasClass('destaque')
+        $('#resultado').append(`<br>Tem classe? ${temClasse}`)
+
+        // remover classe
+
+        $('#div2').removeClass('destaque')
+
+
+        // se tiver coloca, se nao tiver tira
+        $('#div2').toggleClass('destaque')
+
     </script>
 </body>
