@@ -20,6 +20,46 @@
     <input type="text" placeholder="Cor de Background">
 
     <script>
-        // ...
+
+        function mostrarPosicaoDoMouse(e) {
+            $('#posicao').html(`x: ${e.clientX} y: ${e.clientY}`)
+        }
+
+        // on: funcao que registra um evento dentro do jQuery,
+        // 1: passa nome do evento como uma string
+        // 2: funcao que seja chamada quando esse evento acontecer
+        // off: retira 
+        function ligarMouseMove() { $('body').on('mousemove', mostrarPosicaoDoMouse)}
+        function desligarMouseMove() { $('body').off('mousemove', mostrarPosicaoDoMouse)}
+
+        ligarMouseMove()
+
+        $('#posicao').mouseover(e => {
+            desligarMouseMove()
+        })
+        $('#posicao').mouseleave(e => {
+            ligarMouseMove()
+        })
+
+
+        let cliques = 0
+        $('body').click(e => {
+            $('#cliques').html(`Cliques: ${++cliques}`)
+        })
+
+        const backgroundOriginal = $('body').css('background-color')
+
+        $('input').keyup(function (e) {
+            const valor = $(this).val() // this nao funciona em arrow function
+
+            // digito de a (minusculo) a f (minusculo) e de A (maiusculo) ate F (maiusculo) 
+            // 3 a 6 vezes
+            if (valor.match(/#[\da-fA-F]{3,6}/)) {
+                $('body').css('background-color', valor)
+            } else {
+                $('body').css('background-color', backgroundOriginal)
+            }
+        })
+
     </script>
 </body>
