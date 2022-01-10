@@ -28,6 +28,58 @@
     <div>Animar!</div>
 
     <script>
-        // ...
+        function alterarLarguraEAltura(valor, duracao, callback) {
+            $('div').animate({ width: `+=${valor}`, height: `+=${valor}`},
+                duracao,
+                callback)
+        }
+
+        function alterarAltura(valor, duracao, callback) {
+            $('div').animate({ height: `+=${valor}` },
+                duracao,
+                callback)
+        }
+
+        function moverDiagonal(valor, duracao, callback) {
+            $('div').animate({ top: `+=${valor}`, left: `+=${valor}` },
+                duracao,
+                callback)
+        }
+
+        function girar(valor, duracao, callback) {
+            $('div').animate({ transform: `+=${valor}` },
+                {
+                    step: function (valor) {
+                        $(this).css('transform', `rotate(${valor}deg)`)
+                    },
+                    duration: duracao
+                }, 'linear', callback
+            )
+        }
+
+        // usando callbacks, mas poderia usar promises, metodo then
+        alterarLarguraEAltura(100, 500, () => {
+            alterarLarguraEAltura(-100, 'slow', () => {
+                moverDiagonal(300, 600, () => {
+                    girar(360, 1000)
+                })
+            } )
+        })
+
+
+        // com promises
+
+        /*
+        const executar = (animacao, valor, duracao) => new Promise((resolve, reject) => { 
+            resolve(animacao(valor, duracao))
+        })
+
+        executar(moverDiagonal, valor=300, duracao=1000)
+            .then(girar(360, duracao))
+            .then(alterarLarguraEAltura(100, duracao))
+            .then(moverDiagonal(-valor, duracao))
+            .then(alterarLarguraEAltura(-100, duracao))
+        
+        */    
     </script>
 </body>
