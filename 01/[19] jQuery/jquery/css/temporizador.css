@@ -14,10 +14,16 @@ body {
     align-items: center;
     height: 100vh;
     background: linear-gradient(to right, rgb(189, 195, 199), rgb(44, 62, 80));
+
 }
 
 h1 {
+    color: #fff;
     font-size: 4em;
+
+    max-width: 600px;
+    text-align: center;
+
 }
 
 .temporizador .digito {
