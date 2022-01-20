@@ -22,6 +22,28 @@
     <h1>1. Grid Básica</h1>
     <hr>
 
+    <!-- semantica muito importante.... pode ser ruim usar <table> só por ser mais facil -->
+    <!-- importante pro SEO tbm -->
+
+    <!-- sempre 12 colunas dividas igualmente -->
+
+    <div class="container-fluid"> <!-- vai ocupar a tela inteira -->
+        <div class="row">
+            <div class="col bg-danger text-center text-white">1</div>
+            <div class="col bg-warning text-center text-white">2</div>
+            <div class="col bg-info text-center text-white">3</div>
+            <div class="col bg-success text-center text-white">4</div>
+        </div>
+        <div class="row">
+            <div class="col bg-danger text-center text-white">5</div> <!--ocupa 1.5 das 12 colunas-->
+            <div class="col-4 bg-warning text-center text-white">6</div> <!--ocupa 4 das 12 colunas-->
+            <div class="col-5 bg-info text-center text-white">7</div> <!--ocupa 5 das 12 colunas-->
+            <div class="col bg-danger text-center text-white">8</div> <!--ocupa 1.5 das 12 colunas-->
+        </div>
+    </div>
+
+
+
     <!-- Grid Básica -->
 
     <h1 class="mt-5">2. Grid Responsiva</h1>
