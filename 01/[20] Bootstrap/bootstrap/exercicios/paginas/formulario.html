@@ -19,3 +19,80 @@
 </p>
 
 <!-- Formulário -->
+
+<div class="card">
+    <div class="card-header">
+        <h5 class="mb-0">
+            Exemplo de formulário
+        </h5>
+        <div class="card-body">
+            <form action="" class="container-fluid">
+                <div class="form-row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label for="nome">Nome</label>
+                            <input type="text" class="form-control" id="nome" placeholder="nome">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row ">
+                    <div class="col-12 col-md-6">
+                        <div class="form-goup">
+                            <label for="email">Email</label>
+                            <div class="input-group d-block">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        @
+                                    </span>
+                                    <input type="text" class="form-control" id="email" placeholder="email">
+                                </div>
+                                <small class="form-text text-muted">
+                                    Enviaremos um email para confirmar o cadastro
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="form-group">
+                            <label for="LinguagemPreferida">Linguagem prefereida</label>
+                            <select name="" id="LinguagemPreferida" class="form-control">
+                                <option value="">Selecione</option>
+                                <option value="JS">JS</option>
+                                <option value="Java">Java</option>
+                                <option value="Python">Python</option>
+                                <option value="Ruby">Ruby</option>
+                                <option value="Outra">Outra</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row mt-3">
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <label class="form-check-label" for="defaultCheck1">
+                                Aceito os
+                                <a href="#" class="text-info">termos de uso</a>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" disabled>
+                            <label class="form-check-label" for="defaultCheck2">
+                                Discordo
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <hr>
+                <div class="form-row mb-0">
+                    <div class="col-12 d-flex justify-content-end">
+                        <button class="btn btn-primary mr-2" type="submit">Enviar</button>
+                        <button class="btn btn-secondary" type="reset">Limpar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
