@@ -1,0 +1,8 @@
+@import "~bootstrap/scss/bootstrap";
+
+// sobreescrever nome de uma variaves do sass do font-awesome
+$fa-font-path: "~font-awesome/fonts";
+
+@import "~font-awesome/scss/font-awesome";
+
+@import "custom";
