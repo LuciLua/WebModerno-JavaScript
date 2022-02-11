@@ -2,7 +2,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const elementos = [<h1>React!</h1>, <h2>Subtítulo</h2>, <p>Paragrafo!<span>OK</span></p>]
+import First from './components/First';
+
+const elementos = [<h1>React!</h1>, <First/>]
 
 ReactDOM.render(
     // esse h1 nao é html puro, mas sim JSX (JS extendido), que será convertido em "HTML" atravez do react
