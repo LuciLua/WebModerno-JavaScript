@@ -25,9 +25,9 @@ During the course, these are some technologies and topics that I have already le
 - [x] Ajax
 - [x] Gulp
 - [x] Webpack
-- [ ] jQuery
-- [ ] Bootstrap
-- [ ] React
+- [x] jQuery
+- [x] Bootstrap
+- [x] React
 - [ ] VueJS
 - [ ] Electron
 - [ ] Angular 9
