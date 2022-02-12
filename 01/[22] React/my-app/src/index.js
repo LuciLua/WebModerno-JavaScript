@@ -8,8 +8,11 @@ import GoodMorning from './components/GoodMorning';
 
 import Multi, { BoaNoite } from './components/Multiplos';
 
+import Saudacao from './components/Saudacao';
+
 const elementos = [<h1>React!</h1>, <QualquerNome />, <GoodMorning name="Luci" age={20} />,
-<BoaNoite name="Luci" />, <Multi.BoaTarde name="luci"/>]
+<BoaNoite name="Luci" />, <Multi.BoaTarde name="luci"/>, <hr />, <Saudacao tipo="Bom dia" nome="Maria!" />]
+// nõa é possivel alterar aas propriedades que voce recebeu em um componente
 
 ReactDOM.render(
     // esse h1 nao é html puro, mas sim JSX (JS extendido), que será convertido em "HTML" atravez do react
