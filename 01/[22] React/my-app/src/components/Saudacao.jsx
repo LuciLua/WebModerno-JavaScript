@@ -10,6 +10,13 @@ export default class Saudacao extends Component{
         nome: this.props.nome
     }
 
+    constructor(props){
+        super(props)
+
+        // setTipo agr vai sempre referenciar o componente atual
+        this.setTipo = this.setTipo.bind(this)
+    }
+
     setTipo(e){
         this.setState({ 
             tipo: e.target.value,
@@ -32,7 +39,8 @@ export default class Saudacao extends Component{
                 </h1>
                 <hr />
                 {/* inpout so de leitura, para mexer precisa suar evento onChange */}
-                <input type="text" placeholder="Tipo..." value={tipo} onChange={e => this.setTipo(e)} />
+                {/* this apontando para o componente atual */}
+                <input type="text" placeholder="Tipo..." value={tipo} onChange={this.setTipo} />
                 <input type="text" placeholder="Nome..." value={nome} onChange={e => this.setNome(e)} />
             </div>
         )
