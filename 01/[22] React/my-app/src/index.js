@@ -2,6 +2,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import './styles/globals.css'
+
 import QualquerNome from './components/First';
 import GoodMorning from './components/GoodMorning';
 // não posso colocar componentes com letra minuscula
@@ -9,9 +11,20 @@ import GoodMorning from './components/GoodMorning';
 import Multi, { BoaNoite } from './components/Multiplos';
 
 import Saudacao from './components/Saudacao';
+import Pai from './components/Pai';
 
-const elementos = [<h1>React!</h1>, <QualquerNome />, <GoodMorning name="Luci" age={20} />,
-<BoaNoite name="Luci" />, <Multi.BoaTarde name="luci"/>, <hr />, <Saudacao tipo="Bom dia" nome="Maria!" />]
+const elementos = (
+<main>
+    <h1>Exercícios React!</h1>
+    <QualquerNome />
+    <GoodMorning name="Luci" age={20} />
+    <BoaNoite name="Luci" />
+    <Multi.BoaTarde name="luci"/>
+    <hr/>
+    <Saudacao tipo="Bom dia" nome="Maria!" />
+    <Pai  nome="Paulo" sobrenome="Silva"/>
+</main>
+)
 // nõa é possivel alterar aas propriedades que voce recebeu em um componente
 
 ReactDOM.render(

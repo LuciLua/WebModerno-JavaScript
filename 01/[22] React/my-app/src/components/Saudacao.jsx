@@ -35,7 +35,7 @@ export default class Saudacao extends Component{
         return(
             <div>
                 <h1>
-                    {tipo}, {nome}!
+                    {tipo} {nome}
                 </h1>
                 <hr />
                 {/* inpout so de leitura, para mexer precisa suar evento onChange */}

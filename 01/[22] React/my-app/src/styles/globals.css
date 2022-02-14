@@ -1,0 +1,57 @@
+*::before, *, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    background-color: rgb(243, 243, 243);
+    color: rgb(31, 31, 31);
+    font-family: Arial;
+}
+
+main{
+    padding: 30px;
+    margin: 30px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 30px #a9a9a931;
+    border-radius: 9px;
+}
+
+main h1{
+    background-color: rgba(192, 192, 192, 0.315);
+    margin-bottom: 30px;
+}
+
+main h2{
+    background-color: #73727b58;
+    margin-bottom: 10px;
+}
+
+main p{
+    padding: 10px;
+}
+
+main input{
+    width: 160px;
+    height: 30px;
+
+    padding: 10px 13px;
+    margin: 10px 51px;
+
+    outline: none;
+
+    border-radius: 30px;
+    border: 1px solid rgba(191, 191, 191, 0.385);
+    background-color: rgb(255, 255, 255);
+}
+
+main ul{
+    background-color: #e2e2e231;
+    padding: 10px;
+}
+
+main ul li{
+    margin-left: 20px;
+}
