@@ -13,6 +13,8 @@ import Multi, { BoaNoite } from './components/Multiplos';
 import Saudacao from './components/Saudacao';
 import Pai from './components/Pai';
 
+import Filho from './components/Filho'
+
 const elementos = (
 <main>
     <h1>Exercícios React!</h1>
@@ -22,7 +24,11 @@ const elementos = (
     <Multi.BoaTarde name="luci"/>
     <hr/>
     <Saudacao tipo="Bom dia" nome="Maria!" />
-    <Pai  nome="Paulo" sobrenome="Silva"/>
+    <Pai  nome="Paulo" sobrenome="Silva">
+        <Filho nome="Pedro" />
+        <Filho nome="Paulo" sobrenome="Silva"/>
+        <Filho nome="Carla" sobrenome="Silva"/>
+    </Pai>
 </main>
 )
 // nõa é possivel alterar aas propriedades que voce recebeu em um componente
