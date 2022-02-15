@@ -3,10 +3,12 @@ import './Calculator.css'
 
 // Components
 import Button from "../components/Button"
+import Display from "../components/Display"
 export default class calculator extends Component {
     render(){
         return(
             <div className="calculator">
+                <Display value="100"/>
                 <Button label="AC"/>
                 <Button label="/"/>
                 <Button label="7"/>
