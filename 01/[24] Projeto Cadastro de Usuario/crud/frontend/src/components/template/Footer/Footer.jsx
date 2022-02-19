@@ -5,7 +5,11 @@ import React from 'react'
 export default props => {
     return(
         <footer className="footer">
-            Rodapé
+            <span>
+                Desenvolvido com 
+                <i className="ml-2 fa fa-heart text-danger"></i>
+                <strong className='ml-1'>Cod<span className='text-danger'>3</span>r</strong>
+                </span>
         </footer>
     )
 }
