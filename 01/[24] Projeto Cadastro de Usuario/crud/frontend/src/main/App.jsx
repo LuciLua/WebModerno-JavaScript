@@ -6,10 +6,10 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'font-awesome/css/font-awesome.min.css'
 
 // Components
-import Main from '../components/template/Main/Main'
 import Logo from '../components/template/Logo/Logo'
 import Nav from '../components/template/Nav/Nav'
 import Footer from '../components/template/Footer/Footer'
+import Home from '../components/home/Home'
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default props => {
@@ -17,10 +17,7 @@ export default props => {
         <div className="app">
             <Logo />
             <Nav />
-            <Main 
-                icon="home" 
-                title="Início" 
-                subtitle="Segundo projeto do capítulo de React."/>
+            <Home/>
             <Footer />
         </div>
     )
