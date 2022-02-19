@@ -8,7 +8,11 @@
 
     --shadow: 
         0 2px 23px 0 rgba(0, 0, 0, 0.1),
-        0 2px 49px 0 rgba(0, 0, 0, 0.06)
+        0 2px 49px 0 rgba(0, 0, 0, 0.06);
+
+    --shadow-2:
+        2px 40px 10px 0 rgba(0, 0, 0, 0.12),
+        2px 40px 15px 0 rgba(0, 0, 0, 0.09);
 }
 
 * {
