@@ -9,11 +9,11 @@ export default props => {
             title="Início" 
             subtitle="Segundo projeto do capítulo de React."
         >
-            <div className='display-4 text-muted'>
+            <div className='display-4'>
                 Bem-Vindo!
             </div>
             <hr />
-            <p className="mb-0">Sistema para exemplificar a construção de um cadastro desenvolvido em React!</p>
+            <p className="mb-0 text-muted">Sistema para exemplificar a construção de um cadastro desenvolvido em React!</p>
         </Main>
     )
 }
