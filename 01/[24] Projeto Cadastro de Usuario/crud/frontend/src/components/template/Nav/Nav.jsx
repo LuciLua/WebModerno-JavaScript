@@ -8,8 +8,8 @@ export default props => {
     return(
         <aside className="menu-area">
             <nav className="menu">
-                <Item label="Início" href="#/" icon="home"/>
-                <Item label="Usuários" href="#/users" icon="users"/>
+                <Item label="Início" href="/" icon="home"/>
+                <Item label="Usuários" href="/users" icon="users"/>
             </nav>
         </aside>
     )
