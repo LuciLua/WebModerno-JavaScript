@@ -1,4 +1,16 @@
 header.header{
     width: 100%;
-    background-color: var(--bg-dark);
+    background-color: #FFF;
+
+    padding: 0 15px;
+
+    overflow: hidden;
+
+    white-space: nowrap;
+
+    box-shadow: var(--shadow);
+}
+
+header.header h1{
+    font-size: 1.8em;
 }

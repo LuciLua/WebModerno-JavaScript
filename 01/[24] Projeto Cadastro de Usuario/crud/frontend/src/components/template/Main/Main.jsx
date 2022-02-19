@@ -7,9 +7,10 @@ import Header from '../Header/Header'
 export default props => {
     return(
         <Fragment>
-            <Header />
+            <Header {...props} />
             <main className="content">
-                Conteúdo
+                {props.title}
+                {props.subtitle}
             </main>
         </Fragment>
     )
