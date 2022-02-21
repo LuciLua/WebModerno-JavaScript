@@ -95,12 +95,12 @@ export default class UserCrud extends Component {
                             >
                             Salvar
                             </button>
-                            <butoon 
+                            <button 
                             className="btn btn-secondary ml-2"
                             onClick={e=> this.clear(e)}
                             >
                             Cancelar
-                            </butoon>
+                            </button>
                         </div>
                     </div>
                 </div>

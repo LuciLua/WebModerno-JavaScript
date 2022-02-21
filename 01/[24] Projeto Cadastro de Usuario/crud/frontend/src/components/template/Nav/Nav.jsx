@@ -10,6 +10,7 @@ export default props => {
             <nav className="menu">
                 <Item label="Início" href="/" icon="home"/>
                 <Item label="Usuários" href="/users" icon="users"/>
+                <Item label="Lista de Usuários" href="/classes" icon="list"/>
             </nav>
         </aside>
     )
