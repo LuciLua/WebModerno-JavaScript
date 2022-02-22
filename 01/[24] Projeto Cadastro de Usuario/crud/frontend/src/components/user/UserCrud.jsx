@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useEffect } from "react";
 
 import axios from 'axios'
 
@@ -19,10 +19,19 @@ const initialState = {
     list: []
 }
 
+
+
 // tentar substituir para versoes mais modernas disso usando funcao...
 export default class UserCrud extends Component {
-
+    
     state = {...initialState}
+
+    // funcao sera chamada quando o componente for ser exibido na tela
+    componentWillMount(){
+        axios.get(baseURL).then(resp=>{
+            this.setState({ list: resp.data })
+        })
+    }
 
     // vai limpar o formulario, o user
     clear(){
@@ -43,9 +52,9 @@ export default class UserCrud extends Component {
         })
     }
 
-    getUpdatedList(user){
+    getUpdatedList(user, add = true){
         const list = this.state.list.filter(u => u.id !== user.id)
-        list.unshift(user) // coloca elemento na primeria posicao do array
+        if(add) list.unshift(user) // coloca elemento na primeria posicao do array
         return list
     }
 
@@ -108,12 +117,63 @@ export default class UserCrud extends Component {
         )
     }
 
+    load(user){
+        this.setState({ user })
+    }
+
+    remove(user){
+        axios.delete(`${baseURL}/${user.id}`).then(resp=> {
+            const list = this.getUpdatedList(user, false)
+            this.setState({ list })
+        })
+    }
+
+    renderTable(){
+        return(
+            <table className="table mt-4">
+                <thead>
+                    <th>Id</th>
+                    <th>Nome</th>
+                    <th>E-mail</th>
+                    <th>Ações</th>
+                </thead>
+                <tbody>
+                    {this.renderRows()}
+                </tbody>
+            </table>
+        )
+    }
+
+    renderRows() {
+        return this.state.list.map(user => {
+            return(
+                <tr key={user.id}>
+                    <td>{user.id}</td>
+                    <td>{user.name}</td>
+                    <td>{user.email}</td>
+                    <td>
+                        <button className="btn btn-warning"
+                        onClick={() => this.load(user)}>
+                            <i className="fa fa-pencil"></i>
+                        </button>
+                        <button className="btn btn-danger ml-2"
+                        onClick={() => this.remove(user)}>
+                            <i className="fa fa-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+            )
+        })
+    }
+
     render(){
+        console.log(this.state.list)
         return(
             <Main {...headerProps}>
                 <h3>Cadastro de Usuário</h3>
                 <hr />
                 {this.renderForm()}
+                {this.renderTable()}
             </Main>
         )
     }
