@@ -4,16 +4,8 @@
   padding: 0;
 }
 
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
 .container{
   padding: 30px;
   min-height: 100vh;
-  background-color: rgb(250, 250, 250);
 }
+

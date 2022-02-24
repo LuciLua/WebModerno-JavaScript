@@ -8,6 +8,10 @@ function Home(){
             <hr />
             <br />
             <p>Para criar um componente dentro do Next que tenha uma url basta criar arquivo dentro de pages e exportar</p>
+            <br />
+            <hr />
+            <br />
+            <p>ola</p>
         </>
     )
 }
