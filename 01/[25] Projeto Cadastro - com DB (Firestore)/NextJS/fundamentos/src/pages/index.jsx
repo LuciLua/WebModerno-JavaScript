@@ -50,4 +50,6 @@ function Home() {
   );
 }
 
+// componentes funcionais: componentes baseados em funcao
+
 export default Home;
