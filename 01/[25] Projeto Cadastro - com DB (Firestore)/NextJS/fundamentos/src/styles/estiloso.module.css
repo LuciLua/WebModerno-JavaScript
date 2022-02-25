@@ -1,0 +1,30 @@
+.container{
+    border: 1px solid rgb(68, 68, 68);
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    
+    display: grid;
+    grid-template-columns: 120px 1fr 1fr;
+    max-width: 800px;
+}
+
+.container h2, .container h1{
+    height: fit-content;
+    margin: 5px;
+    padding: 15px;
+    border: 1px solid rgb(68, 68, 68);
+    background-color: rgb(38, 38, 38);
+    box-shadow: -0.5px -0.5px 0.01px 0.01px rgb(22, 22, 22),
+                0.5px 0.5px 3px 0.01px rgb(22, 22, 22);
+    border-radius: 10px;
+
+    font-size: 14px;
+    user-select: none;
+    cursor: pointer;
+}
+
+.container h2:hover, .container h1:hover{
+    background-color: rgb(44, 44, 44);
+    box-shadow: 0 0 7px rgb(16, 16, 16);
+}
