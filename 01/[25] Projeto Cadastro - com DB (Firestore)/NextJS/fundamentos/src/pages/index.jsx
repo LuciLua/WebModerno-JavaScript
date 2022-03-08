@@ -41,6 +41,7 @@ function Home() {
         {/* cor de forma dinamica */}
         <Navegador destino="/exemplo" label="Exemplo" />
         <Navegador destino="/jsx" label="Jsx" />
+        <Navegador destino="/navegacao" label="Navegacao" cor="#335f" />
       </div>
     </>
   );
