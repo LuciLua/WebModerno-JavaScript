@@ -1,0 +1,28 @@
+.navegador {
+  background-color: dodgerblue;
+
+  height: 60px;
+  min-width: 120px;
+
+  display: flex;
+}
+
+.navegador:last-child{
+  border-radius: 0 5px 5px 0;
+}
+.navegador:first-child{
+  border-radius: 5px 0 0 5px;
+}
+
+.navegador a {
+  cursor: pointer;
+
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #fff;
+  text-decoration: none;
+}

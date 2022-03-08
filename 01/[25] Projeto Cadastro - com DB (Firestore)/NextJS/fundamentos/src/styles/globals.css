@@ -4,8 +4,35 @@
   padding: 0;
 }
 
-.container{
+.container {
   padding: 30px;
   min-height: 100vh;
 }
 
+.btn-back {
+  background-color: crimson;
+  border: none;
+  margin: 5px 0px;
+
+  width: fit-content;
+  height: fit-content;
+
+  border-radius: 7px;
+  display: flex;
+}
+.btn-back:hover {
+  background-color: rgb(189, 20, 54);
+}
+
+.btn-back a {
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+
+  border-radius: 7px;
+}
+:root{
+  --active: rgb(30, 132, 235);
+}
