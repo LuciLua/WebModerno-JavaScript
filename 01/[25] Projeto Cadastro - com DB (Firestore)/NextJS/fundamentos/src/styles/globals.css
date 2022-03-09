@@ -36,3 +36,11 @@
 :root{
   --active: rgb(30, 132, 235);
 }
+
+.sussessfuly{
+  position: absolute;
+  margin: auto;
+  width: 200px;
+  height: 170px;
+  background-color: #fff;
+}
