@@ -6,7 +6,7 @@ function Home() {
   var output = "ola";
   var active = "var(--active)";
 
-  const [path, setPath] = useState("/cliente/");
+  const [path, setPath] = useState("/cliente/id/luci");
   const [type, setType] = useState("id");
   const [client, setClient] = useState("user");
 
@@ -85,8 +85,9 @@ function Home() {
         {/* cor de forma dinamica */}
         <Navegador destino="/exemplo" label="Exemplo" />
         <Navegador destino="/jsx" label="Jsx" />
+        <Navegador destino="/estado" label="Estado" />
         <Navegador destino="/navegacao" label="Navegacao I" cor="#335f" />
-        <Navegador label="Navegacao II" cor="#335f" destino={path} />
+        <Navegador destino={path} label="Navegacao II" cor="#335f" />
         <input
           autoComplete="off"
           type="text"
@@ -106,7 +107,7 @@ function Home() {
         <Navegador
           label="Salvar"
           cor="green"
-          destino=""
+          destino="/"
           click={() => {
             finalPath();
           }}
