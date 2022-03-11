@@ -86,6 +86,10 @@ function Home() {
         <Navegador destino="/exemplo" label="Exemplo" />
         <Navegador destino="/jsx" label="Jsx" />
         <Navegador destino="/estado" label="Estado" />
+        <Navegador
+          label="req res"
+          destino={`http://localhost:3000/api/clientes/${client}`}
+        />
         <Navegador destino="/navegacao" label="Navegacao I" cor="#335f" />
         <Navegador destino={path} label="Navegacao II" cor="#335f" />
         <input
