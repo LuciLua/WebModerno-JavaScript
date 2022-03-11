@@ -41,6 +41,7 @@ function Home() {
     border: "none",
     height: "60px",
     width: "100px",
+    borderRadius: "0"
   };
 
   return (
@@ -87,8 +88,12 @@ function Home() {
         <Navegador destino="/jsx" label="Jsx" />
         <Navegador destino="/estado" label="Estado" />
         <Navegador
-          label="req res"
-          destino={`http://localhost:3000/api/clientes/${client}`}
+          label="Integracao #1"
+          destino="/integracao1"
+        />
+        <Navegador
+          label="Integracao GitHub"
+          destino="/integracaoTesteGitHub"
         />
         <Navegador destino="/navegacao" label="Navegacao I" cor="#335f" />
         <Navegador destino={path} label="Navegacao II" cor="#335f" />

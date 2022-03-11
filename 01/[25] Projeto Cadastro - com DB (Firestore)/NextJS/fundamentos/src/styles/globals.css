@@ -44,3 +44,30 @@
   height: 170px;
   background-color: #fff;
 }
+
+input{
+  background-color: transparent;
+  border-radius: 30px;
+  border: 1px solid #fff;
+  height: 30px;
+  color: #fff;
+  padding: 18px 15px;
+}
+
+button{
+  background-color: rgb(63, 130, 255);
+  border-radius: 30px;
+  height: 40px;
+  border: none;
+  color: #fff;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+button:hover{
+  background-color: rgb(49, 112, 230);
+}

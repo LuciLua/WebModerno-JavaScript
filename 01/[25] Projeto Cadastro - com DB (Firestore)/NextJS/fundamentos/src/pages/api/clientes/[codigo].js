@@ -4,7 +4,7 @@ export default function handler(req, res){
 
     res.status(200).json({
         id: req.query.codigo,
-        nome: `Maria ${codigo}`,
-        email: `dasdas${codigo}@gmail.com`
+        nome: `${codigo} MyName`,
+        email: `${codigo}MyName@gmail.com`
     })
 }
