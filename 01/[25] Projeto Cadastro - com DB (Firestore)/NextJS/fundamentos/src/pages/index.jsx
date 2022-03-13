@@ -41,7 +41,7 @@ function Home() {
     border: "none",
     height: "60px",
     width: "100px",
-    borderRadius: "0"
+    borderRadius: "0",
   };
 
   return (
@@ -87,14 +87,8 @@ function Home() {
         <Navegador destino="/exemplo" label="Exemplo" />
         <Navegador destino="/jsx" label="Jsx" />
         <Navegador destino="/estado" label="Estado" />
-        <Navegador
-          label="Integracao #1"
-          destino="/integracao1"
-        />
-        <Navegador
-          label="Integracao GitHub"
-          destino="/integracaoTesteGitHub"
-        />
+        <Navegador label="Integracao #1" destino="/integracao1" />
+        <Navegador label="Integracao GitHub" destino="/integracaoTesteGitHub" />
         <Navegador destino="/navegacao" label="Navegacao I" cor="#335f" />
         <Navegador destino={path} label="Navegacao II" cor="#335f" />
         <input
@@ -121,6 +115,7 @@ function Home() {
             finalPath();
           }}
         />
+        <Navegador label="Conteudo estático" cor="#848ab8" destino="/estatico"/>
       </div>
     </>
   );
