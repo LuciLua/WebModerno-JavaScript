@@ -1,11 +1,11 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
-
 export default function Home() {
   return (
-    <div className="">
-      <h1>ola</h1>
+    <div className={`
+    flex h-screen
+    justify-center
+    items-center
+    bg-gradient-to-r from-purple-400 via-white to-blue-300`}>
+      <span className="text-4xl">Texto</span>
     </div>
   )
 }
