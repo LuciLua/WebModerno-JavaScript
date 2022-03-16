@@ -14,6 +14,7 @@ export default function Tabela(props: TabelaProps) {
 
     function renderizarCabecalho() {
         return (
+
             <tr>
                 <th className={`text-left p-4`}>Codigo</th>
                 <th className={`text-left p-4`}>Nome</th>
@@ -87,7 +88,9 @@ export default function Tabela(props: TabelaProps) {
             `}>
                 {renderizarCabecalho()}
             </thead>
-            {renderizarDados()}
+            <tbody>
+                {renderizarDados()}
+            </tbody>
         </table>
     )
 }
