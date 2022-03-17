@@ -5,6 +5,9 @@ import Botao from "./Botao";
 
 interface FormularioProps {
     cliente: Cliente
+    clienteMudou?: (cliente: Cliente) => void
+    // funcao q n recebe nenhum parametro e n retorna nd tbm
+    cancelado?: () => void
 }
 
 export default function Formulario(props: FormularioProps) {
@@ -35,10 +38,17 @@ export default function Formulario(props: FormularioProps) {
                 valorMudou={setIdade}
             />
             <div className="mt-7 flex justify-end">
-                <Botao cor="blue" className="mr-2">
+                <Botao
+                    cor="blue"
+                    className="mr-2"
+                    onClick={() => props.clienteMudou?.(new Cliente(nome, +idade, id))}
+                >
                     {id ? 'Alterar' : 'Salvar'}
                 </Botao>
-                <Botao cor="gray">
+                <Botao
+                    cor="gray"
+                    onClick={() => props.cancelado()}
+                >
                     Cancelar
                 </Botao>
             </div>
