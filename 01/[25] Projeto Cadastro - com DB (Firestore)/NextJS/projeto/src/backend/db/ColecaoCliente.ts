@@ -1,10 +1,10 @@
-import firebase from "firebase";
+import firebase from "../config";
 import Cliente from "../../core/Cliente";
 import ClienteRepositorio from "../../core/ClienteRepositorio";
 
 export default class ColecaoCliente implements ClienteRepositorio {
+  // converte uma classe pra algo que vai ser persistido no firestore
   #conversor = {
-    // converte uma classe pra algo que vai ser persistido no firestore
     toFirestore(cliente: Cliente) {
       return {
         nome: cliente.nome,
@@ -16,7 +16,7 @@ export default class ColecaoCliente implements ClienteRepositorio {
       snapshot: firebase.firestore.QueryDocumentSnapshot,
       options: firebase.firestore.SnapshotOptions
     ) {
-      const dados = snapshot.data(options);
+      const dados = snapshot?.data(options);
       return new Cliente(dados.nome, dados.idade, snapshot.id);
     },
   };
@@ -40,10 +40,10 @@ export default class ColecaoCliente implements ClienteRepositorio {
   }
 
   async obterTodos(): Promise<Cliente[]> {
-    const query = await this.colecao().get()
-    return query.docs.map(doc => doc.data()) ?? [] // entrega os proprios clientes
+    const query = await this.colecao().get();
+    return query.docs.map((doc) => doc.data()) ?? []; // entrega os proprios clientes
     // caso n retorne nada, retorne um array vazio
-}
+  }
 
   private colecao() {
     return firebase
