@@ -1,15 +1,68 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>Binding</title>
     <link rel="stylesheet" href="/css/estilo.css">
     <script src="/js/vue.min.js"></script>
 </head>
+
 <body class="exercicio">
 
+    <div id="app">
+        <div>
+
+            <p>{{link}}</p>
+            <p>
+                <!-- nao da certo -->
+                <a href="{{ link }}">Canal (nao da certo)</a>
+            </p>
+            <p>
+                <!-- diretiva: propriedades personalizadas -->
+                <!-- v-bind:nomeDaPropriedade ... siginifica que o conteudo dessa propriedade precisa ser interpolado pelo vue-->
+                <a v-bind:href="link">Canal</a>
+            </p>
+            <p>
+                <!-- forma reduzida para fazer bind -->
+                <a :href="link">Canal</a>
+            </p>
+        </div>
+        <div>
+            <p>
+                <!-- atualizacao em duas direções, ou bind bidirecional -->
+                <input type="text" v-model="nome">
+
+                <!-- nao funciona -->
+                <!-- <input type="text" value="nome"> -->
+                <!-- funciona: faz um binding. Mas nao vai gerar a atualizacao em duas direcoes -->
+                <!-- <input type="text" :value="nome"> -->
+                <span>{{nome}}</span>
+            </p>
+        </div>
+    </div>
+
     <script>
-        // ...
+
+        new Vue({
+
+            el: "#app",
+            data: {
+                link: "https://youtube.com/cod3rcursos",
+                nome: "Maria"
+            },
+            watch: {
+                nome(novoValor){
+                    // sempre que o nome for alterado essa funcao vai ser chamada
+                    // na mudança de um atributo, faça tal coisa...
+                    console.log(novoValor.toUpperCase())
+                }
+            }
+
+        })
+
+
     </script>
 </body>
+
 </html>
