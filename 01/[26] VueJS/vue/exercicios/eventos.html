@@ -1,15 +1,68 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>Eventos</title>
     <link rel="stylesheet" href="/css/estilo.css">
     <script src="/js/vue.min.js"></script>
 </head>
-<body class="exercicio">
 
+<body class="exercicio">
+    <div id="app">
+        <p>{{ contador }}</p>
+        <p>
+            <!-- nome do metodo: add -->
+            <button v-on:click="add">
+                +1
+            </button>
+            <!-- @ para eventos -->
+            <button @click="contador -= 2">
+                -2
+            </button>
+        </p>
+        <p @mousemove="atualizarPosicao">
+            Coordenadas: x:{{x}} y:{{y}}
+            <span @mousemove.stop>
+                ... nao
+            </span>
+            <span @mousemove="atualizarPosicao">
+                ... sim
+            </span>
+            <span @mousemove="stop">
+                ... nao
+            </span>
+        </p>
+        <input placeholder="k ou enter invoca method" type="text" @keyup.enter="alerta" @keyup.k="letraK">
+    </div>
     <script>
-        // ...
+        new Vue({
+            el: "#app",
+            data: {
+                x: 0,
+                y: 0,
+                contador: 0
+            },
+            methods: {
+                add() {
+                    this.contador++
+                },
+                atualizarPosicao(e) {
+                    this.x = e.clientX
+                    this.y = e.clientY
+                },
+                stop(e) { // mesma coisa que o @mousemove.stop
+                    e.stopPropagation()
+                },
+                alerta() {
+                    alert('Enter!')
+                },
+                letraK() {
+                    alert('K!')
+                }
+            }
+        })
     </script>
 </body>
+
 </html>
