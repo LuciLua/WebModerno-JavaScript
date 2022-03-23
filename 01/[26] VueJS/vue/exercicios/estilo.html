@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>Aplicando Estilo</title>
@@ -11,10 +12,21 @@
         }
     </style>
 </head>
-<body class="exercicio">
 
+<body class="exercicio">
+    <!-- 1 nome da classe e depois o valor boolean... ai tem a aplicacao condicional se o estilo vai ser aplicado ou nao-->
+    <div style="cursor: pointer; user-select: none;" id="app" @click="aplicarCor = !aplicarCor"
+        :class="{vermelho: aplicarCor}">
+        Teste
+    </div>
     <script>
-        // ...
+        new Vue({
+            el: "#app",
+            data: {
+                aplicarCor: false
+            }
+        })
     </script>
 </body>
+
 </html>
