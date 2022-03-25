@@ -1,15 +1,41 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>Componente</title>
     <link rel="stylesheet" href="/css/estilo.css">
     <script src="/js/vue.min.js"></script>
 </head>
+
 <body class="exercicio">
 
+    <div id="app">
+        <saudacao nome="Aninha"></saudacao>
+        <saudacao nome="Pedro"></saudacao>
+    </div>
+
     <script>
-        // ...
+        // 1 parametr: nome do componente
+        // 2 parametr: objeto que ira dizer quais sao as propriedades
+        Vue.component('saudacao',
+            {
+                props: ['nome'],
+                /* data: function(){
+                    return {
+                        contador: 0
+                    }
+                },
+                */
+                template: `
+                <div>Bom dia {{nome}}!</div>  
+                `
+            })
+
+        new Vue({
+            el: "#app"
+        })
     </script>
 </body>
+
 </html>
