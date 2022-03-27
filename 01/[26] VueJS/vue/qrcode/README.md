@@ -7,4 +7,4 @@
 
 ## 🖼 Preview
 
-<img src="print.png"/>
+<img src="preview.png"/>

@@ -1,28 +1,102 @@
 @font-face {
-    font-family: 'RobotoMono';
-    src: url('../fonts/RobotoMono-Thin.ttf');
-  }
-  
-  * {
-    font-family: 'RobotoMono', monospace;
-  }
+  font-family: "RobotoMono";
+  src: url("../fonts/RobotoMono-Thin.ttf");
+}
+
+* {
+  font-family: "RobotoMono", monospace;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    
-    color: #FFF;
-    background: linear-gradient(to right, rgb(19, 106, 138), rgb(38, 120, 113));
+  display: flex;
+  justify-content: center;
+  text-align: center;
+
+  width: 100%;
+  height: 100vh;
+
+  color: #fff;
+  background: linear-gradient(to right, rgb(45, 151, 189), rgb(27, 165, 154));
+}
+
+.qrcodeArea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+
+  height: fit-content;
+  width: fit-content;
+
+  margin: auto;
+}
+
+.target {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 30px;
+  border-radius: 15px;
+
+  margin-bottom: 30px;
+
+  position: relative;
+}
+
+.target::before {
+  content: '';
+  position: absolute;
+  background-color: #000;
+  width: 40px;
+  height: 40px;
+  top: 30px;
+  left: 70%;
+
+  transform: rotateZ(45deg);
+}
+
+.target p {
+  font-size: 30px;
+  font-weight: 900;
+  font-family: Arial, Helvetica, sans-serif;
+
+  z-index: 10;
+  position: relative;
+}
+
+h1 {
+  margin-bottom: 20px;
+  margin-top: 40px;
 }
 
 input {
-    font-size: 2em;
-    margin-bottom: 30px;
+  font-size: 1.7em;
+  margin-bottom: 50px;
+  border: none;
+  border-radius: 10px;
+  padding: 22px 15px;
+
+  background-color: rgba(255, 255, 255, 0.466);
+  color: #fff;
 }
 
 .output {
-    border: 1px solid #222;
-    padding: 30px 15px;
-    background-color: #0006;
+  border: 5px solid rgb(0, 0, 0);
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+
+  padding: 20px;
+
+  width: fit-content;
+  height: fit-content;
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: auto;
 }

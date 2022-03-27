@@ -13,30 +13,56 @@
 
     <div id="app">
         <h1>{{ title }}</h1>
-        <input type="text" placeholder="Digite para gerar" :value="text" size="25" @input="onData">
-
-        <div v-if="text" class="output">
-            <img :src="newQRCode" alt="QRCode">
+        <input type="text" placeholder="Digite para gerar" v-model="text" size="25">
+        <div class="qrcodeArea">
+            <div class="target">
+                <p>
+                    {{target}}
+                </p>
+            </div>
+            <div v-if="text" class="output">
+                <img :src="newQRCode" alt="QRCode">
+            </div>
         </div>
     </div>
 
     <script>
+        /* new Vue({
+             el: "#app",
+             data: {
+                 title: 'Gerador QRCode',
+                 text: 'https://www.luci-lua.tk/',
+                 qrcode: new QRious({ size: 300 }) // olhar documentacao do qrious
+             },
+             computed: {
+                 newQRCode() {
+                     this.qrcode.value = this.text
+                     return this.qrcode.toDataURL()
+                 }
+             },
+             methods: {
+                 onData(event) {
+                     this.text = event.target.value
+                 }
+             }
+         })
+         */
+
+        // refatorando
+        // tambem tirei @input="onData" do html e substitui :value="text" por v-model="text"
         new Vue({
             el: "#app",
             data: {
-                title: 'Gerador QRCode',
+                title: 'Gerador de QRCode',
                 text: 'https://www.luci-lua.tk/',
-                qrcode: new QRious({ size: 300 }) // olhar documentacao do qrious
+                qrcode: new QRious({ size: 270 }), // olhar documentacao do qrious
+                target: "SCAN ME"
             },
             computed: {
                 newQRCode() {
-                    this.qrcode.value = this.text
-                    return this.qrcode.toDataURL()
-                }
-            },
-            methods: {
-                onData(event) {
-                    this.text = event.target.value
+                    const { qrcode, text } = this
+                    qrcode.value = text
+                    return qrcode.toDataURL()
                 }
             }
         })
