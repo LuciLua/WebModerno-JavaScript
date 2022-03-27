@@ -11,8 +11,35 @@
 
 <body>
 
+    <div id="app">
+        <h1>{{ title }}</h1>
+        <input type="text" placeholder="Digite para gerar" :value="text" size="25" @input="onData">
+
+        <div v-if="text" class="output">
+            <img :src="newQRCode" alt="QRCode">
+        </div>
+    </div>
+
     <script>
-        // ...
+        new Vue({
+            el: "#app",
+            data: {
+                title: 'Gerador QRCode',
+                text: 'https://www.luci-lua.tk/',
+                qrcode: new QRious({ size: 300 }) // olhar documentacao do qrious
+            },
+            computed: {
+                newQRCode() {
+                    this.qrcode.value = this.text
+                    return this.qrcode.toDataURL()
+                }
+            },
+            methods: {
+                onData(event) {
+                    this.text = event.target.value
+                }
+            }
+        })
     </script>
 </body>
 
