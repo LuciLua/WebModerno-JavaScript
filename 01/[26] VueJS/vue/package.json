@@ -4,6 +4,7 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
+		"teste": "http-server ./teste -c-1",
 		"exercicios": "http-server ./exercicios -c-1",
 		"qrcode": "http-server ./qrcode -c-1",
 		"sales": "http-server ./sales -c-1"
