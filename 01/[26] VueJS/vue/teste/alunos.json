@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "nome": "Luci",
+        "curso": "Cinema e Audiovisual"
+    },
+    {
+        "id": 2,
+        "nome": "Matheus",
+        "curso": "Artes Visuais"
+    },
+    {
+        "id": 3,
+        "nome": "Karina",
+        "curso": "Design"
+    },
+    {
+        "id": 4,
+        "nome": "Beatriz",
+        "curso": "Moda"
+    },
+    {
+        "id": 5,
+        "nome": "Fernando",
+        "curso": "Licenciatura"
+    }
+]

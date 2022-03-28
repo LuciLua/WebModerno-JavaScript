@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testes VueJS</title>
+    <link rel="stylesheet" href="bootstrap.min.css" type="text/css">
+    <script src="vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div class="container">
+            <h1 class="mt-3">{{ title }}</h1>
+            <div class="container">
+                <table class="table">
+                    <thead>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Curso</th>
+                    </thead>
+                    <tbody v-for="aluno in alunos">
+                        <td>{{aluno.id}}</td>
+                        <td>{{aluno.nome}}</td>
+                        <td v-unica="'Recebendo String do Curso'">{{ aluno.curso }}</td>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        Vue.directive('unica', {
+            inserted(el, binding){
+                const curso = (el.innerHTML).replace(/i/g, '!')
+                el.innerHTML = `${binding.value} + ${curso}` // el.innerHTML é o que o componente com a v-unica vai imprimir na tela
+            }
+        })
+
+        new Vue({
+            el: "#app",
+            data: {
+                title: "Testes VueJS",
+                alunos: null
+            },
+            methods: {
+                getAlunos(){
+                    fetch('alunos.json')
+                    .then(resp => resp.json())
+                    .then(data => this.alunos = data)
+                }
+            },
+            mounted(){
+                this.getAlunos()
+            }
+        })
+    </script>
+</body>
+</html>
