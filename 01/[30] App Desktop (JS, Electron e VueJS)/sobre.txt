@@ -1,0 +1,4 @@
+Criar aplicações multiplataforma com electron
+Um dos principais princípios do electron: Inter-Process Communication (IPC): 
+comunicação entre processos
+
