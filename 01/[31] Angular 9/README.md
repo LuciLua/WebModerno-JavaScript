@@ -79,6 +79,7 @@ export class HomeComponent implements OnInit {
 
 | <u>AppModule</u> |     |
 | :--------------: | :-: |
+
 |<i>BOOTSTRAP [^1]</i>
 |DECLARATIONS [^2]|IMPORTS[^3]
 
@@ -102,3 +103,237 @@ export class HomeComponent implements OnInit {
 [^3]: Imports: Importar outros módulos, um modulo ppode depender de outro modulo - Modulo A, Modulo B, Modulo C
 [^4]: Exports: São colocados todos os componentes, diretivas e pipes que serão visíveis para fora do módulos - Componentes, Diretivas e Pipes
 [^5]: Providers: Declara os services - Service A, Service B, Service C,
+
+---
+
+### Elementos do Angular
+
+<dl>
+  <dt>
+    Componentes
+  </dt>
+  <dd>
+    (HTML, CSS TS => home.component.html, home.component.css, home.component.ts)
+
+    <app-home> </app-home>
+
+  </dd>
+  <dt>
+    Diretivas
+  </dt>
+    <dd>
+      Altera a <u>aparência</u> e o <u>comportamento</u> de um elemento, componente ou outra diretiva.
+
+```ts
+@Directive({
+  selector: "[appRed]",
+})
+export class RedDirective {
+  constructor(el: ElementRef) {
+    el.nativeElement.style.color = "#e35e6b";
+  }
+}
+```
+
+```html
+<i class="material-icons v-middle"> favorite </i>
+```
+
+-> ♡
+
+```html
+<i class="material-icons v-middle" appRed> favorite </i>
+```
+
+-> ❤
+
+> @Directive => Decorator (Padrão de projeto para evitar herança e trabalhar com composição, para definir que aquela classe seja responsável por alguma coisa naquele componente)
+
+> Diretiva de atributo consegue tanto alterar estilo como também o comportamento
+
+##### <u>Diretiva estrutural</u>
+
+Altera o alyout <u>adicionando</u> e <u>removendo</u> elementos da <u>DOM</u>(Document Object Model).
+
+> Diferença (visualmente) entre diretiva estrutural para uma de atributo é o asterisco na frente
+
+```html
+<form *ngIf="product" class="product-form"></form>
+```
+
+```html
+<ul>
+  <li *ngFor="let product of products">{{ product.name }}</li>
+</ul>
+```
+
+##### <u>Propriedade Binding</u>
+
+###### <u>Binding de tributo</u>
+
+> Precisa haver comunicação entre o TS file (codigo) e o template (HTML file). Um das formas é o <u>binding de atributo</u>
+
+```html
+<table [dataSource]="products"></table>
+```
+
+> Se nao colocar entre colchetes, interpreta como string, com colchete: olha pro componente procurando atributo com esse mesmo nome.
+
+> Forma que se tem parar fazer uma ligação: usando colchetes associado a um atributo
+
+> [dataDource] do HTML file apontando para products no TSFile
+
+```ts
+@Component({
+  selector: "app-product-read",
+  templateUrl: "./product-read.component.html",
+  styleUrls: ["./product-read.component.css"],
+})
+export class ProductReadComponent implements OnInit {
+  products: Product[];
+}
+```
+
+###### <u>Binding de Evento</u>
+
+> Para ligar evento em um método: usa-se a sintaxe dos <u>parênteses</u>
+
+```html
+<button mat-raised-button (click)="createProduct()" color="primary">
+  Salvar
+</button>
+```
+
+> (click)="createProduct()" no HTML file com o createProduct(): void { } no TS File
+
+```ts
+@Component({
+  selector: "app-product-create",
+  templateUrl: "./product-create.component.html",
+  styleUrls: ["./product-create.component.css"],
+})
+export class ProductCreateComponent implements OnInit {
+  createProduct(): void {
+    // ...
+  }
+}
+```
+
+#### Resumindo bindings:
+
+- de atributos usa-se <b><u>COLCHETES</b></u>
+- de eventos usa-se <b><u>PARÊNTESES</b></u>
+
+---
+
+### 🥾 One Way Data Binding
+
+> (bataBinding de uma unica direcao)
+
+```html
+<input [value]="nome" />
+```
+
+```ts
+nome: string;
+```
+
+> Componente dentro do TS muda-se nome para "Rebeca" então é feita a alteração no componente visual HTML.
+
+> TS > > HTML (Sentido único)
+
+### 👣 <u>Two</u> Way Data Binding
+
+> (bataBinding de duas direcoes)
+
+```html
+<input [(ngModel)]="nome" />
+```
+
+```ts
+nome: string;
+```
+
+> TS > > HTML && HTML > > TS (Duplo sentido)
+
+> Para usa-la: deve-se usar <b>[( colchetes e parenteses )] </b>
+
+  </dd>
+  <dt>
+    Rotas (Angular Router)
+  </dt>
+  <dd>
+
+> Mapeamento entre a URL e mapear para o componente
+
+```bash
+/home [Comp. Home]
+```
+
+```bash
+/produto [Comp Prod.]
+```
+
+```bash
+/usuário [Comp. Usuário]
+```
+> Router outlet: vai injetar dentro dele outros componentes de acordo com a navegação que foi feita
+
+> 🖱: /Home => Router Outlet[Comp. Home]
+
+> 🖱: /produto => Router Outlet[Comp. Prod]
+
+> 🖱: /usuario => Router Outlet[Comp. Usuário]
+
+  </dd>
+  <dt>
+    Pipes
+  </dt>
+  <dd>
+
+> Processamentos em cima de variáveis
+
+> Vai interpretar o que estiver dentro das "double-mustaches": {{}}
+
+> Pipe para fazer formatação de um dado, para colocar simbolo do real por exemplo
+
+```html
+<p>
+  O vencimento é {{ produto.vencimento | date }}
+</p>
+
+```
+
+> Alguns pipes recebem parâmetros
+
+```html
+
+<td mat-cell *matCellDef="let product">
+  {{ product.price | moeda: 'BRL' }}
+</td>
+```
+
+> Consegue-se ter também uma cadeia de processamento/pipes
+
+```html
+
+<p>
+  O vencimento do produto é
+  {{ produto.vencimento | date: 'fullDate' | uppercase }}
+</p>
+```
+
+  </dd>
+  <dt>
+    Observables
+  </dt>
+  <dd>
+    mean observables
+  </dd>
+  <dt>
+    Services
+  </dt>
+  <dd>
+    mean services
+  </dd>
+</dl>
