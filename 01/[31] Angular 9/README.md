@@ -328,7 +328,73 @@ nome: string;
     Observables
   </dt>
   <dd>
-    mean observables
+
+> Angular usa ReactiveX (Framework)
+
+> Programação reativa: que não fica chamando o tempo todo, é necessário acontecer alguma coisa, como um evento, para o codigo ser executado
+
+```ts
+import { Observable } from "rxjs";
+```
+
+#### O Padrão Observer
+
+> O padrao de projeto mais utilizado na web
+
+> Padrão orientado a <b>Evento</b>!
+
+> Padrões dos GoF
+
+> [Subject] => Quem tem a capacidade de monitorar e detectar quando o evento acontece
+
+> [[Observer]][[Observer]][[Observer]][[Observer]] => Código ou as pessoas interessadas em determinado evento
+
+> [[Observer]] => Cada observer precisa se registrar no [subject] dizendo que ele é interessado no evento
+
+> [Observer]<=(3)notifica= [subject] =(1)detecta=> [evento] <=(2)registrar= [observer]
+
+> Ex: evento de compra. observador para manda msg pro sistema, outro para dar baixa do estoque... Tudo isso é ativado no evento venda. Subject quem monitora evento compra e o observador por exemplo fala pro usuario que a compra foi finalizada.
+
+
+#### Entendendo Observables
+
+##### <u>callbacks</u>
+
+Funções que recebem como parâmetro outras funções também sao chamadas de callbacks
+
+callbacks => surgiu Promises
+##### <u>Promises</u>
+
+ Capacidade de encadear varias chamadas sem aninhamento causada pelas callbacks
+
+ problemas: executa uma unica vez, não reutilizavel
+
+promises => surgiu Observables
+##### <u>Observables</u>
+
+Encapsula questão do padrão observer
+Padrão observer é a base da programação reativa
+
+✅ Reusável
+
+✅ Stream dados
+
+✅ Operadores
+
+```ts
+criarNoBackend(produto: Produto): Observable<Produto> {
+  return this.http.post<Produto>(this.url, produto);
+}
+```
+```ts
+criarProduto(): void {
+  this.criarNoBackend(this.produto).subscribe(() => {
+    this.exibirMensagem("Salvo com sucesso!");
+  });
+}
+```
+
+
   </dd>
   <dt>
     Services
