@@ -277,6 +277,7 @@ nome: string;
 ```bash
 /usuário [Comp. Usuário]
 ```
+
 > Router outlet: vai injetar dentro dele outros componentes de acordo com a navegação que foi feita
 
 > 🖱: /Home => Router Outlet[Comp. Home]
@@ -298,28 +299,21 @@ nome: string;
 > Pipe para fazer formatação de um dado, para colocar simbolo do real por exemplo
 
 ```html
-<p>
-  O vencimento é {{ produto.vencimento | date }}
-</p>
-
+<p>O vencimento é {{ produto.vencimento | date }}</p>
 ```
 
 > Alguns pipes recebem parâmetros
 
 ```html
-
-<td mat-cell *matCellDef="let product">
-  {{ product.price | moeda: 'BRL' }}
-</td>
+<td mat-cell *matCellDef="let product">{{ product.price | moeda: 'BRL' }}</td>
 ```
 
 > Consegue-se ter também uma cadeia de processamento/pipes
 
 ```html
-
 <p>
-  O vencimento do produto é
-  {{ produto.vencimento | date: 'fullDate' | uppercase }}
+  O vencimento do produto é {{ produto.vencimento | date: 'fullDate' | uppercase
+  }}
 </p>
 ```
 
@@ -355,7 +349,6 @@ import { Observable } from "rxjs";
 
 > Ex: evento de compra. observador para manda msg pro sistema, outro para dar baixa do estoque... Tudo isso é ativado no evento venda. Subject quem monitora evento compra e o observador por exemplo fala pro usuario que a compra foi finalizada.
 
-
 #### Entendendo Observables
 
 ##### <u>callbacks</u>
@@ -363,13 +356,15 @@ import { Observable } from "rxjs";
 Funções que recebem como parâmetro outras funções também sao chamadas de callbacks
 
 callbacks => surgiu Promises
+
 ##### <u>Promises</u>
 
- Capacidade de encadear varias chamadas sem aninhamento causada pelas callbacks
+Capacidade de encadear varias chamadas sem aninhamento causada pelas callbacks
 
- problemas: executa uma unica vez, não reutilizavel
+problemas: executa uma unica vez, não reutilizavel
 
 promises => surgiu Observables
+
 ##### <u>Observables</u>
 
 Encapsula questão do padrão observer
@@ -386,6 +381,7 @@ criarNoBackend(produto: Produto): Observable<Produto> {
   return this.http.post<Produto>(this.url, produto);
 }
 ```
+
 ```ts
 criarProduto(): void {
   this.criarNoBackend(this.produto).subscribe(() => {
@@ -394,12 +390,141 @@ criarProduto(): void {
 }
 ```
 
-
   </dd>
   <dt>
     Services
   </dt>
   <dd>
-    mean services
+
+> São classes que têm como objetivo <b>organizar</b> e <b>compartilhar</b> <u>métodos</u> e <u>dados</u> entre <b>componentes</b>.
+
+> Pode-se usar services dentro de componentes e de diretivas. ideia: separar as responsabilidades
+
+> Responsabilidade de mostrar algo visual: componente.
+
+> Services na responsabilidade da parte nao visual.
+
+> Viabilizar compartilhamento entre componentes.
+
+#### Motivação para o Service
+
+> Deve-se ter lógicas relacionadas com a parte visual
+
+> Service: une as lógicas duplicadas usadas por mais de um componente por exemplo
+
+> Services tem que ter coerência de estar juntos
+
+> Quando não há coerência, criar mais services
+
+> Para deixar componente mais focado na parte visual
+
+```bash
+ng g s services/product
+```
+
+> Criação do service vai ser gerenciada pelo angular
+
+> g: generate s:service c:component
+
+```ts
+@Injectable({
+  providedIn: "root",
+})
+export class ProductService {
+  // ...
+}
+```
+
+> No lugar do "root" pode-se colocar referencia para um módulo
+
+> @Injectable: vai ser possivel ser injetada em outras classes
+
+> para usar service dentro do componente: a partir da injecao de dependencia
+
+> Só exite um injetor raiz da aplicação
+
+> sempre que eu injetar um produto service dentro de um componente ou diretiva, o angular vai devolver a mesma instancia
+
+> instancia sempre sera devolvida quando eu pedir
+
+#### Injeção de <b><u>Dependências</u></b>
+
+É um padrão no qual a classe recebe as <b>dependencias</b> de uma <b>fonte externa</b> ao invez de criar por conta prórpia.
+
+###### SEM Injeção de Dependencia
+>  Ex.: 
+> Carro foi responsável por criar uma instancia de motor
+
+classe Carro
+```ts
+class Carro {
+  motor: Motor
+
+  constructor(){
+    this.motor = new Motor()
+  }
+}
+```
+classe Motor
+```ts
+class Motor {
+  cilindrada: number
+
+  constructor(cilindrada: number) {
+      this.cilindrada = cilindrada
+    }
+  }
+```
+
+> Instanciei um obj motor e atribui a variavel dentro de carro. Então quando o carro for instanciado ele terá automaticamente um motor. Carro foi responsável por criar instancia de motor 
+
+> ### Carro => Motor
+###### COM Injeção de Dependencia
+
+classe Carro
+```ts
+class Carro {
+  motor: Motor
+
+  constructor(motor: Motor){
+    this.motor = motor
+  }
+}
+```
+classe Motor
+```ts
+class Motor {
+  cilindrada: number
+
+  constructor(cilindrada: number) {
+      this.cilindrada = cilindrada
+    }
+  }
+```
+> Passando motor (ja construido) como parametro para o carro
+
+> Fonte externa (fábrica) ja passa motor construido para dentro do carro
+
+> Frameworks que ajudam no processo de injecao de dependencias
+
+> ### Motor => Carro
+
+---
+
+- Angular Framework Instancia uma classe e cria uma instância, passa o service, criando um componente
+
+- Para cada tag vai ter uma instancia
+
+- providedIn: "root" é um alias para AppModule, ele é um Injector.
+
+### Singletons
+
+Apenas uma uncia instancia dentro do escopo de um Injector 
+
+Services são <b>singletons</b> dentro do escopo de um <b>injector</b>
+
+1. ModuleInjector: @NgModule @Injectable
+2. ElementInjector: @Directive @Component
+
   </dd>
 </dl>
