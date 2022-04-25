@@ -2,6 +2,14 @@
 <p [id]="atributoLegal">product-create works!</p>
 
 <!-- binding de evento -->
-<button (click)="fazerAlgo()">
+<!-- <button (click)="fazerAlgo()">
     Fazer algo
+</button> -->
+
+
+<button mat-raised-button (click)="createProduct()" color="primary">
+    Salvar
+</button>
+<button mat-raised-button (click)="cancel()" color="secondary">
+    Cancela
 </button>
