@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { HeaderComponent } from "./components/template/header/header.component";
 import { FooterComponent } from "./components/template/footer/footer.component";
 import { NavComponent } from "./components/template/nav/nav.component";
+import { ProductCreateComponent } from "./components/product/product-create/product-create.component";
 // @angular/material
 import { MatButtonModule } from "@angular/material/button";
 import { MatToolbarModule } from "@angular/material/toolbar";
@@ -16,14 +17,17 @@ import { MatCardModule } from "@angular/material/card";
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatListModule } from "@angular/material/list";
 import { MatSnackBarModule } from "@angular/material/snack-bar";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatInputModule } from "@angular/material/input";
 // Views
 import { HomeComponent } from "./views/home/home.component";
 import { ProductCrudComponent } from "./views/product-crud/product-crud.component";
 // Diretivas
 import { RedDirective } from "./directives/red.directive";
 import { ForDirective } from "./directives/for.directive";
-import { ProductCreateComponent } from "./components/product/product-create/product-create.component";
-
+// @angular/forms
+import { FormsModule } from "@angular/forms";
+// @angular/common
 import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
@@ -50,6 +54,9 @@ import { HttpClientModule } from "@angular/common/http";
     MatButtonModule,
     MatSnackBarModule,
     HttpClientModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
