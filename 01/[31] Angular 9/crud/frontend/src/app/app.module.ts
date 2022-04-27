@@ -29,6 +29,7 @@ import { ForDirective } from "./directives/for.directive";
 import { FormsModule } from "@angular/forms";
 // @angular/common
 import { HttpClientModule } from "@angular/common/http";
+import { ProductReadComponent } from './components/product/product-read/product-read.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { HttpClientModule } from "@angular/common/http";
     RedDirective,
     ForDirective,
     ProductCreateComponent,
+    ProductReadComponent,
   ],
   imports: [
     BrowserModule,
