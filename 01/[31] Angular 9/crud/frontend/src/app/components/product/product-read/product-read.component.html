@@ -1,1 +1,20 @@
-<p>product-read works!</p>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Preço</th>
+        </tr>
+    </thead>
+    <tbody>
+        <td>
+            <tr *ngFor="let product of products">{{product.id}}</tr>
+        </td>
+        <td>
+            <tr *ngFor="let product of products">{{product.name}}</tr>
+        </td>
+        <td>
+            <tr *ngFor="let product of products">{{product.price}}</tr>
+        </td>
+    </tbody>
+</table>
