@@ -22,32 +22,32 @@
     },
     {
       "name": "Prato eletronico",
-      "price": "235,99",
+      "price": 235.99,
       "id": 5
     },
     {
       "name": "Tablet ",
-      "price": "399,99",
+      "price": 399.99,
       "id": 6
     },
     {
       "name": "vassoura smart",
-      "price": "200",
+      "price": 200,
       "id": 7
     },
     {
       "name": "mouse led",
-      "price": "67,99",
+      "price": 67.99,
       "id": 8
     },
     {
       "name": "pc gamer",
-      "price": "5999",
+      "price": 5999,
       "id": 9
     },
     {
       "name": "mouse ",
-      "price": "12222",
+      "price": 12222,
       "id": 10
     }
   ]

@@ -1,20 +1,32 @@
-<table>
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Nome</th>
-            <th>Preço</th>
-        </tr>
-    </thead>
-    <tbody>
-        <td>
-            <tr *ngFor="let product of products">{{product.id}}</tr>
-        </td>
-        <td>
-            <tr *ngFor="let product of products">{{product.name}}</tr>
-        </td>
-        <td>
-            <tr *ngFor="let product of products">{{product.price}}</tr>
-        </td>
-    </tbody>
-</table>
+<div class="mat-elevation-z8">
+    <table mat-table [dataSource]="products">
+        <!-- Id Column -->
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef>Id</th>
+            <td mat-cell *matCellDef="let row">{{ row.id }}</td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef>Name</th>
+            <td mat-cell *matCellDef="let row">{{ row.name }}</td>
+        </ng-container>
+
+        <!-- Price Column -->
+        <ng-container matColumnDef="price">
+            <th mat-header-cell *matHeaderCellDef>Price</th>
+            <td mat-cell *matCellDef="let row">{{ row.price | currency: 'BRL' }}</td>
+        </ng-container>
+
+        <!-- Header and Footer -->
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <!-- Data -->
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    
+    <!--   
+    <mat-paginator #paginator [length]="dataSource?.data?.length" [pageIndex]="0" [pageSize]="10"
+      [pageSizeOptions]="[5, 10, 20]" aria-label="Select page">
+    </mat-paginator> -->
+
+</div>
