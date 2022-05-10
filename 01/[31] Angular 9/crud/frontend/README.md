@@ -1,3 +1,16 @@
+# Preview
+
+<table>
+    <th>
+        <img width="700" src="products.png">
+        <img width="700" src="products3.png">
+    </th>
+    <td>
+        <img width="700" src="products2.png">
+        <img width="700" src="products4.png">
+    </td>
+<table>
+
 # Frontend
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
