@@ -1,1 +1,10 @@
-<p>product-delete works!</p>
+<mat-card>
+    <mat-card-title>Are you sure you want to do this?</mat-card-title>
+    <button mat-raised-button (click)="deleteProduct()" color="primary">
+        Sim
+    </button>
+    <button mat-raised-button (click)="cancel()" color="secondary">
+        Cancelar
+    </button>
+</mat-card>
+<p>This action is irreversible</p>
