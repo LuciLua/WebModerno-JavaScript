@@ -18,14 +18,15 @@ export class ProductDeleteComponent implements OnInit {
   product!: Product;
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get("id");
-    this.productService.readById(`${id}`).subscribe((product) => {
+    // + => converte para number
+    const id = +this.route.snapshot.paramMap.get("id")!;
+    this.productService.readById(id).subscribe((product) => {
       this.product = product;
     });
   }
 
   deleteProduct(): void {
-    this.productService.delete(this.product).subscribe(() => {
+    this.productService.delete(this.product.id!).subscribe(() => {
       this.productService.showMessage("The product has been deleted!");
       this.router.navigate(["/products"]);
     });
@@ -34,4 +35,5 @@ export class ProductDeleteComponent implements OnInit {
   cancel(): void {
     this.router.navigate(["/products"]);
   }
+
 }

@@ -1,5 +1,13 @@
 <mat-card>
-    <mat-card-title>Are you sure you want to do this?</mat-card-title>
+    <mat-card-title>Are you sure you want delete this?</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Nome" name="name" disabled [value]="product.name" />
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Preço (R$)" name="price" disabled [value]="product.price" />
+        </mat-form-field>
+    </form>
     <button mat-raised-button (click)="deleteProduct()" color="warn">
         Sim
     </button>
