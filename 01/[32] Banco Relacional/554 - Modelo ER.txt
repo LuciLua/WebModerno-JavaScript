@@ -1,0 +1,39 @@
+SGBD => Sistemas gerenciadores de banco de dados
+    - MySql
+    - Oracle
+
+MySql usa SQL => Structure Query Language (linguagem utilizada)
+
+Modelo Entidade/Relacionamento
+é o paradigma na qual se baseia o bancode dados
+
+- Entidade seria a tabela
+os dados sao armazenados em modo tabular
+
+            /COL1 COL2 COL3 COL4
+LINHA/TUPLA1/    /    /    /    /
+LINHA/TUPLA2/    /    /    /    /
+LINHA/TUPLA3/    /    /    /    /
+LINHA/TUPLA4/    /    /    /    /
+LINHA/TUPLA5/    /    /    /    /
+
+LINHAS/TUPLAS => Dados
+
+
+VarChar dá cadeia de caracteres para colocar dados textuais
+VarChar (200) => armazena dentro dessa coluna, no maximo 200 caracteres
+
+Objetos largos para armazenas coisas maiores, mas nao imagens, videos...
+BLOB 
+CLOB 
+
+Schema servepara validar os dados
+
+ex tabelas:
+
+PROD [   ]
+ //
+   //relação entre eles ====> PEDIDO [  ]
+ //
+CLIENT [   ]
+
