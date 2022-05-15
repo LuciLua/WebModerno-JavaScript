@@ -1,0 +1,33 @@
+Chave primaria (PK)
+- É única
+- É uma coluna de uma tabela
+- Não vazia (nao aceita valor vazio)
+- Não muda
+
+cod nome email cpf
+1   ana  ...  ...
+2   bia  ...  ...
+3   luci ... ... 
+4
+
+cod vai ser minha chave primaria: 
+(pk)
+
+dois caminhos:
+
+1. Gerada a partir de uma surrogate key => chave sintética, ou algo artificial
+valores sem significado para o cliente, para que seja unico em uma tabela
+
+
+2. Natural Key: Ou seja, chave natural da pessoa. ex: pegar cpf e rg (tem que ter 2 coluna). CUIDADO: se inverter algum valor, vai ser mais dificil mudar a chave primaria
+
+
+ou seja:
+=> chave primaria para ter um valor unico
+
+
+
+restrições que se pode colocar em cima de uma coluna:
+- dizer que a coluna é do tipo única (nao vai aceitar repeticao dentro dessa coluna)
+- poder ter repetidas mas nunca dupla igual tipo  1 1 e 1 1.. pode: 1 2 e 1 e 3
+
