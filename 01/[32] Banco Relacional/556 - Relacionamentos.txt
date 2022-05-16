@@ -1,0 +1,64 @@
+Modelo ER
+
+E => Entidade
+R => relacionamento
+
+tabela Mae
+cod  nome
+1    ana  ====> mae do pedro e adao 
+2    bia ====> mae do iago
+(cod => primary key - PK)
+
+
+
+tabela filho
+cod  nome   mae_cod
+1    pedro  1
+2    iago   2
+3    adao   1
+(cod da tabela mae vai para tabela filho ==> cod => foreign key - FK)
+coluna mae_cod = fk
+
+Só consigo apagar uma mae se eu apagar os filhos antes
+Se nao gera inconscistencia nos dados
+
+--------------------------------
+
+relação entre coluna da chave primaria de uma tabela e outra tabela
+
+--------------------------------
+
+relacionamento 1 para muitos -/----///  (1-n)
+tabela compk ====> tabela com fk
+
+--------------------------------
+relacionamento 1 para 1 (1-1)
+tabela com fk tem que ter "unique" => so pode ter chave unica
+
+--------------------------------
+relacionamento (1-n) (naoha relacao direta, mas sim uma tabela intemediaria)
+tabela 1 com tios
+tabela 2 com sobrinhos
+tabela 3 => intermediaria (tio/sobrinho) => recebe fk da tabela 1 e fk da tabela 2 => as duas colunas de fk formam a chave primaria dessa tabela intermediaria
+
+(ex: para cada elemento da tabela 1, vai ter todos os sobrinhos, 1 por um e assim por diante)
+
+--------------------------------
+
+mais facil colocar o id do prefeito na tabela da cidade
+
+tabela cidade
+
+id  cidade
+1   ...
+2   ...
+3   ...     
+
+
+tabela prefeito
+
+id  prefeito
+1   ...
+2   ...
+3   ...
+
