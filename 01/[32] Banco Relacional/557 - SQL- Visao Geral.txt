@@ -3,5 +3,5 @@ SQL => Dividido em 4 partes
 DML => data manipulation language (SELECT, UPDATE, DELETE, INSERT) - CRUD
 DDL => data definition language (CREATE, ALTER, DROP) - define esquema do bd
 DCL => data control language => (GRANT, DENY, REVOKE)
-TCL => transaction control language => controle de transações
+TCL => transaction control language => (BEGIN, TRANSACTION, COMMIT, ROLLBACK) controle de transações
 
