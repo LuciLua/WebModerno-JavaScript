@@ -1,0 +1,6 @@
+mysql -u root -p
+
+create schema nomeDoSchema;
+use nomeDoSchema;
+quit
+
