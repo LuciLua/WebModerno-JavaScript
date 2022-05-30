@@ -1,0 +1,27 @@
+        inner =>  dentro da intersessão
+(  A ( )Inner( ) B  )
+  outer          outer => Fora da intersessão 
+
+
+
+
+Left Join = Left outer Join 
+- (A()inner()B)
+  .....
+Traz aqui que veio da intersessao das duas tabelas mas o conteudo de A nao está associado com B
+
+
+
+
+  Right Join
+- (A()inner()B)
+        .......
+Traz aqui que veio da intersessao das duas tabelas mas o conteudo de B nao está associado com A
+  
+
+Full Join
+- (A()inner()B)
+  ..............
+Traz todo o resultado, inclusive left e right (mas esse tipo de consulta nao é suportado pelo mysql)
+
+
