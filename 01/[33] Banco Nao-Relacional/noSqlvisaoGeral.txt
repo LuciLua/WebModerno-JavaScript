@@ -1,0 +1,39 @@
+NoSQL = Not Only SQL
+
+bancos baseados em:
+
+chave/valor   ex.: redis
+doc.          ex.: Mongo        Fortemente baseado em JSON (no caso do MongoDB)
+grafo         ex.: Neo4j        grafo: vertices ligados por nós
+column        ex.: BigTable
+
+----------------------------------
+
+Escalonamento Vertical X Escalonamento Horizontal
+
+Escalonamento vertical:
+    Maquina com armazenamento... Fazendo upgrades na maquina para atendar demandas que se tem dos dados
+    Mas tem um limite, que chega rapido
+
+    []  /⧵
+    []  || 
+    []  ||
+    []  ||
+
+
+Escalonamento Horizontal
+
+    Consegue-se replicar dados
+
+    [,.] [] [] [.] 
+    [] [] [.,] [] 
+    [.] [] [] [,] 
+
+----------------------------------
+
+MONGO
+    documento => JSON
+    DB (database) => Collections => Docs (relativo às tuplas, linhas)
+     [pode ter varios dbs]
+    Banco sem schema
+    API 
