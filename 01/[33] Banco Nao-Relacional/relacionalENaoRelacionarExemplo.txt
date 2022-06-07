@@ -1,0 +1,17 @@
+fluxo
+          /----.    ----.
+.---.---.----.----.
+      ./---.       ----.
+      .----.
+
+persistindo dados, excluindo, alterando => dava muito trabalho
+
+mapear estrutura em um unico documento (JSON) num banco nao relacional
+
+I-------------------------------I
+I          /----.    ----.      I
+I.---.---.----.----.            I
+I      ./---.       ----.       I    => armazena em um unico doc. JSON
+I      .----.                   I       - depois persiste isso nas 20 tabelas
+I-------------------------------I 
+
