@@ -1,0 +1,20 @@
+mongo --version => Versao do mongo 
+mongo --help  => Ajuda 
+
+
+mongo 
+
+show dbs => Mostra os bancos disponiveis
+use wm =>  mudar para tal banco
+
+db.createCollection('estados') => criar colecao estados
+
+show collections => mostra as coleções criadas
+
+É CASE SENSITIVE
+
+
+db.Estados.drop() =>  Exclui a colecao Estados
+
+
+
