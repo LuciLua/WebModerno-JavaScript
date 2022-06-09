@@ -1,0 +1,9 @@
+db.estados.insert({nome: "Acre", sigla: "AC", regiao: "Norte"})
+db.estados.save({nome: "Alagoas", sigla: "AL", regiao: "Nordeste", populacao: 3322000})
+
+Mostra os dados na colecao
+db.estados.find()
+
+
+Mostra os dados na colecao, mas em formato mais em JSON
+db.estados.find().pretty()
