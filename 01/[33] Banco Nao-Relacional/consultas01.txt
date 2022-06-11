@@ -1,0 +1,38 @@
+// Mostrar estados num formato mais facil de ser lido
+db.estados.find().pretty()
+
+// Pega o primeiro
+db.estados.findOne()
+
+// Ou pega um especifico
+db.estados.findOne({sigla: "SP"})
+
+// Parâmetro OU
+db.estados.find({$or: [{ sigla: "RJ" }, { sigla: "AC" } ] }).pretty()
+
+
+// Parâmetro AND
+db.estados.find({$and: [{ sigla: "RJ" }, { sigla: "AC" } ] }).pretty()
+
+// se existe atributo tal
+db.estados.find({ cidades: { $exists: true } }).pretty()
+
+
+// para buscar registros mas pular algum
+db.estados.find().skip(2).pretty()
+
+
+// para buscar registros com limitação
+db.estados.find().limit(2).pretty()
+
+// Mostrar quantos registros tem dentro dessa colecao
+db.estados.count()
+
+// buscar atributos dentro de um registro (vem o id junto)
+db.estados.find({sigla: "SP"}, {nome: 1, sigla:1})
+
+// buscar atributos dentro de um registro (nao vem o id junto)
+db.estados.find({sigla: "SP"}, {nome: 1, sigla:1, _id: 0})
+
+// Dentro do parametro cidade apenas traga atributo nome
+db.estados.find({sigla: "SP"}, {"cidades.nome": 1, _id: 0})
