@@ -1,0 +1,30 @@
+padrão: pipes and filters
+
+como tubulações com filtros,
+dados passam por tubulações, passam por filtro que transformam os dados
+
+Aggregation Pipeline Stages
+
+Stages: Filtros que serão aplicados nos dados
+
+db.collection.aggregate()
+
+
+entro de aggregate passo um array e cada elementos do array é um estagio de agregacao
+
+---exemplos de estágio---
+
+match => filtra quais documentos quero dentro daminha colecao
+
+project => filtra atributos de dentro do doc que quero que vá para proxima fase do pipeline de agregacao
+
+------------------------
+
+ref: https://www.mongodb.com/docs/manual/reference/operator/aggregation/
+
+
+no mongo, faz-se as consultas mais complexas com aggregate
+
+
+
+
