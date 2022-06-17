@@ -1,0 +1,17 @@
+db.estados.aggregate([
+    { $match: {"cidades.nome": "Sorocaba"} },
+    { $unwind: "$cidades" },
+    { $match: {"cidades.nome": "Sorocaba"} },
+    { $project:  {_id: "$cidades._id"}}
+]).pretty()
+
+
+unwind => desenrolar/desempacotar as cidades (gere 3 documentos. 1 estado 1 cidade. 1 estado 1 cidade...)
+
+project => pegando so o id da cidade de sorocaba
+
+
+
+
+
+

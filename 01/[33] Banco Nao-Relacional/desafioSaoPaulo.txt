@@ -16,30 +16,32 @@ db.estados.insert(
 )
 
 db.estados.insert(
-   nome: "São Paulo",
-   sigla: "SP",
-   regiao: "Sudoeste",
-   cidades: [
-       {
-            _id: ObjectId(),
-            nome: "Campinas",
-            area: 795.7, 
-            prefeito: "Jonas Donizette", 
-            populacao: 1081000
-       },
-       {
-            _id: ObjectId(),
-            nome: "Garulhos", 
-            populacao: 1325000
-       },
-       {
-            _id: ObjectId(),
-            nome: "Sorocaba",
-            distanciaCapital: 87,
-            populacao: 644919
-       }
-   ]
-)
+   {
+        nome: "São Paulo",
+        sigla: "SP",
+        regiao: "Sudoeste",
+        cidades: [
+                {
+                    _id: ObjectId(),
+                    nome: "Campinas",
+                    area: 795.7, 
+                    prefeito: "Jonas Donizette", 
+                    populacao: 1081000
+                },
+                {
+                    _id: ObjectId(),
+                    nome: "Garulhos", 
+                    populacao: 1325000
+                },
+                {
+                    _id: ObjectId(),
+                    nome: "Sorocaba",
+                    distanciaCapital: 87,
+                    populacao: 644919
+                }
+            ]
+        }
+    )
 
 cada cidade tem o atributo _id <- ObjectId
 
