@@ -1,0 +1,19 @@
+// update
+db.estados.update({ sigla: "SP" }, {$set: { populacao: 45340000 }})
+
+// update => acrescentar um array
+db.estados.update({ sigla: "AL" }, {$set: { cidades: [{nome: "Sergipe"}] }})
+
+// para nao substituir cidades ja existentes, fazer push
+db.estados.update(
+    {sigla: "SP"},
+    {$push : {cidades: {nome: "Santos", populacao: 433966}}}
+)
+
+// consulta só os estados em que populacao existe
+db.estados.find(
+    {populacao: 
+        {$exists: true}
+    },
+    {_id: 0, nome: 1}
+)
