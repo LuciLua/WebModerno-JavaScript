@@ -261,3 +261,31 @@ db.nomeDaColecao.find(
     {_id: 0, nome: 1}
 )
 ```
+
+### Removendo dados
+
+removendo
+```bash
+db.nomeDaColecao.remove(
+    {dado: "ID"}
+)
+```
+
+removendo (apenas 1), elemento que tem um determinado registro
+```bash
+db.nomeDaColecao.remove(
+    {registro: {$exists: true}},
+    1
+)
+```
+
+com criterio de remoção: que determinado registro tenha menos que 20000000
+> $lt: last then
+```bash
+db.nomeDaColecao.remove(
+    {registro: {
+        $lt: 20000000
+        }
+    }
+)
+```
