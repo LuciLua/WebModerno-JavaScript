@@ -1,0 +1,30 @@
+db.estados.count()
+
+// remover registro
+db.estados.remove(
+    {sigla: "AC"}
+)
+
+// remover (apenas 1) estados que tem o registro populacao
+db.estados.remove(
+    {populacao: {$exists: true}},
+    1
+)
+
+// Desafio atualizar populacao do RJ
+db.estados.update(
+    {sigla: "RJ"},
+    {$set: 
+        {populacao: 16720000}
+    }
+)
+
+// lt de last then
+// criterio de remoção: que a populacao tenha menos que 20000000 de habitantes
+
+db.estados.remove(
+    {populacao: {
+        $lt: 20000000
+        }
+    }
+)
