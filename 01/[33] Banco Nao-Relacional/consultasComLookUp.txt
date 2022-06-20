@@ -1,0 +1,25 @@
+db.empresas.aggregate([
+    { $match:
+        {
+            nome: "Bradesco"
+        }
+    },
+    { $lookup:
+        {
+            from: "estados",
+            localField: "estadoId",
+            foreignField: "_id",
+            as: "estado"
+        }
+    },
+    { $unwind: 
+        "$estado"
+    },
+]).pretty()
+
+
+
+// from: nome da collection que vou  fazer o lookup
+// localField: faz relação com  outra tabela
+// foreignField: para upa relacao
+// nome do atributo que sera criado a partir desse lookup
