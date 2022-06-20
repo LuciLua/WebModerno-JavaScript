@@ -1,0 +1,46 @@
+
+db.empresas.insert(
+    {
+        nome: "Bradesco",
+        estadoId: ObjectId("62b0659a98eafad4444caf9e")
+    }
+)
+
+db.empresas.insert(
+    {
+        nome: "Vale",
+        cidadeId: ObjectId("62b0659a98eafad4444caf9d")
+    }
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+db.estados.insert(
+   {
+        nome: "Rio de Janeiro",
+        sigla: "RJ",
+        regiao: "Sudeste",
+        cidades: [
+                {
+                    _id: ObjectId(),
+                    nome: "Niterói",
+                    area: 133.9, 
+                    populacao: 487562
+                },
+            ]
+        }
+    )
