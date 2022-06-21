@@ -1,0 +1,46 @@
+db.empresas.aggregate(
+    [
+        {$match: 
+            {
+                nome: "Vale"
+            }
+        },
+        {$lookup:
+            {
+                from: "estados",
+                localField: "cidadeId",
+                foreignField: "cidades._id",
+                as: "estado"
+            }
+        },
+        {$unwind:
+            "$estado"
+        },
+        {$unwind:
+            "$estado.cidades"
+        },
+        {$addFields:
+            {mesmaCidade:
+                {$cmp:
+                    [
+                        "$estado.cidades._id",
+                        "$cidadeId"
+                    ]
+                }
+            }
+        },
+        {$match:
+            {
+                mesmaCidade: 0
+            }
+        }
+    ]
+).pretty()
+
+
+        {$match:
+            {"estado.cidades._id": "$cidadeId"}
+        }
+
+// addFields => cria um atributo a mais
+// $cmp => para comparar dois valores
