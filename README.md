@@ -32,7 +32,7 @@ During the course, these are some technologies and topics that I have already le
 - [x] <a href="https://github.com/LuciLua/WebModerno-JavaScript/tree/master/01/%5B30%5D%20App%20Desktop%20(JS%2C%20Electron%20e%20VueJS)"> Electron </a>
 - [x] <a href="https://github.com/LuciLua/WebModerno-JavaScript/tree/master/01/%5B31%5D%20Angular%209">Angular 9 </a>
 - [x] <a href="https://github.com/LuciLua/WebModerno-JavaScript/tree/master/01/%5B32%5D%20Banco%20Relacional">Banco relacional </a>
-- [ ] <a href="https://github.com/LuciLua/WebModerno-JavaScript/tree/master/01/%5B33%5D%20Banco%20Nao-Relacional">Banco não relacional </a>
+- [x] <a href="https://github.com/LuciLua/WebModerno-JavaScript/tree/master/01/%5B33%5D%20Banco%20Nao-Relacional">Banco não relacional </a>
 - [ ] Express
 
 > to find a specific subject, just access folder 01 and look for the category states in the name of the folder that contains my study files
