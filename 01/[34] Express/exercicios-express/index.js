@@ -11,9 +11,20 @@ const app = express()
 //     res.send("I'm fine")
 // })
 
+// Função Middleware: Função que recebe requisição, resposta e next()
 
-app.use((req, res) => {
+// funciona mas nao chama a proxima
+app.use('/opa', (req, res, next) => {
+    console.log("Antes")
+    next()
+})
 
+// cadeia de responsabildade
+
+
+app.get('/opa', (req, res, next) => {
+
+    console.log("Durante")
     // resposta em formato json
     res.json(
         [{
@@ -51,8 +62,13 @@ app.use((req, res) => {
         }]
     )
 
+    next()
     // res.send("I'm fine")
+})
 
+
+app.use('/opa', (req, res) => {
+    console.log("Depois")
 })
 
 app.listen(3000, () => {
