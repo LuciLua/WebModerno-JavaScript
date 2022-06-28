@@ -1,6 +1,9 @@
 const express = require('express')
 const app = express()
 
+// Importando module
+const saudacao = require('./saudacaoMid')
+
 // so será chamad se a url for /test
 // app.use('/test', (req, res) => {
 //     res.send("I'm fine")
@@ -12,6 +15,7 @@ const app = express()
 // })
 
 // Função Middleware: Função que recebe requisição, resposta e next()
+
 
 // funciona mas nao chama a proxima
 app.use('/opa', (req, res, next) => {
@@ -25,6 +29,7 @@ app.use('/opa', (req, res, next) => {
 app.get('/opa', (req, res, next) => {
 
     console.log("Durante")
+
     // resposta em formato json
     res.json(
         [{
@@ -65,6 +70,10 @@ app.get('/opa', (req, res, next) => {
     next()
     // res.send("I'm fine")
 })
+
+// retorno dessa função chama função middleware (com o next)
+app.use(saudacao("Luci"))
+
 
 
 app.use('/opa', (req, res) => {
