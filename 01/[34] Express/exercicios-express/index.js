@@ -14,7 +14,10 @@ const saudacao = require('./saudacaoMid')
 //     res.send("I'm fine")
 // })
 
+
+
 // Função Middleware: Função que recebe requisição, resposta e next()
+
 
 
 // funciona mas nao chama a proxima
@@ -23,8 +26,47 @@ app.use('/opa', (req, res, next) => {
     next()
 })
 
-// cadeia de responsabildade
 
+
+// http://localhost:3000/clientes/relatorio?completo=true&ano=2018
+app.get('/clientes/relatorio', (req, res, next) => {
+
+    res.send(`Cliente relatorio: Completo = ${req.query.completo}. ano = ${req.query.ano}`)
+    console.log(`Relatorio`)
+    next()
+
+})
+
+app.post('/corpo', (req, res) => {
+    let corpo = ''
+    req.on(`data`, function(parte){
+        corpo+= parte
+    })
+
+    req.on('end', function(){
+        res.send(corpo)
+    })
+
+    // converter em json. mas tem q receber em json
+    // req.on('end', function(){
+    //     res.send(JSON.parse(corpo))
+    // })
+})
+
+// ordem que as coisas são chamadas é importante
+
+
+// parametro q pode ser mudado na url
+// http://localhost:3000/cliente/2
+app.get('/cliente/:id', (req,res, next) => {
+    const id = req.params.id
+    res.send(`Cliente ${id} selecionado!`)
+    console.log(`Cliente Selecionado`)
+
+    next()
+})
+
+// cadeia de responsabildade
 
 app.get('/opa', (req, res, next) => {
 
