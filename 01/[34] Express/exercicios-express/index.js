@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+const bodyParser = require('body-parser')
 
 // Importando module
 const saudacao = require('./saudacaoMid')
@@ -14,19 +15,21 @@ const saudacao = require('./saudacaoMid')
 //     res.send("I'm fine")
 // })
 
+// retorno dessa função chama função middleware (com o next)
+app.use(saudacao("Luci"))
 
+// Body parser
+app.use(bodyParser.text())
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
 
 // Função Middleware: Função que recebe requisição, resposta e next()
-
-
 
 // funciona mas nao chama a proxima
 app.use('/opa', (req, res, next) => {
     console.log("Antes")
     next()
 })
-
-
 
 // http://localhost:3000/clientes/relatorio?completo=true&ano=2018
 app.get('/clientes/relatorio', (req, res, next) => {
@@ -38,27 +41,31 @@ app.get('/clientes/relatorio', (req, res, next) => {
 })
 
 app.post('/corpo', (req, res) => {
-    let corpo = ''
-    req.on(`data`, function(parte){
-        corpo+= parte
-    })
+    // let corpo = ''
+    // req.on(`data`, function(parte){
+    //     corpo+= parte
+    // })
 
-    req.on('end', function(){
-        res.send(corpo)
-    })
+    // req.on('end', function(){
+    //     res.send(corpo)
+    // })
 
     // converter em json. mas tem q receber em json
     // req.on('end', function(){
     //     res.send(JSON.parse(corpo))
     // })
+
+    // req.body ja foi criado pelo body-parser
+    // res.send(req.body)
+    // res.send(req.body.nome)
+    res.send(JSON.stringify(req.body))
 })
 
 // ordem que as coisas são chamadas é importante
 
-
 // parametro q pode ser mudado na url
 // http://localhost:3000/cliente/2
-app.get('/cliente/:id', (req,res, next) => {
+app.get('/cliente/:id', (req, res, next) => {
     const id = req.params.id
     res.send(`Cliente ${id} selecionado!`)
     console.log(`Cliente Selecionado`)
@@ -108,15 +115,9 @@ app.get('/opa', (req, res, next) => {
                 ],
         }]
     )
-
     next()
     // res.send("I'm fine")
 })
-
-// retorno dessa função chama função middleware (com o next)
-app.use(saudacao("Luci"))
-
-
 
 app.use('/opa', (req, res) => {
     console.log("Depois")
