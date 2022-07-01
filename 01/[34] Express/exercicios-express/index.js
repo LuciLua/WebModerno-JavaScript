@@ -5,6 +5,21 @@ const bodyParser = require('body-parser')
 // Importando module
 const saudacao = require('./saudacaoMid')
 
+
+// Module: Usuario
+
+
+const usuario_API = require('./api/usuario')
+
+
+app.post('/usuario', usuario_API.save)
+app.get('/usuario', usuario_API.get)
+
+
+
+
+
+
 // so será chamad se a url for /test
 // app.use('/test', (req, res) => {
 //     res.send("I'm fine")
