@@ -2,59 +2,79 @@ const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
 
-// Importando module
+// Importando module saudacao
 const saudacao = require('./saudacaoMid')
 
 
-// Module: Usuario
+//################################################
+// ------------Module: usuario 1------------------
+// const usuario_API = require('./api/usuario')
+
+// app.post('/usuario', usuario_API.save)
+// app.get('/usuario', usuario_API.get)
+// -----------------------------------------------
+//                                                
+// -------------Module: usuario 2-----------------
+const product_API = require('./api/product')
+product_API(app, 'name: ', 'price: ')
+// -----------------------------------------------
+//################################################
 
 
-const usuario_API = require('./api/usuario')
-
-
-app.post('/usuario', usuario_API.save)
-app.get('/usuario', usuario_API.get)
-
-
-
-
-
-
-// so será chamad se a url for /test
+// -----------------------------------------------
+// so será chamada se a url for /test
 // app.use('/test', (req, res) => {
 //     res.send("I'm fine")
 // })
+// -----------------------------------------------
 
-// aceita apenas  requisicoes tipo get
+
+// -----------just accept get requests------------
 // app.get('/', (req, res) => {
 //     res.send("I'm fine")
 // })
+// -----------------------------------------------
 
+
+// -----------------------------------------------
 // retorno dessa função chama função middleware (com o next)
 app.use(saudacao("Luci"))
+// -----------------------------------------------
 
-// Body parser
+
+// --------------  Body-Parser  ------------------
 app.use(bodyParser.text())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
+// -----------------------------------------------
 
+
+// -----------------------------------------------
 // Função Middleware: Função que recebe requisição, resposta e next()
+// -----------------------------------------------
 
+
+// -----------------------------------------------
 // funciona mas nao chama a proxima
 app.use('/opa', (req, res, next) => {
     console.log("Antes")
     next()
 })
+// -----------------------------------------------
 
+
+// -----------------------------------------------
 // http://localhost:3000/clientes/relatorio?completo=true&ano=2018
 app.get('/clientes/relatorio', (req, res, next) => {
 
     res.send(`Cliente relatorio: Completo = ${req.query.completo}. ano = ${req.query.ano}`)
     console.log(`Relatorio`)
     next()
-
 })
+// -----------------------------------------------
 
+
+// -----------------------------------------------
 app.post('/corpo', (req, res) => {
     // let corpo = ''
     // req.on(`data`, function(parte){
@@ -75,9 +95,16 @@ app.post('/corpo', (req, res) => {
     // res.send(req.body.nome)
     res.send(JSON.stringify(req.body))
 })
+// -----------------------------------------------
 
+
+// -----------------------------------------------
 // ordem que as coisas são chamadas é importante
+// cadeia de responsabildade
+// -----------------------------------------------
 
+
+// -----------------------------------------------
 // parametro q pode ser mudado na url
 // http://localhost:3000/cliente/2
 app.get('/cliente/:id', (req, res, next) => {
@@ -87,13 +114,12 @@ app.get('/cliente/:id', (req, res, next) => {
 
     next()
 })
+// -----------------------------------------------
 
-// cadeia de responsabildade
 
+// ------------------Responses--------------------
 app.get('/opa', (req, res, next) => {
-
     console.log("Durante")
-
     // resposta em formato json
     res.json(
         [{
@@ -133,12 +159,20 @@ app.get('/opa', (req, res, next) => {
     next()
     // res.send("I'm fine")
 })
+// -----------------------------------------------
 
+
+//################################################
+//-On last run no need to call middleware (next())-
 app.use('/opa', (req, res) => {
     console.log("Depois")
 })
+//################################################
 
+
+//################################################
+// -------------Listen to port 3000---------------
 app.listen(3000, () => {
     console.log("Backend executando!")
 })
-
+//################################################
