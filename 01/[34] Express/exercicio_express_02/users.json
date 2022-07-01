@@ -1,0 +1,28 @@
+{
+    "users": [
+        {
+            "name": "Luci Lua",
+            "age": 21
+        },
+        {
+            "name": "Ires Yu",
+            "age": 22
+        },
+        {
+            "name": "Naa Ka",
+            "age": 16
+        },
+        {
+            "name": "Ana Hu",
+            "age": 32
+        },
+        {
+            "name": "Lza Roh",
+            "age": 29
+        },
+        {
+            "name": "Goi Coc",
+            "age": 18
+        }
+    ]
+}
