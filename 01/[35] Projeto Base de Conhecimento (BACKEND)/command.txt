@@ -1,0 +1,8 @@
+iniciar postgres
+psql -U postgres
+
+criar db
+create database teste_install;
+
+sair do postgres
+\q
