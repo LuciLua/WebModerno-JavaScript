@@ -6,3 +6,11 @@ create database teste_install;
 
 sair do postgres
 \q
+
+\l
+
+npm i -g knex
+
+
+start frontend versao final
+npm run serve -- --port 8081
