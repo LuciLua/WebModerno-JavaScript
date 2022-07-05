@@ -11,6 +11,13 @@ sair do postgres
 
 npm i -g knex
 
-
 start frontend versao final
 npm run serve -- --port 8081
+
+usar esse banco
+\c knowledge_final
+
+select * from users;
+
+update: user > admin
+update users set admin = true where id = 1;

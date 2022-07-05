@@ -15,8 +15,8 @@
             <button v-else @click="signin">Entrar</button>
 
             <a href @click.prevent="showSignup = !showSignup">
-                <span v-if="showSignup">Já tem cadastro? Acesse o Login!</span>
-                <span v-else>Não tem cadastro? Registre-se aqui!</span>
+                <span v-if="showSignup">Faça Login</span>
+                <span v-else>Registre-se aqui!</span>
             </a>
         </div>
     </div>
@@ -96,6 +96,13 @@ export default {
         background-color: #2460ae;
         color: #FFF;
         padding: 5px 15px;
+        border: none;
+
+        border-radius: 2px;
+    }
+
+    .auth-modal button:hover{
+        background-color: #285691;
     }
 
     .auth-modal a {
@@ -111,4 +118,5 @@ export default {
             rgba(120, 120, 120, 0.75),
             rgba(120, 120, 120, 0));
     }
+
 </style>

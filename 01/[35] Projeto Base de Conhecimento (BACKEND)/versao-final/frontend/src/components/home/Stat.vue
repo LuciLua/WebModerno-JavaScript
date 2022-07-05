@@ -32,7 +32,7 @@ export default {
         background-color: #FFF;
         padding: 20px;
         border: 1px solid rgba(0, 0, 0, 0.2);
-        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 1px 10px rgba(0, 0, 0, 0.048);
     }
 
     .stat-icon {
