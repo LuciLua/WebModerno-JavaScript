@@ -21,3 +21,10 @@ select * from users;
 
 update: user > admin
 update users set admin = true where id = 1;
+
+
+deletar categoria
+delete from categories where id = 2;
+
+mostrar todos os itens do db
+\dt 
