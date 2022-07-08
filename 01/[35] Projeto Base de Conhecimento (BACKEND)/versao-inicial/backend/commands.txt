@@ -2,3 +2,17 @@ knex init
 
 // Criar tabela de usuarios
 knex migrate:make create_table_users
+
+
+ddl = data definition language
+
+miggrations boa pra controlar as evoluções do banco de dados
+
+// roda ate a ultima migration cadastrada no meu sistema
+knex migrate:latest
+
+
+// Roolback nas migrations
+knex migrate:rollback
+
+

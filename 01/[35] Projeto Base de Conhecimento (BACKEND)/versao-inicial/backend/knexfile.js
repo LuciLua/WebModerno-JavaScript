@@ -34,7 +34,7 @@ module.exports = {
     connection: {
         database: 'knowledge',
         user: 'postgres',
-        password: process.env.PASS
+        password: "password_here"
     },
     pool: {
         min: 2,
