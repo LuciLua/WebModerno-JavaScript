@@ -1,0 +1,4 @@
+knex init
+
+// Criar tabela de usuarios
+knex migrate:make create_table_users
