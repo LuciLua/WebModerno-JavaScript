@@ -1,8 +1,6 @@
 const bodyParser = require('body-parser')
 const cors = require ('cors')
 
-
-
 // app em index.js
 module.exports  = app => {
     app.use(bodyParser.json())

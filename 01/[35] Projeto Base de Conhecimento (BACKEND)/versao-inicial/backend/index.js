@@ -9,8 +9,8 @@ consign()
     .then('./api/validation.js')
     .then('./api')
     .then('./config/routes.js')
-    .into(app) //injeta app, vai adicionando os middlewares
+    .into(app)
 
 app.listen(3000, () => {
-    console.log('Backend is running...')
+    console.log('Backend executando...')
 })

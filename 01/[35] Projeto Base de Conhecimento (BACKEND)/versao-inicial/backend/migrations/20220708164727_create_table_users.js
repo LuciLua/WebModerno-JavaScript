@@ -1,23 +1,14 @@
-/**
- * @param { import("knex").Knex } knex
- * @returns { Promise<void> }
- */
-exports.up = function(knex) {
+
+exports.up = function (knex, Promise) {
   return knex.schema.createTable('users', table => {
-    table.increments('id').primary()
-    table.string('name').notNullable()
-    table.string('email').notNullable().unique()
-    table.string('password').notNullable()
-    table.boolean('admin').notNullable().defaultTo(false)
+      table.increments('id').primary()
+      table.string('name').notNull()
+      table.string('email').notNull().unique()
+      table.string('password').notNull()
+      table.boolean('admin').notNull().defaultTo(false)
   })
 };
 
-/**
- * @param { import("knex").Knex } knex
- * @returns { Promise<void> }
- */
-
-// Down sempre faz o contario q fez no up
-exports.down = function(knex) {
-    return knex.schema.dropTable('users')
+exports.down = function (knex, Promise) {
+  return knex.schema.dropTable('users')
 };

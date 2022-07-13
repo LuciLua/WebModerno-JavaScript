@@ -1,7 +1,6 @@
 const bcrypt = require('bcrypt-nodejs')
 
-module.exports = (app) => {
-    // Criando metodos
+module.exports = app => {
     const { existsOrError, notExistsOrError, equalsOrError } = app.api.validation
 
     const encryptPassword = password => {
@@ -11,10 +10,10 @@ module.exports = (app) => {
 
     const save = async (req, res) => {
         const user = { ...req.body }
-        if (req.params.id) user.id = req.params.id
+        if(req.params.id) user.id = req.params.id
 
-        if (!req.originalUrl.startsWith('/users')) user.admin = false
-        if (!req.user || !req.user.admin) user.admin = false
+        if(!req.originalUrl.startsWith('/users')) user.admin = false
+        if(!req.user || !req.user.admin) user.admin = false
 
         try {
             existsOrError(user.name, 'Nome não informado')
@@ -26,17 +25,17 @@ module.exports = (app) => {
 
             const userFromDB = await app.db('users')
                 .where({ email: user.email }).first()
-            if (!user.id) {
+            if(!user.id) {
                 notExistsOrError(userFromDB, 'Usuário já cadastrado')
             }
-        } catch (msg) {
+        } catch(msg) {
             return res.status(400).send(msg)
         }
 
         user.password = encryptPassword(user.password)
         delete user.confirmPassword
 
-        if (user.id) {
+        if(user.id) {
             app.db('users')
                 .update(user)
                 .where({ id: user.id })
@@ -58,6 +57,16 @@ module.exports = (app) => {
             .then(users => res.json(users))
             .catch(err => res.status(500).send(err))
     }
-    return { save, get }
 
+    const getById = (req, res) => {
+        app.db('users')
+            .select('id', 'name', 'email', 'admin')
+            .where({ id: req.params.id })
+            .whereNull('deletedAt')
+            .first()
+            .then(user => res.json(user))
+            .catch(err => res.status(500).send(err))
+    }
+
+    return { save, get, getById }
 }
