@@ -68,9 +68,13 @@ module.exports = app => {
             .select('id', 'name', 'description')
             // offset => deslocamento que vou precisar fazer para trazer os dados
             .limit(limit).offset(page * limit - limit)
+            // primeira pagina o offset vai ser 0
+            // offset 10 para a pagina 2
+            // offset 20 para a pagina 3 ... etc
             .then(articles => res.json({ data: articles, count, limit }))
             .catch(err => res.status(500).send(err))
     }
+    // 12.24
 
     const getById = (req, res) => {
         app.db('articles')
