@@ -1,4 +1,4 @@
-const queries = require('./queries')
+// const queries = require('./queries')
 
 module.exports = app => {
     const { existsOrError, notExistsOrError } = app.api.validation
@@ -40,22 +40,22 @@ module.exports = app => {
             const rowsDeleted = await app.db('articles')
                 .where({ id: req.params.id }).del()
 
-            // try {
-            existsOrError(rowsDeleted, 'Artigo não foi encontrado.')
-        }
-        catch (msg) {
-            return res.status(400).send(msg)
-        }
+            try {
+                existsOrError(rowsDeleted, 'Artigo não foi encontrado.')
+            }
+            catch (msg) {
+                return res.status(400).send(msg)
+            }
 
-        // res.status(204).send()
-        // } catch(msg) {
-        // res.status(500).send(msg)
-        // }
+            res.status(204).send()
+        } catch (msg) {
+            res.status(500).send(msg)
+        }
     }
 
     const limit = 10 // usado para paginação
     const get = async (req, res) => {
-        
+
         // qual é a pagina | se nao mandou nada: exibe a pagina 1 
         const page = req.query.page || 1
 
