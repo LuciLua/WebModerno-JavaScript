@@ -1,4 +1,4 @@
-// const queries = require('./queries')
+const queries = require('./queries')
 
 module.exports = app => {
     const { existsOrError, notExistsOrError } = app.api.validation
@@ -76,6 +76,7 @@ module.exports = app => {
     }
     // 12.24
 
+    // pegar os arquivos a partir do ID da categoria
     const getById = (req, res) => {
         app.db('articles')
             .where({ id: req.params.id })
@@ -87,18 +88,21 @@ module.exports = app => {
             .catch(err => res.status(500).send(err))
     }
 
+    // tambem e uma funcao middleware
     const getByCategory = async (req, res) => {
         const categoryId = req.params.id
+        // se n for informado, sera a pagina 1
         const page = req.query.page || 1
         const categories = await app.db.raw(queries.categoryWithChildren, categoryId)
         const ids = categories.rows.map(c => c.id)
 
+        // interagir com 2 tabelas diferentes, pois quando ve os articles, aparece tbm autor, q pertence a tabela usuarios
         app.db({ a: 'articles', u: 'users' })
             .select('a.id', 'a.name', 'a.description', 'a.imageUrl', { author: 'u.name' })
             .limit(limit).offset(page * limit - limit)
-            .whereRaw('?? = ??', ['u.id', 'a.userId'])
+            .whereRaw('?? = ??', ['u.id', 'a.userId']) // para encontrar de fato o usuario autor desse artigo
             .whereIn('categoryId', ids)
-            .orderBy('a.id', 'desc')
+            .orderBy('a.id', 'desc') // ordenacao dos mais novos pros mais antigos (decrescente)
             .then(articles => res.json(articles))
             .catch(err => res.status(500).send(err))
     }
