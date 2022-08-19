@@ -49,4 +49,8 @@ module.exports = (app) => {
 
     // colocar urls mais especificas mais em cima
     // urls mais genericas mais em baixo
+
+    app.route('/stats')
+        .all(app.config.passport.authenticate())
+        .get(app.api.stat.get)
 }
