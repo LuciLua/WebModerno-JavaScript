@@ -30,3 +30,5 @@ mostrar todos os itens do db
 \dt 
 
 mongod --dbpath C:\data
+
+db.getCollection("stats").find()
