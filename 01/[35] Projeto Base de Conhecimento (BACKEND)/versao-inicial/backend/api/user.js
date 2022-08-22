@@ -12,7 +12,10 @@ module.exports = app => {
         const user = { ...req.body }
         if (req.params.id) user.id = req.params.id
 
+        // garante que usuario seja cadastrado como administrador se
+        // se n comecar com /users admin sera falso
         if (!req.originalUrl.startsWith('/users')) user.admin = false
+        // se n tiver ngm logado no sistema ou a tag admin do usuario ser false 
         if (!req.user || !req.user.admin) user.admin = false
 
         try {
