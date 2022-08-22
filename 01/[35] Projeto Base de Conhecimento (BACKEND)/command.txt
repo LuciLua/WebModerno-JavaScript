@@ -32,3 +32,7 @@ mostrar todos os itens do db
 mongod --dbpath C:\data
 
 db.getCollection("stats").find()
+
+knex migrate:make add_deleted_at_table_users
+
+knex migrate:latest
