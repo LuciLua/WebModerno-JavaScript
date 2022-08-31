@@ -8,8 +8,14 @@
       <i class="fa fa-angle-down"></i>
     </div>
     <div class="user-dropdown-content">
-      <a href><i class="fa fa-cogs"></i> Administração</a>
-      <a href><i class="fa fa-cogs"></i> Sair</a>
+      <router-link to="/admin">
+        <i class="fa fa-cogs"></i>
+        Administração
+      </router-link>
+      <router-link to="/">
+        <i class="fa fa-cogs"></i>
+        Sair
+      </router-link>
     </div>
   </div>
 </template>
