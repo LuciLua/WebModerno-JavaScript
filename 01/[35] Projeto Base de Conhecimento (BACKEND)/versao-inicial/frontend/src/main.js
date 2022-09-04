@@ -13,7 +13,7 @@ Vue.config.productionTip = false
 
 // TEMP LINE | REMOVE AFTER
 
-require('axios').defaults.headers.common['Authorization'] = 'bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6Ikx1Y2lMdWEiLCJlbWFpbCI6Imx1Y2kubHVhODFAZ21haWwuY29tIiwiYWRtaW4iOnRydWUsImlhdCI6MTY2MjA2NTI2MiwiZXhwIjoxNjYyMzI0NDYyfQ.roX24uMBi4rjb-o2_fOa_1wzUyT8lJs8xAGPcg-C6RE'
+require('axios').defaults.headers.common['Authorization'] = 'bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6Ikx1Y2lMdWEiLCJlbWFpbCI6Imx1Y2kubHVhODFAZ21haWwuY29tIiwiYWRtaW4iOnRydWUsImlhdCI6MTY2MjMyNDU4MCwiZXhwIjoxNjYyNTgzNzgwfQ.PuubhDO_Mtdz3AMHmFM4dEofQfSDXVo0mgnTKtHX8D0'
 
 new Vue({
   store,
