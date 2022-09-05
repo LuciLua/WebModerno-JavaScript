@@ -94,6 +94,12 @@
         </b-button>
       </template>
     </b-table>
+    <b-pagination
+      size="md"
+      v-model="page"
+      :total-rows="count"
+      :per-page="limit"
+    />
   </div>
 </template>
 
@@ -101,6 +107,9 @@
 import { VueEditor } from "vue2-editor";
 import { baseApiUrl, showError } from "@/global";
 import axios from "axios";
+
+// pagination Vue bootstrap:
+// https://bootstrap-vue.org/docs/components/pagination
 
 export default {
   name: "ArticleAdmin",
@@ -125,7 +134,7 @@ export default {
   },
   methods: {
     loadArticles() {
-      const url = `${baseApiUrl}/articles`;
+      const url = `${baseApiUrl}/articles?page=${this.page}`;
       axios.get(url).then((res) => {
         this.articles = res.data.data;
         this.count = res.data.count;
@@ -178,6 +187,12 @@ export default {
           return { value: user.id, text: `${user.name} - ${user.email}` };
         });
       });
+    },
+  },
+  // sempre que page mudar vou chamar...
+  watch: {
+    page() {
+      this.loadArticles();
     },
   },
   mounted() {
