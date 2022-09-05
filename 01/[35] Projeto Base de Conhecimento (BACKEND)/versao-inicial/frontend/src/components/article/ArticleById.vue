@@ -49,7 +49,7 @@ export default {
   color: #ddd;
 }
 
-.article-content image {
+.article-content img{
   max-width: 100%;
 }
 
