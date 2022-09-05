@@ -9,7 +9,7 @@
       <!-- tagas com b-... vem do bootstrap vue -->
       <b-card no-body>
         <b-tabs card>
-          <b-tab title="Aticles" active>
+          <b-tab title="Articles" active>
             <article-admin/>
           </b-tab>
           <b-tab title="Categories">
