@@ -32,7 +32,7 @@ export default {
       articles: [],
       page: 1,
       loadMore: true,
-    };
+    }
   },
   methods: {
     getCategory() {
@@ -50,6 +50,17 @@ export default {
         if (res.data.length === 0) this.loadMore = false;
       });
     },
+  },
+  watch: {
+    $route(to){
+      this.category.id = to.params.id;
+      this.articles = []
+      this.page = 1
+      this.loadMore = true
+
+      this.getCategory()
+      this.getArticles()
+    }
   },
   mounted() {
     this.category.id = this.$route.params.id;

@@ -45,6 +45,15 @@ export default {
       const url = `${baseApiUrl}/categories/tree`;
       return axios.get(url).then((res) => res.data);
     },
+    onNodeSelect(node) {
+      this.$router.push({
+        name: "articlesByCategory",
+        params: { id: node.id },
+      });
+    },
+  },
+  mounted() {
+    this.$refs.tree.$on("node:selected", this.onNodeSelect);
   },
 };
 </script>
@@ -81,15 +90,15 @@ export default {
 
   margin: 20px;
   padding-bottom: 8px;
-  border-bottom: 1px solid #AAA;
+  border-bottom: 1px solid #aaa;
 }
-.menu .menu-filter i{
-  color: #AAA;
+.menu .menu-filter i {
+  color: #aaa;
   /* margin top and right */
-  margin: 10px 10px 0 0; 
-} 
+  margin: 10px 10px 0 0;
+}
 .menu .menu-filter input {
-  color: #CCC;
+  color: #ccc;
   font-size: 1.3rem;
   border: 0;
   width: 100%;
@@ -97,8 +106,8 @@ export default {
   background: transparent;
 }
 
-.menu .tree-filter-empty{
-  color: #CCC;
+.menu .tree-filter-empty {
+  color: #ccc;
   margin-left: 20px;
   font-size: 1.2rem;
 }
