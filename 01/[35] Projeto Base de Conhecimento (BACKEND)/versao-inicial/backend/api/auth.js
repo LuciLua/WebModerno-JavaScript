@@ -25,7 +25,8 @@ module.exports = app => {
             email: user.email,
             admin: user.admin,
             iat: now, // issued at (emitido em)
-            exp: now + (60 * 60 * 24 * 3)
+            exp: now + (60 * 60 * 24 * 3) // 3 dias
+            // quando token perder a validade: corta conexao com backend e user é desconectado e precisa conectar novamente
         }
 
         res.json({
