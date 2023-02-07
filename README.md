@@ -1,4 +1,4 @@
-# <p align="center">📚 WebModerno-JavaScript 📚</p>
+# <p align="center">📚 WebModerno-JavaScript [Status: finalized] 📚</p>
 
 <p align="center">Repository where I put my studies during the course Modern Web Course Complete with JavaScript 2021 + Projects</p>
 
@@ -23,7 +23,7 @@ During the course, these are some technologies and topics that I have already le
 - [x] <a href="https://github.com/LuciLua/WebModerno-JavaScript/tree/master/01/%5B14%5D%20CSS/css"> CSS </a>
 - [x] <a href="https://github.com/LuciLua/WebModerno-JavaScript/tree/master/01/%5B15%5D%20Integrando%20CSS%20HTML%20JS"> Integrando HTML, CSS e JS </a>
 - [x] <a href="https://github.com/LuciLua/WebModerno-JavaScript/tree/master/01/%5B16%5D%20Ajax"> Ajax </a>
-- [x] <a href="https://github.com/LuciLua/WebModerno-JavaScript/tree/master/01/%5B17%5D%20Gulp"> Gulp </a>
+- [x] <a href="https://github.com/LuciLua/WebModerno-JavaScript/tree/master/01/%5B17%5D%20Gulp"> Gulp </a> | <a href="https://github.com/LuciLua/gulp">Gulp [2]</a>
 - [x] <a href="https://github.com/LuciLua/WebModerno-JavaScript/tree/master/01/%5B18%5D%20Webpack"> Webpack </a>
 - [x] <a href="https://github.com/LuciLua/WebModerno-JavaScript/tree/master/01/%5B19%5D%20jQuery/jquery"> jQuery </a>
 - [x] <a href="https://github.com/LuciLua/WebModerno-JavaScript/tree/master/01/%5B20%5D%20Bootstrap/bootstrap"> Bootstrap </a>
